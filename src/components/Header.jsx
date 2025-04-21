@@ -1,4 +1,5 @@
 import React from "react";
+import navLinks from "../data/navLinks";
 
 export const Header = () => {
   return (
@@ -7,10 +8,14 @@ export const Header = () => {
     "
     >
       <h1>VIAJES LOCOS</h1>
-      <ul>
-        <li>
-          <a href="">Viajes</a>
-        </li>
+      <ul className="flex gap-4">
+        {navLinks.map((link) => (
+          <li key={link.id}>
+            <a href={link.href} className="text-blue-600 hover:underline">
+              {link.name}
+            </a>
+          </li>
+        ))}
       </ul>
       <p>Iniciar sesion</p>
     </header>
