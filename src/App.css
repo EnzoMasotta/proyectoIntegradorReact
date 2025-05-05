@@ -1,6 +1,19 @@
 @import "tailwindcss";
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
 * {
   font-family: "Inter", sans-serif;
+}
+
+.logo {
+  font-family: "Roboto", sans-serif;
+}
+
+:root {
+  --verde-logo: #2d6a4f; /* Verde fuerte y vibrante */
+  --beige-fondo: #f0e6d2; /* Fondo beige suave */
+  --naranja-acento: #ff6f00; /* Naranja intenso para destacar */
+  --gris-texto: #2a2a2a; /* Gris oscuro para texto */
+  --blanco: #ffffff; /* Blanco para frescura */
 }

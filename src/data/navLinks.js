@@ -7,7 +7,7 @@ import {
   BriefcaseMedical,
 } from "lucide-react";
 
-const navLinks = [
+export const navLinks = [
   {
     id: 1,
     name: "Paquetes",
@@ -39,11 +39,9 @@ const navLinks = [
     icon: Ticket,
   },
   {
-    id: 5,
+    id: 6,
     name: "Asistencias",
     href: "/asistencias",
     icon: BriefcaseMedical,
   },
 ];
-
-export default navLinks;
