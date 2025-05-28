@@ -1,30 +1,28 @@
 import React from "react";
-import { useUser } from "../contexts/UserContext";
-import Login from "./Login";
+import { User } from "./User";
+import { Link } from "react-router-dom";
+import { MenuButton } from "./MenuButton";
+import { ResponsiveMenu } from "./ResponsiveMenu";
 
 export const HeaderLogo = () => {
-  const { user, logout } = useUser();
-
   return (
-    <header
-      className="w-full flex py-2 px-[5%] justify-between items-center bg-white 
-    "
-    >
-      <h1 className="logo cursor-pointer  font-bold text-[#2d6a4f] text-2xl">
-        nomada 360°
-      </h1>
+    <header className="w-full flex py-3 px-[3%] justify-between items-center bg-white md:px-[10%]">
+      <Link to="/">
+        <h1 className="logo cursor-pointer font-extrabold text-[#2d6a4f] text-3xl">
+          katafly
+        </h1>
+      </Link>
 
-      <nav>
-        {user ? (
-          <>
-            <span className="text-gray-700">Hola, {user.email}</span>
-            <button onClick={logout} className="text-red-600">
-              Cerrar sesión
-            </button>
-          </>
-        ) : (
-          <Login />
-        )}
+      <nav className="flex gap-3 justify-between items-center md:gap-5 ">
+        <Link
+          to="/reservas"
+          className="text-sm font-medium hidden text-[#2d6a4f] md:flex "
+        >
+          Mis reservas
+        </Link>
+        <User />
+        <MenuButton />
+        <ResponsiveMenu />
       </nav>
     </header>
   );

@@ -12,6 +12,7 @@ function App() {
       <HeaderNav />
       <Routes>
         <Route path="/" element={<h1>Pagina principal</h1>} />
+        <Route path="/reservas" element={<h1>Aca vas a ver las reservas</h1>} />
         <Route path="/actividades" element={<h1>No hay nada gato</h1>} />
       </Routes>
       <Footer />

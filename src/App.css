@@ -7,7 +7,8 @@
 }
 
 .logo {
-  font-family: "Roboto", sans-serif;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
 :root {
@@ -16,4 +17,5 @@
   --naranja-acento: #ff6f00; /* Naranja intenso para destacar */
   --gris-texto: #2a2a2a; /* Gris oscuro para texto */
   --blanco: #ffffff; /* Blanco para frescura */
+  --gris-navbar: #4a4a4a; /* Gris claro suave, ideal para navbar */
 }
