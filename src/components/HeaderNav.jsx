@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export function HeaderNav() {
   return (
     <div className="relative">
-      <nav className="w-full items-center py-2 px-[3%] md:px-[15%] block overflow-x-auto">
+      <nav className="w-full items-center py-2 px-[3%] md:px-[15%] block overflow-x-auto ">
         <ul className="flex items-center whitespace-nowrap">
           {navLinks.map((link) => {
             const Icon = link.icon;
@@ -13,7 +13,7 @@ export function HeaderNav() {
               <li key={link.id} className="px-3">
                 <Link
                   to={link.href}
-                  className="flex flex-col items-center justify-center gap-2 text-[#4a4a4a] hover:text-gray-400 text-sm font-extralight md:px-2"
+                  className="flex flex-col items-center justify-center gap-1 text-[#4a4a4a] hover:text-gray-400 text-sm font-extralight md:px-2"
                 >
                   <Icon size={20} />
                   {link.name}

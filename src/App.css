@@ -1,9 +1,8 @@
 @import "tailwindcss";
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 * {
-  font-family: "Inter", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .logo {
@@ -14,7 +13,7 @@
 :root {
   --verde-logo: #2d6a4f; /* Verde fuerte y vibrante */
   --beige-fondo: #f0e6d2; /* Fondo beige suave */
-  --naranja-acento: #ff6f00; /* Naranja intenso para destacar */
+  --verde-hero: #86cb92; /* Verde Hero*/
   --gris-texto: #2a2a2a; /* Gris oscuro para texto */
   --blanco: #ffffff; /* Blanco para frescura */
   --gris-navbar: #4a4a4a; /* Gris claro suave, ideal para navbar */

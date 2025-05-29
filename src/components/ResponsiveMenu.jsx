@@ -24,12 +24,7 @@ export function ResponsiveMenu() {
           </li>
           <li>
             <Link to="/reservas" onClick={closeMenu}>
-              Reservas
-            </Link>
-          </li>
-          <li>
-            <Link to="/actividades" onClick={closeMenu}>
-              Actividades
+              Mis reservas
             </Link>
           </li>
           <li>

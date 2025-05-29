@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import { HeaderLogo } from "./components/HeaderLogo";
 import { HeaderNav } from "./components/HeaderNav";
 import { Footer } from "./components/Footer";
+import { PackagesPage } from "./pages/PackagesPage";
 
 function App() {
   return (
@@ -11,7 +12,8 @@ function App() {
       <HeaderLogo />
       <HeaderNav />
       <Routes>
-        <Route path="/" element={<h1>Pagina principal</h1>} />
+        <Route path="/" element={<PackagesPage />} />
+        <Route path="/paquetes" element={<PackagesPage />} />
         <Route path="/reservas" element={<h1>Aca vas a ver las reservas</h1>} />
         <Route path="/actividades" element={<h1>No hay nada gato</h1>} />
       </Routes>
