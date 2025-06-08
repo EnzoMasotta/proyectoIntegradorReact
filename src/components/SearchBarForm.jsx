@@ -9,7 +9,7 @@ export const SearchBarForm = ({
   className = "",
   value,
   onChange,
-  ...rest // capturamos cualquier otra prop extra
+  ...rest
 }) => {
   return (
     <div className="relative w-full mt-4">
@@ -20,9 +20,9 @@ export const SearchBarForm = ({
         value={value}
         onChange={onChange}
         placeholder={placeholder}
-        className={`w-full border border-gray-400 text-gray-800 px-3 pt-6 pb-2 rounded-md focus:outline-none focus:border-blue-500 ${className}`}
+        className={`w-full border border-gray-400 text-[#2a2a2a] px-3 pt-6 pb-2 rounded-md focus:outline-none focus:border-blue-500 ${className}`}
         style={{ paddingTop: "1.5rem" }}
-        {...rest} // aquí pasamos las props extra como min, disabled, etc.
+        {...rest}
       />
       <label
         htmlFor={id}

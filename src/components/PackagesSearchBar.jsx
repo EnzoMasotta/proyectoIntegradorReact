@@ -1,6 +1,7 @@
 import React from "react";
 import { SearchBarForm } from "./SearchBarForm";
 import { useState } from "react";
+import { DatePicker } from "./DatePicker";
 
 export function PackagesSearchBar() {
   const [origen, setOrigen] = useState("");
@@ -32,39 +33,7 @@ export function PackagesSearchBar() {
           onChange={(e) => setOrigen(e.target.value)}
         />
 
-        <SearchBarForm
-          label="Fecha de ida"
-          placeholder="Seleccione la fecha de ida"
-          name="fechaIda"
-          id="fechaIda"
-          type="date"
-          value={fechaIda}
-          onChange={(e) => {
-            setFechaIda(e.target.value);
-            // Si la fecha vuelta es anterior, la reseteamos
-            if (fechaVuelta && e.target.value > fechaVuelta) {
-              setFechaVuelta("");
-            }
-          }}
-        />
-
-        <SearchBarForm
-          label="Fecha de vuelta"
-          placeholder="Seleccione la fecha de vuelta"
-          name="fechaVuelta"
-          id="fechaVuelta"
-          type="date"
-          value={fechaVuelta}
-          min={fechaIda || undefined} // no permite fechas antes que ida
-          onChange={(e) => {
-            if (fechaIda && e.target.value < fechaIda) {
-              alert("La fecha de vuelta no puede ser anterior a la de ida");
-              return;
-            }
-            setFechaVuelta(e.target.value);
-          }}
-          disabled={!fechaIda} // deshabilitar si no hay fecha de ida
-        />
+        <DatePicker />
       </form>
     </section>
   );
