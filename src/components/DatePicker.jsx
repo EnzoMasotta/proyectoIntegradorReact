@@ -43,7 +43,6 @@ export function DatePicker() {
   const handleSelect = (selectedRange) => {
     const { from, to } = selectedRange || {};
 
-    // Si el usuario tocó 2 veces la misma fecha
     if (from && to && from.getTime() === to.getTime()) {
       const newFrom = new Date(from);
       const newTo = new Date(newFrom);
