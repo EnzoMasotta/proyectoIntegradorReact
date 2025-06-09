@@ -3,24 +3,20 @@ import { DayPicker, getDefaultClassNames } from "react-day-picker";
 import { format } from "date-fns";
 import { es } from "date-fns/locale";
 import "react-day-picker/style.css";
-
-function useIsMobile(breakpoint = 768) {
-  const [isMobile, setIsMobile] = useState(false);
-  useEffect(() => {
-    const onResize = () => setIsMobile(window.innerWidth < breakpoint);
-    onResize();
-    window.addEventListener("resize", onResize);
-    return () => window.removeEventListener("resize", onResize);
-  }, [breakpoint]);
-  return isMobile;
-}
+import { useIsMobile } from "../hooks/useIsMobile";
+import { ChevronLeft } from "lucide-react";
 
 export function DatePicker() {
   const [range, setRange] = useState({ from: undefined, to: undefined });
   const [open, setOpen] = useState(false);
   const isMobile = useIsMobile();
   const ref = useRef();
-  const defaultClassNames = getDefaultClassNames();
+
+  const handleApply = () => {
+    if (range.from && range.to) {
+      setOpen(false);
+    }
+  };
 
   useEffect(() => {
     if (!isMobile) {
@@ -45,35 +41,35 @@ export function DatePicker() {
   const handleSelect = (selectedRange) => {
     const { from, to } = selectedRange || {};
 
-    if (from && to && from.getTime() === to.getTime()) {
-      const newFrom = new Date(from);
-      const newTo = new Date(newFrom);
-      newTo.setDate(newTo.getDate() + 2);
+    if (from && to) {
+      const diffInDays = (to - from) / (1000 * 60 * 60 * 24) + 1;
 
-      setRange({ from: newFrom, to: newTo });
+      if (diffInDays < 3) {
+        const newTo = new Date(from);
+        newTo.setDate(from.getDate() + 2);
+        setRange({ from, to: newTo });
+        return;
+      }
+    }
+
+    if (from && !to) {
+      setRange({ from, to: undefined });
       return;
     }
 
     setRange(selectedRange);
   };
 
-  const handleApply = () => {
-    if (range.from && range.to) {
-      setOpen(false);
-    }
-  };
-
   return (
     <div className=" w-full mt-4" ref={ref}>
-      <div className="flex w-full gap-4">
+      <div className="flex w-full gap-4 lg:gap-2">
         <div className="relative w-1/2">
           <input
             readOnly
             value={formatRange(range.from)}
             onClick={() => setOpen(true)}
             placeholder="Fecha de ida"
-            className="w-full border border-gray-400 text-gray-800 px-3 pt-6 pb-2 rounded-md focus:outline-none focus:border-blue-500"
-            style={{ paddingTop: "1.5rem" }}
+            className="w-full border border-gray-400 text-gray-800 px-3 pt-6 pb-2 rounded-md focus:outline-none focus:border-blue-500 lg:placeholder:text-sm lg:text-sm"
           />
           <label className="absolute left-3 top-2 text-xs text-gray-500 pointer-events-none">
             Ida
@@ -86,8 +82,7 @@ export function DatePicker() {
             value={formatRange(range.to)}
             onClick={() => setOpen(true)}
             placeholder="Fecha de vuelta"
-            className="w-full border border-gray-400 text-gray-800 px-3 pt-6 pb-2 rounded-md focus:outline-none focus:border-blue-500"
-            style={{ paddingTop: "1.5rem" }}
+            className="w-full border border-gray-400 text-gray-800 px-3 pt-6 pb-2 rounded-md focus:outline-none focus:border-blue-500 lg:placeholder:text-sm lg:text-sm"
           />
           <label className="absolute left-3 top-2 text-xs text-gray-500 pointer-events-none">
             Vuelta
@@ -98,14 +93,16 @@ export function DatePicker() {
       {open &&
         (isMobile ? (
           <div className="fixed inset-0 bg-white z-50 overflow-y-auto p-4 flex flex-col">
-            <div className="flex justify-between items-center mb-2">
-              <h2 className="text-lg font-semibold">Selecciona fechas</h2>
+            <div className="flex gap-4 items-center mb-2">
               <button
                 onClick={() => setOpen(false)}
                 className="text-[#4a4a4a] font-semibold"
               >
-                Cerrar
+                <ChevronLeft />
               </button>
+              <h2 className="text-[17px] font-normal text-[#4a4a4a]">
+                Seleccioná fechas
+              </h2>
             </div>
 
             <DayPicker

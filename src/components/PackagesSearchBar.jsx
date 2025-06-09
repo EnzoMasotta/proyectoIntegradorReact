@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { SearchBarForm } from "./SearchBarForm";
 import { DatePicker } from "./DatePicker";
+import { GuestsAndRoomsInput } from "./GuestsAndRoomsInput";
 
 export function PackagesSearchBar() {
   const [origen, setOrigen] = useState("");
@@ -19,20 +20,14 @@ export function PackagesSearchBar() {
   };
 
   return (
-    <section className="bg-white p-4 rounded-lg flex flex-col">
+    <section className="bg-white p-4 rounded-lg flex flex-col lg:w-[90%]">
       <h1 className="text-[17px] font-normal text-[#4a4a4a]">
         Elegí el paquete perfecto
       </h1>
-      <form className="flex flex-col items-start" onSubmit={handleSubmit}>
-        <SearchBarForm
-          label="Destino"
-          placeholder="Ingrese destino"
-          name="destino"
-          id="destino"
-          value={destino}
-          onChange={(e) => setDestino(e.target.value)}
-        />
-
+      <form
+        className="flex flex-col items-start lg:flex-row lg:gap-2 lg:items-center"
+        onSubmit={handleSubmit}
+      >
         <SearchBarForm
           label="Origen"
           placeholder="Ingrese su origen"
@@ -42,11 +37,22 @@ export function PackagesSearchBar() {
           onChange={(e) => setOrigen(e.target.value)}
         />
 
+        <SearchBarForm
+          label="Destino"
+          placeholder="Ingrese destino"
+          name="destino"
+          id="destino"
+          value={destino}
+          onChange={(e) => setDestino(e.target.value)}
+        />
+
         <DatePicker />
+
+        <GuestsAndRoomsInput />
 
         <button
           type="submit"
-          className="mt-4 w-full px-4 py-2 bg-[#2a5732] text-white rounded"
+          className="mt-4 w-full px-4 py-2 bg-[#2a5732] text-white rounded lg:w-1/2"
         >
           Buscar
         </button>
