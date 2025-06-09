@@ -66,8 +66,8 @@ export function DatePicker() {
 
   return (
     <div className=" w-full mt-4" ref={ref}>
-      <div className="flex justify-between">
-        <div className="relative w-[48%]">
+      <div className="flex w-full gap-4">
+        <div className="relative w-1/2">
           <input
             readOnly
             value={formatRange(range.from)}
@@ -81,7 +81,7 @@ export function DatePicker() {
           </label>
         </div>
 
-        <div className="relative w-[48%]">
+        <div className="relative w-1/2">
           <input
             readOnly
             value={formatRange(range.to)}
