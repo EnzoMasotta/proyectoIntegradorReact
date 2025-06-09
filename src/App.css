@@ -19,14 +19,36 @@
   --gris-navbar: #4a4a4a; /* Gris claro suave, ideal para navbar */
 }
 
-.rdp {
-  --rdp-accent-color: white; /* color del texto */
-  --rdp-accent-background-color: #0ea5e9; /* celeste: para días seleccionados */
-  --rdp-range_middle-background-color: #facc15; /* amarillo para los días del medio */
-  --rdp-range_middle-color: black; /* texto negro */
-  --rdp-range_start-background: #22c55e; /* verde para el inicio del rango */
-  --rdp-range_end-background: #ef4444; /* rojo para el final del rango */
-  --rdp-range_start-color: white;
-  --rdp-range_end-color: white;
-  --rdp-today-color: #ec4899; /* rosa para el día actual */
+.rdp-range_middle {
+  background-color: #addab5 !important;
+  color: white !important;
+}
+
+.rdp-range_start .rdp-day_button {
+  background-color: #2d6a4f !important;
+  color: white !important;
+  border: #2d6a4f !important;
+}
+
+.rdp-range_end .rdp-day_button {
+  background-color: #2d6a4f !important;
+  color: white !important;
+  border: #2d6a4f !important;
+}
+
+.rdp-range_start {
+  background: linear-gradient(to right, transparent 30%, #addab5 70%);
+}
+
+.rdp-range_end {
+  background: linear-gradient(to left, transparent 30%, #addab5 70%);
+}
+
+.rdp-today {
+  color: #212622 !important;
+  font-weight: normal;
+}
+
+.rdp-chevron {
+  fill: #2a5732;
 }

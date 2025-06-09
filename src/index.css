@@ -8,3 +8,41 @@ body {
   font-family: sans-serif;
   color: #000;
 }
+
+.rdp-range_middle {
+  background-color: #addab5 !important;
+  color: white !important;
+}
+
+.rdp-range_start .rdp-day_button {
+  background-color: #2d6a4f !important;
+  color: white !important;
+  border: #2d6a4f !important;
+}
+
+.rdp-range_end .rdp-day_button {
+  background-color: #2d6a4f !important;
+  color: white !important;
+  border: #2d6a4f !important;
+}
+
+.rdp-range_start {
+  background: linear-gradient(
+    to right,
+    transparent 30%,
+    #addab5 70%
+  ) !important;
+}
+
+.rdp-range_end {
+  background: linear-gradient(to left, transparent 30%, #addab5 70%) !important;
+}
+
+.rdp-today {
+  color: #212622 !important;
+  font-weight: bold !important;
+}
+
+.rdp-chevron {
+  fill: #2a5732 !important;
+}
