@@ -18,3 +18,15 @@
   --blanco: #ffffff; /* Blanco para frescura */
   --gris-navbar: #4a4a4a; /* Gris claro suave, ideal para navbar */
 }
+
+.rdp {
+  --rdp-accent-color: white; /* color del texto */
+  --rdp-accent-background-color: #0ea5e9; /* celeste: para días seleccionados */
+  --rdp-range_middle-background-color: #facc15; /* amarillo para los días del medio */
+  --rdp-range_middle-color: black; /* texto negro */
+  --rdp-range_start-background: #22c55e; /* verde para el inicio del rango */
+  --rdp-range_end-background: #ef4444; /* rojo para el final del rango */
+  --rdp-range_start-color: white;
+  --rdp-range_end-color: white;
+  --rdp-today-color: #ec4899; /* rosa para el día actual */
+}

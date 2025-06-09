@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
-import { DayPicker } from "react-day-picker";
+import { DayPicker, getDefaultClassNames } from "react-day-picker";
 import { format } from "date-fns";
+import { es } from "date-fns/locale";
 import "react-day-picker/style.css";
+import "../styles/DatePicker.css";
 
 function useIsMobile(breakpoint = 768) {
   const [isMobile, setIsMobile] = useState(false);
@@ -19,6 +21,7 @@ export function DatePicker() {
   const [open, setOpen] = useState(false);
   const isMobile = useIsMobile();
   const ref = useRef();
+  const defaultClassNames = getDefaultClassNames();
 
   useEffect(() => {
     if (!isMobile) {
@@ -35,7 +38,7 @@ export function DatePicker() {
 
   const formatRange = (from, to) => {
     if (from && to)
-      return `Del ${format(from, "d MMM")} al ${format(to, "d MMM")}`;
+      return `${format(from, "dd/MM/yyyy")} hasta ${format(to, "dd/MM/yyyy")}`;
     if (from) return `Del ${format(from, "d MMM")}`;
     return "";
   };
@@ -82,13 +85,15 @@ export function DatePicker() {
               <h2 className="text-lg font-semibold">Selecciona fechas</h2>
               <button
                 onClick={() => setOpen(false)}
-                className="text-blue-600 font-semibold"
+                className="text-[#4a4a4a] font-semibold"
               >
                 Cerrar
               </button>
             </div>
 
             <DayPicker
+              className="flex justify-center"
+              locale={es}
               mode="range"
               selected={range}
               onSelect={handleSelect}
@@ -99,10 +104,10 @@ export function DatePicker() {
 
             <button
               disabled={!range.from || !range.to}
-              className={`mt-4 py-2 rounded-md text-white ${
+              className={`mt-10 py-2 rounded-md text-white ${
                 !range.from || !range.to
                   ? "bg-gray-400 cursor-not-allowed"
-                  : "bg-blue-600 hover:bg-blue-700"
+                  : "bg-[#2a5732] hover:bg-[#354938]"
               }`}
               onClick={handleApply}
             >
@@ -112,6 +117,7 @@ export function DatePicker() {
         ) : (
           <div className="absolute z-10 mt-2 bg-white shadow-lg border border-gray-200 rounded-md p-4">
             <DayPicker
+              locale={es}
               mode="range"
               selected={range}
               onSelect={handleSelect}
