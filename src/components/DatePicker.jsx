@@ -3,7 +3,6 @@ import { DayPicker, getDefaultClassNames } from "react-day-picker";
 import { format } from "date-fns";
 import { es } from "date-fns/locale";
 import "react-day-picker/style.css";
-import "../styles/DatePicker.css";
 
 function useIsMobile(breakpoint = 768) {
   const [isMobile, setIsMobile] = useState(false);
