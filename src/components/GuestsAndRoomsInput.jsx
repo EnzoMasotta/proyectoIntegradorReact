@@ -44,7 +44,7 @@ export const GuestsAndRoomsInput = ({ label = "Personas" }) => {
   const displayValue = `${totalPeople} persona${totalPeople !== 1 ? "s" : ""}`;
 
   return (
-    <div className="relative w-full mt-4 lg:w-[60%]">
+    <div className="relative w-full mt-4 lg:w-1/2">
       <input
         type="text"
         value={displayValue}

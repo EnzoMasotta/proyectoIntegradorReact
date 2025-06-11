@@ -20,7 +20,7 @@ export function PackagesSearchBar() {
   };
 
   return (
-    <section className="bg-white p-4 rounded-lg flex flex-col lg:w-[90%]">
+    <section className="bg-white p-4 rounded-lg flex flex-col lg:w-[75%]">
       <h1 className="text-[17px] font-normal text-[#4a4a4a]">
         Elegí el paquete perfecto
       </h1>
@@ -52,7 +52,7 @@ export function PackagesSearchBar() {
 
         <button
           type="submit"
-          className="mt-4 w-full px-4 py-2 bg-[#2a5732] text-white rounded lg:w-1/2"
+          className="mt-4 w-full px-4 py-2 bg-[#2a5732] text-white rounded lg:w-1/3"
         >
           Buscar
         </button>

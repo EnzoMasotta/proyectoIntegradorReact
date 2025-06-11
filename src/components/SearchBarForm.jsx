@@ -12,7 +12,7 @@ export const SearchBarForm = ({
   ...rest
 }) => {
   return (
-    <div className="relative w-full mt-4 lg:w-1/2">
+    <div className="relative w-full mt-4 lg:w-2/3">
       <input
         type={type}
         name={name}
