@@ -123,6 +123,13 @@ export function DatePicker() {
               disabled={{ before: new Date() }}
               numberOfMonths={1}
             />
+
+            <button
+              onClick={() => setOpen(false)}
+              className="mt-auto w-full px-4 py-2 bg-[#2a5732] text-white rounded-md"
+            >
+              Listo
+            </button>
           </div>
         ) : (
           <div className="absolute z-10 mt-2 bg-white shadow-lg border border-gray-200 rounded-md p-4">

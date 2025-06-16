@@ -1,16 +1,6 @@
 import { ChevronLeft, Plus, Minus } from "lucide-react";
 import React, { useState, useEffect, useRef } from "react";
-
-function useIsMobile(breakpoint = 768) {
-  const [isMobile, setIsMobile] = useState(false);
-  useEffect(() => {
-    const onResize = () => setIsMobile(window.innerWidth < breakpoint);
-    onResize();
-    window.addEventListener("resize", onResize);
-    return () => window.removeEventListener("resize", onResize);
-  }, [breakpoint]);
-  return isMobile;
-}
+import { useIsMobile } from "../hooks/useIsMobile";
 
 export const GuestsAndRoomsInput = ({ label = "Personas" }) => {
   const isMobile = useIsMobile();
@@ -104,12 +94,20 @@ export const GuestsAndRoomsInput = ({ label = "Personas" }) => {
                   removeRoom={removeRoom}
                 />
               ))}
-              <button
-                onClick={addRoom}
-                className="mt-auto bg-[#2a5732] text-white rounded py-3 font-semibold"
-              >
-                Agregar habitación
-              </button>
+              <div className="flex justify-between items-center">
+                <button
+                  onClick={addRoom}
+                  className=" text-[#2a5732] font-medium"
+                >
+                  Agregar habitación
+                </button>
+                <button
+                  onClick={toggleOpen}
+                  className="bg-[#2a5732] text-white py-2 px-4 rounded-md"
+                >
+                  Aplicar
+                </button>
+              </div>
             </div>
           </div>
         ) : (
@@ -123,12 +121,21 @@ export const GuestsAndRoomsInput = ({ label = "Personas" }) => {
                 removeRoom={removeRoom}
               />
             ))}
-            <button
-              onClick={addRoom}
-              className="mt-2 w-full bg-[#2a5732] text-white py-2 rounded"
-            >
-              Agregar habitación
-            </button>
+
+            <div className="flex justify-between items-center ">
+              <button
+                onClick={addRoom}
+                className="text-[#2a5732] font-medium cursor-pointer"
+              >
+                Agregar habitación
+              </button>
+              <button
+                onClick={toggleOpen}
+                className="bg-[#2a5732] text-white py-1.5 px-4 rounded-md"
+              >
+                Aplicar
+              </button>
+            </div>
           </div>
         ))}
     </div>
@@ -143,7 +150,7 @@ const RoomSelector = ({ room, index, changeGuestCount, removeRoom }) => (
         <button
           type="button"
           onClick={() => removeRoom(index)}
-          className="text-red-600 hover:text-red-800 text-sm font-normal"
+          className="text-red-600 hover:text-red-800 text-sm font-normal cursor-pointer"
           aria-label={`Eliminar habitación ${index + 1}`}
         >
           Eliminar
@@ -167,7 +174,7 @@ const RoomSelector = ({ room, index, changeGuestCount, removeRoom }) => (
         <div className="flex items-center gap-2">
           <button
             type="button"
-            className="px-2 py-1 border rounded disabled:opacity-50"
+            className="px-2 py-1 border rounded disabled:opacity-50 cursor-pointer"
             onClick={() => changeGuestCount(index, type, -1)}
             disabled={type === "adults" ? room[type] === 1 : room[type] === 0}
           >
@@ -177,7 +184,7 @@ const RoomSelector = ({ room, index, changeGuestCount, removeRoom }) => (
           <span className="w-6 text-center">{room[type]}</span>
           <button
             type="button"
-            className="px-1 py-0.5 border rounded disabled:opacity-50"
+            className="px-1 py-0.5 border rounded disabled:opacity-50 cursor-pointer"
             onClick={() => changeGuestCount(index, type, 1)}
             disabled={room.adults + room.children >= 8}
           >
