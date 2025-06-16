@@ -12,11 +12,19 @@ export function DatePicker() {
   const isMobile = useIsMobile();
   const ref = useRef();
 
-  const handleApply = () => {
-    if (range.from && range.to) {
-      setOpen(false);
+  useEffect(() => {
+    if (isMobile) {
+      if (open) {
+        document.body.style.overflow = "hidden";
+      } else {
+        document.body.style.overflow = "";
+      }
+
+      return () => {
+        document.body.style.overflow = "";
+      };
     }
-  };
+  }, [open, isMobile]);
 
   useEffect(() => {
     if (!isMobile) {
@@ -93,7 +101,7 @@ export function DatePicker() {
       {open &&
         (isMobile ? (
           <div className="fixed inset-0 bg-white z-50 overflow-y-auto p-4 flex flex-col">
-            <div className="flex gap-4 items-center mb-2">
+            <div className="flex gap-4 items-center mb-4">
               <button
                 onClick={() => setOpen(false)}
                 className="text-[#4a4a4a] font-semibold"
@@ -115,18 +123,6 @@ export function DatePicker() {
               disabled={{ before: new Date() }}
               numberOfMonths={1}
             />
-
-            <button
-              disabled={!range.from || !range.to}
-              className={`mt-10 py-2 rounded-md text-white ${
-                !range.from || !range.to
-                  ? "bg-gray-400 cursor-not-allowed"
-                  : "bg-[#2a5732] hover:bg-[#354938]"
-              }`}
-              onClick={handleApply}
-            >
-              Aplicar fechas
-            </button>
           </div>
         ) : (
           <div className="absolute z-10 mt-2 bg-white shadow-lg border border-gray-200 rounded-md p-4">

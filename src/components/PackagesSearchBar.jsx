@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { SearchBarForm } from "./SearchBarForm";
+import { SearchInput } from "./SearchInput";
 import { DatePicker } from "./DatePicker";
 import { GuestsAndRoomsInput } from "./GuestsAndRoomsInput";
 
@@ -28,16 +28,17 @@ export function PackagesSearchBar() {
         className="flex flex-col items-start lg:flex-row lg:gap-2 lg:items-center"
         onSubmit={handleSubmit}
       >
-        <SearchBarForm
+        <SearchInput
           label="Origen"
           placeholder="Ingrese su origen"
           name="origen"
           id="origen"
           value={origen}
           onChange={(e) => setOrigen(e.target.value)}
+          filterCountry="Argentina"
         />
 
-        <SearchBarForm
+        <SearchInput
           label="Destino"
           placeholder="Ingrese destino"
           name="destino"
