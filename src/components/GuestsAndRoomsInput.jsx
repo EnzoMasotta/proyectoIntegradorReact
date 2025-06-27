@@ -2,9 +2,25 @@ import { ChevronLeft, Plus, Minus } from "lucide-react";
 import React, { useState, useEffect, useRef } from "react";
 import { useIsMobile } from "../hooks/useIsMobile";
 
-export const GuestsAndRoomsInput = ({ label = "Personas" }) => {
+export const GuestsAndRoomsInput = ({
+  label = "Personas",
+  onChange,
+  defaultPeople = 1,
+}) => {
   const isMobile = useIsMobile();
-  const [rooms, setRooms] = useState([{ adults: 1, children: 0 }]);
+
+  const MAX_ROOMS = 4;
+
+  const createRoomsFromPeople = (totalPeople) => {
+    let adults = totalPeople > 0 ? totalPeople : 1;
+    let children = 0;
+    if (adults > 8) adults = 8;
+    return [{ adults, children }];
+  };
+
+  const [rooms, setRooms] = useState(() =>
+    createRoomsFromPeople(defaultPeople)
+  );
   const [open, setOpen] = useState(false);
   const containerRef = useRef(null);
 
@@ -27,6 +43,19 @@ export const GuestsAndRoomsInput = ({ label = "Personas" }) => {
     };
   }, [open]);
 
+  useEffect(() => {
+    if (isMobile) {
+      if (open) {
+        document.body.style.overflow = "hidden";
+      } else {
+        document.body.style.overflow = "";
+      }
+      return () => {
+        document.body.style.overflow = "";
+      };
+    }
+  }, [open, isMobile]);
+
   const changeGuestCount = (roomIndex, type, delta) => {
     setRooms((prev) => {
       const updated = [...prev];
@@ -34,7 +63,6 @@ export const GuestsAndRoomsInput = ({ label = "Personas" }) => {
       const newCount = room[type] + delta;
 
       if (type === "children" && newCount < 0) return prev;
-
       if (type === "adults" && newCount < 1) return prev;
 
       const totalPeople = room.adults + room.children + delta;
@@ -47,6 +75,7 @@ export const GuestsAndRoomsInput = ({ label = "Personas" }) => {
   };
 
   const addRoom = () => {
+    if (rooms.length >= MAX_ROOMS) return;
     setRooms((prev) => [...prev, { adults: 1, children: 0 }]);
   };
 
@@ -56,9 +85,14 @@ export const GuestsAndRoomsInput = ({ label = "Personas" }) => {
 
   const totalAdults = rooms.reduce((a, r) => a + r.adults, 0);
   const totalChildren = rooms.reduce((a, r) => a + r.children, 0);
-  const totalRooms = rooms.length;
   const totalPeople = totalAdults + totalChildren;
   const displayValue = `${totalPeople} persona${totalPeople !== 1 ? "s" : ""}`;
+
+  useEffect(() => {
+    if (onChange) {
+      onChange(totalPeople);
+    }
+  }, [totalPeople, onChange]);
 
   return (
     <div ref={containerRef} className="relative w-full mt-4 lg:w-1/2">
@@ -97,7 +131,12 @@ export const GuestsAndRoomsInput = ({ label = "Personas" }) => {
               <div className="flex justify-between items-center">
                 <button
                   onClick={addRoom}
-                  className=" text-[#2a5732] font-medium"
+                  disabled={rooms.length >= MAX_ROOMS}
+                  className={`text-[#2a5732] font-medium cursor-pointer ${
+                    rooms.length >= MAX_ROOMS
+                      ? "opacity-50 cursor-not-allowed"
+                      : ""
+                  }`}
                 >
                   Agregar habitación
                 </button>
@@ -125,7 +164,10 @@ export const GuestsAndRoomsInput = ({ label = "Personas" }) => {
             <div className="flex justify-between items-center ">
               <button
                 onClick={addRoom}
-                className="text-[#2a5732] font-medium cursor-pointer"
+                disabled={rooms.length >= MAX_ROOMS}
+                className={`text-[#2a5732] font-medium cursor-pointer ${
+                  rooms.length >= MAX_ROOMS ? "opacity-50" : ""
+                }`}
               >
                 Agregar habitación
               </button>

@@ -1,0 +1,282 @@
+[
+  {
+    "id": 1,
+    "title": "Viaje a Buenos Aires",
+    "description": "Disfrutá de Buenos Aires, la capital argentina.",
+    "destination": "Buenos Aires",
+    "price": 100000,
+    "image": "/img/buenos-aires.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Viaje a Córdoba",
+    "description": "Explorá la hermosa ciudad de Córdoba.",
+    "destination": "Córdoba",
+    "price": 95000,
+    "image": "/img/cordoba.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Viaje a Mendoza",
+    "description": "Descubrí los vinos y montañas de Mendoza.",
+    "destination": "Mendoza",
+    "price": 110000,
+    "image": "/img/mendoza.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Viaje a Bariloche",
+    "description": "Visitá Bariloche y sus paisajes increíbles.",
+    "destination": "Bariloche",
+    "price": 120000,
+    "image": "/img/bariloche.jpg"
+  },
+  {
+    "id": 5,
+    "title": "Viaje a Salta",
+    "description": "Explorá la provincia de Salta y su cultura.",
+    "destination": "Salta",
+    "price": 90000,
+    "image": "/img/salta.jpg"
+  },
+  {
+    "id": 6,
+    "title": "Viaje a Rosario",
+    "description": "Descubrí Rosario y su río Paraná.",
+    "destination": "Rosario",
+    "price": 90000,
+    "image": "/img/rosario.jpg"
+  },
+  {
+    "id": 7,
+    "title": "Viaje a Ushuaia",
+    "description": "Conocé Ushuaia, la ciudad más austral.",
+    "destination": "Ushuaia",
+    "price": 140000,
+    "image": "/img/ushuaia.jpg"
+  },
+  {
+    "id": 8,
+    "title": "Viaje a Montevideo",
+    "description": "Disfrutá la capital uruguaya, Montevideo.",
+    "destination": "Montevideo",
+    "price": 95000,
+    "image": "/img/montevideo.jpg"
+  },
+  {
+    "id": 9,
+    "title": "Viaje a Punta del Este",
+    "description": "Vacaciones en la playa en Punta del Este.",
+    "destination": "Punta del Este",
+    "price": 110000,
+    "image": "/img/punta-del-este.jpg"
+  },
+  {
+    "id": 10,
+    "title": "Viaje a São Paulo",
+    "description": "Explorá la vibrante ciudad de São Paulo.",
+    "destination": "São Paulo",
+    "price": 130000,
+    "image": "/img/sao-paulo.jpg"
+  },
+  {
+    "id": 11,
+    "title": "Viaje a Río de Janeiro",
+    "description": "Playas y samba en Río de Janeiro.",
+    "destination": "Río de Janeiro",
+    "price": 130000,
+    "image": "/img/rio.jpg"
+  },
+  {
+    "id": 12,
+    "title": "Viaje a Florianópolis",
+    "description": "Disfrutá las playas de Florianópolis.",
+    "destination": "Florianópolis",
+    "price": 120000,
+    "image": "/img/florianopolis.jpg"
+  },
+  {
+    "id": 13,
+    "title": "Viaje a Salvador",
+    "description": "Conocé la cultura de Salvador, Bahía.",
+    "destination": "Salvador",
+    "price": 110000,
+    "image": "/img/salvador.jpg"
+  },
+  {
+    "id": 14,
+    "title": "Viaje a Madrid",
+    "description": "Descubrí la capital española, Madrid.",
+    "destination": "Madrid",
+    "price": 180000,
+    "image": "/img/madrid.jpg"
+  },
+  {
+    "id": 15,
+    "title": "Viaje a Barcelona",
+    "description": "Visitá Barcelona y su arquitectura única.",
+    "destination": "Barcelona",
+    "price": 175000,
+    "image": "/img/barcelona.jpg"
+  },
+  {
+    "id": 16,
+    "title": "Viaje a Sevilla",
+    "description": "Explorá la histórica Sevilla.",
+    "destination": "Sevilla",
+    "price": 160000,
+    "image": "/img/sevilla.jpg"
+  },
+  {
+    "id": 17,
+    "title": "Viaje a Valencia",
+    "description": "Disfrutá la costa y la cultura de Valencia.",
+    "destination": "Valencia",
+    "price": 150000,
+    "image": "/img/valencia.jpg"
+  },
+  {
+    "id": 18,
+    "title": "Viaje a Santiago",
+    "description": "Visitá Santiago de Chile, la capital chilena.",
+    "destination": "Santiago",
+    "price": 110000,
+    "image": "/img/santiago.jpg"
+  },
+  {
+    "id": 19,
+    "title": "Viaje a Calama",
+    "description": "Explorá Calama y el desierto de Atacama.",
+    "destination": "Calama",
+    "price": 95000,
+    "image": "/img/calama.jpg"
+  },
+  {
+    "id": 20,
+    "title": "Viaje a Punta Arenas",
+    "description": "Conocé Punta Arenas en la Patagonia chilena.",
+    "destination": "Punta Arenas",
+    "price": 120000,
+    "image": "/img/punta-arenas.jpg"
+  },
+  {
+    "id": 21,
+    "title": "Viaje a Ciudad de México",
+    "description": "Visitá la capital mexicana, Ciudad de México.",
+    "destination": "Ciudad de México",
+    "price": 130000,
+    "image": "/img/ciudad-de-mexico.jpg"
+  },
+  {
+    "id": 22,
+    "title": "Viaje a Cancún",
+    "description": "Disfrutá las playas de Cancún.",
+    "destination": "Cancún",
+    "price": 140000,
+    "image": "/img/cancun.jpg"
+  },
+  {
+    "id": 23,
+    "title": "Viaje a Guadalajara",
+    "description": "Explorá Guadalajara y su cultura.",
+    "destination": "Guadalajara",
+    "price": 100000,
+    "image": "/img/guadalajara.jpg"
+  },
+  {
+    "id": 24,
+    "title": "Viaje a Monterrey",
+    "description": "Visitá Monterrey, ciudad industrial.",
+    "destination": "Monterrey",
+    "price": 115000,
+    "image": "/img/monterrey.jpg"
+  },
+  {
+    "id": 25,
+    "title": "Viaje a Miami",
+    "description": "Playas y vida nocturna en Miami.",
+    "destination": "Miami",
+    "price": 140000,
+    "image": "/img/miami.jpg"
+  },
+  {
+    "id": 26,
+    "title": "Viaje a Nueva York",
+    "description": "Explorá la Gran Manzana, Nueva York.",
+    "destination": "Nueva York",
+    "price": 160000,
+    "image": "/img/nueva-york.jpg"
+  },
+  {
+    "id": 27,
+    "title": "Viaje a Los Ángeles",
+    "description": "Visitá Los Ángeles, ciudad de cine.",
+    "destination": "Los Ángeles",
+    "price": 155000,
+    "image": "/img/los-angeles.jpg"
+  },
+  {
+    "id": 28,
+    "title": "Viaje a Chicago",
+    "description": "Conocé Chicago y su arquitectura icónica.",
+    "destination": "Chicago",
+    "price": 150000,
+    "image": "/img/chicago.jpg"
+  },
+  {
+    "id": 29,
+    "title": "Viaje a Roma",
+    "description": "Recorré la histórica ciudad de Roma.",
+    "destination": "Roma",
+    "price": 170000,
+    "image": "/img/roma.jpg"
+  },
+  {
+    "id": 30,
+    "title": "Viaje a Milán",
+    "description": "Visitá Milán, capital de la moda italiana.",
+    "destination": "Milán",
+    "price": 175000,
+    "image": "/img/milan.jpg"
+  },
+  {
+    "id": 31,
+    "title": "Viaje a Venecia",
+    "description": "Disfrutá los canales de Venecia.",
+    "destination": "Venecia",
+    "price": 165000,
+    "image": "/img/venecia.jpg"
+  },
+  {
+    "id": 32,
+    "title": "Viaje a Nápoles",
+    "description": "Explorá Nápoles y su historia milenaria.",
+    "destination": "Nápoles",
+    "price": 160000,
+    "image": "/img/napoles.jpg"
+  },
+  {
+    "id": 33,
+    "title": "Viaje a París",
+    "description": "Visitá París, la ciudad del amor.",
+    "destination": "París",
+    "price": 180000,
+    "image": "/img/paris.jpg"
+  },
+  {
+    "id": 34,
+    "title": "Viaje a Lyon",
+    "description": "Descubrí Lyon y su gastronomía.",
+    "destination": "Lyon",
+    "price": 165000,
+    "image": "/img/lyon.jpg"
+  },
+  {
+    "id": 35,
+    "title": "Viaje a Niza",
+    "description": "Disfrutá la costa de Niza.",
+    "destination": "Niza",
+    "price": 160000,
+    "image": "/img/niza.jpg"
+  }
+]

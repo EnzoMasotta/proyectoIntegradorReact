@@ -28,6 +28,7 @@ export const SearchInput = ({
   id,
   name,
   filterCountry = null,
+  error,
 }) => {
   const [inputValue, setInputValue] = useState(value || "");
   const [suggestions, setSuggestions] = useState([]);
@@ -136,9 +137,14 @@ export const SearchInput = ({
         onChange={handleChange}
         onFocus={() => setIsFocused(true)}
         placeholder={placeholder}
-        className="w-full border border-gray-400 text-[#2a2a2a] px-3 pt-6 pb-2 rounded-md focus:outline-none focus:border-blue-500 lg:placeholder:text-sm lg:text-sm"
+        className={`w-full border px-3 pt-6 pb-2 rounded-md focus:outline-none text-[#2a2a2a] lg:placeholder:text-sm lg:text-sm ${
+          error
+            ? "border-red-500 focus:border-red-500"
+            : "border-gray-400 focus:border-blue-500"
+        }`}
         autoComplete="off"
       />
+
       {label && (
         <label
           htmlFor={id}
@@ -160,6 +166,12 @@ export const SearchInput = ({
             </li>
           ))}
         </ul>
+      )}
+
+      {error && (
+        <p className="absolute top-14 lg:top-13 left-1.5 text-[12px] text-red-600">
+          {error}
+        </p>
       )}
     </div>
   );
