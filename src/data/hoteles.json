@@ -1,0 +1,145 @@
+{
+  "Argentina": {
+    "Buenos Aires": [
+      {
+        "id": 1,
+        "title": "Hotel Obelisco",
+        "description": "Ubicado en el corazón de Buenos Aires, cerca del Obelisco.",
+        "image": "/imagenes/obelisco.jpg",
+        "price": 120000
+      },
+      {
+        "id": 2,
+        "title": "Palacio Plaza",
+        "description": "Lujo y confort en el centro porteño.",
+        "image": "/imagenes/palacio.jpg",
+        "price": 180000
+      },
+      {
+        "id": 3,
+        "title": "Recoleta Boutique Hotel",
+        "description": "Hotel elegante en el barrio de Recoleta.",
+        "image": "/imagenes/recoleta.jpg",
+        "price": 150000
+      },
+      {
+        "id": 4,
+        "title": "Puerto Madero Luxury",
+        "description": "Frente al río con vistas impresionantes.",
+        "image": "/imagenes/puertomadero.jpg",
+        "price": 200000
+      }
+    ],
+    "Córdoba": [
+      {
+        "id": 5,
+        "title": "Córdoba Suite Hotel",
+        "description": "Cerca del centro histórico, ideal para recorrer la ciudad.",
+        "image": "/imagenes/cordoba.jpg",
+        "price": 95000
+      },
+      {
+        "id": 6,
+        "title": "Hotel Nueva Córdoba",
+        "description": "Moderno hotel cerca de la zona universitaria.",
+        "image": "/imagenes/nuevacordoba.jpg",
+        "price": 90000
+      }
+    ]
+  },
+  "Uruguay": {
+    "Montevideo": [
+      {
+        "id": 7,
+        "title": "Montevideo Plaza",
+        "description": "A pasos de la Rambla y Ciudad Vieja.",
+        "image": "/imagenes/montevideo.jpg",
+        "price": 115000
+      },
+      {
+        "id": 8,
+        "title": "Hotel Rambla",
+        "description": "Con vistas al mar y zona céntrica.",
+        "image": "/imagenes/rambla.jpg",
+        "price": 120000
+      }
+    ],
+    "Maldonado": [
+      {
+        "id": 9,
+        "title": "Punta del Este Beach Hotel",
+        "description": "Lujo frente al mar en La Brava.",
+        "image": "/imagenes/punta.jpg",
+        "price": 175000
+      }
+    ]
+  },
+  "Brasil": {
+    "São Paulo": [
+      {
+        "id": 10,
+        "title": "Paulista Inn",
+        "description": "Negocios y ocio en la gran metrópolis brasileña.",
+        "image": "/imagenes/saopaulo.jpg",
+        "price": 160000
+      },
+      {
+        "id": 11,
+        "title": "Hotel Jardins",
+        "description": "Ubicado en el barrio Jardins, zona exclusiva.",
+        "image": "/imagenes/jardins.jpg",
+        "price": 155000
+      }
+    ],
+    "Río de Janeiro": [
+      {
+        "id": 12,
+        "title": "Copacabana Hotel",
+        "description": "Frente a la playa más famosa de Brasil.",
+        "image": "/imagenes/copacabana.jpg",
+        "price": 190000
+      },
+      {
+        "id": 13,
+        "title": "Ipanema Suites",
+        "description": "Cerca de la playa de Ipanema, moderno y cómodo.",
+        "image": "/imagenes/ipanema.jpg",
+        "price": 185000
+      }
+    ]
+  },
+  "España": {
+    "Madrid": [
+      {
+        "id": 14,
+        "title": "Madrid Centro Hotel",
+        "description": "En pleno centro, cerca de Puerta del Sol.",
+        "image": "/imagenes/madrid.jpg",
+        "price": 200000
+      },
+      {
+        "id": 15,
+        "title": "Hotel Gran Vía",
+        "description": "Con acceso a la emblemática Gran Vía.",
+        "image": "/imagenes/granvia.jpg",
+        "price": 210000
+      }
+    ],
+    "Barcelona": [
+      {
+        "id": 16,
+        "title": "Barcelona Rambla Inn",
+        "description": "A pasos de Las Ramblas y la Sagrada Familia.",
+        "image": "/imagenes/barcelona.jpg",
+        "price": 195000
+      },
+      {
+        "id": 17,
+        "title": "Hotel Gótico",
+        "description": "En el barrio Gótico, con mucha historia y encanto.",
+        "image": "/imagenes/gotico.jpg",
+        "price": 180000
+      }
+    ]
+  }
+}

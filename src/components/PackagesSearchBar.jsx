@@ -82,7 +82,6 @@ export function PackagesSearchBar({
           id="origen"
           value={origen}
           onChange={(e) => setOrigen(e.target.value)}
-          filterCountry="Argentina"
           error={errors.origen}
         />
 

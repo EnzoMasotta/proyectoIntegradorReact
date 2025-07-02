@@ -1,9 +1,23 @@
 import React from "react";
+import brasil from "../assets/FeaturedPackagesImgs/brasil.png";
+import madrid from "../assets/FeaturedPackagesImgs/madrid.png";
+import puntacana from "../assets/FeaturedPackagesImgs/puntacana.png";
+import cuotassininteres from "../assets/FeaturedPackagesImgs/cuotassininteres.png";
 
 export function FeaturedPackages() {
   return (
-    <div className="flex border-3 border-black w-full h-60 mt-20 items-center justify-center">
-      FeaturedPackages
+    <div className="flex w-full h-auto mt-20 items-center justify-around overflow-x-auto px-[3%] gap-4 border-r-[15px] border-white no-scrollbar lg:border-none">
+      <img
+        src={brasil}
+        alt=""
+        className="h-80 w-auto rounded-2xl cursor-pointer"
+      />
+
+      <img src={madrid} alt="" className="h-80 w-auto rounded-2xl" />
+
+      <img src={puntacana} alt="" className="h-80 w-auto rounded-2xl" />
+
+      <img src={cuotassininteres} alt="" className="h-80 w-auto rounded-2xl" />
     </div>
   );
 }

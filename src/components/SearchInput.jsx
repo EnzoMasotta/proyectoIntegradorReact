@@ -27,7 +27,6 @@ export const SearchInput = ({
   onChange,
   id,
   name,
-  filterCountry = null,
   error,
 }) => {
   const [inputValue, setInputValue] = useState(value || "");
@@ -62,8 +61,7 @@ export const SearchInput = ({
     const matched = flatLocations.some(
       (s) =>
         normalizeText(`${s.city}, ${s.province}, ${s.country}`) ===
-          normalizedInput &&
-        (!filterCountry || s.country === filterCountry)
+        normalizedInput
     );
     if (!matched) {
       setInputValue("");
@@ -96,18 +94,15 @@ export const SearchInput = ({
     let newSuggestions = [];
 
     if (matchedCountry) {
-      if (!filterCountry || matchedCountry === filterCountry) {
-        newSuggestions = locationsByCountry[matchedCountry].map(
-          ({ city, province }) => ({
-            city,
-            province,
-            country: matchedCountry,
-          })
-        );
-      }
+      newSuggestions = locationsByCountry[matchedCountry].map(
+        ({ city, province }) => ({
+          city,
+          province,
+          country: matchedCountry,
+        })
+      );
     } else {
       newSuggestions = flatLocations.filter(({ city, province, country }) => {
-        if (filterCountry && country !== filterCountry) return false;
         return (
           normalizeText(city).includes(normalizedVal) ||
           normalizeText(province).includes(normalizedVal) ||
