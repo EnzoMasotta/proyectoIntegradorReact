@@ -7,16 +7,13 @@ export function PackagesPageResults() {
   const [searchParams, setSearchParams] = useSearchParams();
   const navigate = useNavigate();
 
-  // Leer params existentes
   const origenParam = searchParams.get("origen") || "";
   const destinoParam = searchParams.get("destino") || "";
   const personas = parseInt(searchParams.get("people") || "1", 10);
 
-  // Parsear fechas de ida y vuelta de params
   const idaParam = searchParams.get("ida");
   const vueltaParam = searchParams.get("vuelta");
 
-  // Parsear ISO strings a Date o undefined
   const parseDate = (iso) => {
     if (!iso) return undefined;
     const d = new Date(iso);
@@ -28,7 +25,6 @@ export function PackagesPageResults() {
     to: parseDate(vueltaParam),
   });
 
-  // Cuando cambie el rango localmente, actualizar URL (params)
   useEffect(() => {
     if (range.from && range.to) {
       const params = new URLSearchParams(searchParams);
@@ -36,7 +32,6 @@ export function PackagesPageResults() {
       params.set("vuelta", range.to.toISOString());
       setSearchParams(params, { replace: true });
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [range.from, range.to]);
 
   const origen = origenParam.split(",")[0].trim().toLowerCase();
@@ -73,7 +68,7 @@ export function PackagesPageResults() {
           defaultDestino={destinoParam}
           defaultPeople={personas}
           defaultRange={range}
-          setRange={setRange} // Pasar setter para que datepicker actualice rango y URL
+          setRange={setRange}
         />
       </section>
 

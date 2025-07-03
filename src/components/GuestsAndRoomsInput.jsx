@@ -97,6 +97,7 @@ export const GuestsAndRoomsInput = ({
   return (
     <div ref={containerRef} className="relative w-full mt-4 lg:w-1/2">
       <input
+        id="personas"
         type="text"
         value={displayValue}
         readOnly
@@ -104,7 +105,10 @@ export const GuestsAndRoomsInput = ({
         placeholder={label}
         className="w-full border border-gray-400 text-[#2a2a2a] px-3 pt-6 pb-2 rounded-md focus:outline-none focus:border-blue-500 cursor-pointer lg:placeholder:text-sm lg:text-sm"
       />
-      <label className="absolute left-3 top-2 text-xs text-gray-500 pointer-events-none">
+      <label
+        htmlFor="personas"
+        className="absolute left-3 top-2 text-xs text-gray-500 pointer-events-none"
+      >
         {label}
       </label>
 

@@ -63,6 +63,7 @@ export function DatePicker({ range, setRange, errorFrom, errorTo }) {
       <div className="flex w-full gap-4 lg:gap-2">
         <div className="relative w-1/2 lg:w-2/3">
           <input
+            id="ida"
             readOnly
             value={formatRange(range.from)}
             onClick={() => setOpen(true)}
@@ -73,7 +74,10 @@ export function DatePicker({ range, setRange, errorFrom, errorTo }) {
                 : "border-gray-400 focus:border-blue-500"
             }`}
           />
-          <label className="absolute left-3 top-2 text-xs text-gray-500 pointer-events-none">
+          <label
+            htmlFor="ida"
+            className="absolute left-3 top-2 text-xs text-gray-500 pointer-events-none"
+          >
             Ida
           </label>
           {errorFrom && (
@@ -85,6 +89,7 @@ export function DatePicker({ range, setRange, errorFrom, errorTo }) {
 
         <div className="relative w-1/2 lg:w-2/3">
           <input
+            id="vuelta"
             readOnly
             value={formatRange(range.to)}
             onClick={() => setOpen(true)}
@@ -95,7 +100,10 @@ export function DatePicker({ range, setRange, errorFrom, errorTo }) {
                 : "border-gray-400 focus:border-blue-500"
             }`}
           />
-          <label className="absolute left-3 top-2 text-xs text-gray-500 pointer-events-none">
+          <label
+            htmlFor="vuelta"
+            className="absolute left-3 top-2 text-xs text-gray-500 pointer-events-none"
+          >
             Vuelta
           </label>
           {errorTo && (
