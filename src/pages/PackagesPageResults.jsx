@@ -3,6 +3,7 @@ import { useSearchParams, useNavigate } from "react-router-dom";
 import packages from "../data/packages.json";
 import { PackagesSearchBar } from "../components/PackagesSearchBar";
 import { PackagesFilter } from "../components/PackagesFilter";
+import { PackagesResults } from "../components/PackagesResults";
 import {
   Wifi,
   Coffee,
@@ -10,6 +11,7 @@ import {
   Utensils,
   ParkingCircle,
   Snowflake,
+  WavesLadder,
 } from "lucide-react";
 
 export function PackagesPageResults() {
@@ -72,7 +74,7 @@ export function PackagesPageResults() {
   const iconMap = {
     wifi: { icon: Wifi, label: "Wifi incluido" },
     desayuno: { icon: Coffee, label: "Desayuno" },
-    pileta: { icon: Bath, label: "Pileta" },
+    pileta: { icon: WavesLadder, label: "Pileta" },
     restaurante: { icon: Utensils, label: "Restaurante" },
     estacionamiento: { icon: ParkingCircle, label: "Estacionamiento" },
     aire: { icon: Snowflake, label: "Aire acondicionado" },
@@ -90,64 +92,15 @@ export function PackagesPageResults() {
         />
       </section>
 
-      <PackagesFilter />
+      <div className="bg-[#f4f4f4] flex flex-col lg:flex-row justify-between">
+        <PackagesFilter />
 
-      <section className="flex flex-col p-10 gap-2">
-        {results.length === 0 ? (
-          <p className="text-center text-gray-600 mt-8">
-            No hay paquetes disponibles con los criterios seleccionados.
-          </p>
-        ) : (
-          results.map((pkg) => (
-            <div
-              key={pkg.id || `${pkg.title}-${pkg.province}-${pkg.country}`}
-              className="w-full border rounded shadow p-4 flex"
-            >
-              <img
-                src={pkg.image}
-                alt={pkg.title}
-                className="w-full h-40 object-cover mb-2 rounded"
-              />
-              <div>
-                <h2 className="text-lg font-semibold">{pkg.title}</h2>
-                <p className="text-sm text-gray-600">{pkg.description}</p>
-                {pkg.services?.length > 0 && (
-                  <div className="flex flex-col gap-3 mt-3 text-gray-600 text-sm">
-                    {pkg.services.map((serv) => {
-                      const IconComponent = iconMap[serv]?.icon;
-                      const label = iconMap[serv]?.label;
-
-                      return (
-                        IconComponent && (
-                          <div key={serv} className="flex items-center gap-1">
-                            <IconComponent size={18} />
-                            <span>{label}</span>
-                          </div>
-                        )
-                      );
-                    })}
-                  </div>
-                )}
-              </div>
-
-              {typeof pkg.price === "number" ? (
-                <div className="flex flex-col">
-                  <p className="mt-2 text-sm text-gray-500">
-                    Precio por persona: ${pkg.price.toLocaleString("es-AR")}
-                  </p>
-                  <p className="text-md font-bold mt-1">
-                    Total: ${(pkg.price * personas).toLocaleString("es-AR")}
-                  </p>
-                </div>
-              ) : (
-                <p className="text-sm text-red-500 mt-2">
-                  Precio no disponible
-                </p>
-              )}
-            </div>
-          ))
-        )}
-      </section>
+        <PackagesResults
+          results={results}
+          iconMap={iconMap}
+          personas={personas}
+        />
+      </div>
     </main>
   );
 }
