@@ -6,7 +6,8 @@
         "title": "Hotel Obelisco",
         "description": "Ubicado en el corazón de Buenos Aires, cerca del Obelisco.",
         "image": "/imagenes/obelisco.jpg",
-        "price": 120000
+        "price": 120000,
+        "services": ["wifi", "desayuno", "pileta"]
       },
       {
         "id": 2,

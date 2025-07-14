@@ -1,6 +1,8 @@
 import React from "react";
 import { PackagesSearchBar } from "../components/PackagesSearchBar";
 import { FeaturedPackages } from "../components/FeaturedPackages";
+import { FeaturedPackageDeals } from "../components/FeaturedPackageDeals";
+import { Newsletter } from "../components/Newsletter";
 
 export function PackagesPage() {
   return (
@@ -9,6 +11,8 @@ export function PackagesPage() {
         <PackagesSearchBar />
       </section>
       <FeaturedPackages />
+      <FeaturedPackageDeals />
+      <Newsletter />
     </main>
   );
 }

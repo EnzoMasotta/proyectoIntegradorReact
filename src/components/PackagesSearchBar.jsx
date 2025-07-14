@@ -42,6 +42,14 @@ export function PackagesSearchBar({
       newErrors.destino = "Campo obligatorio";
       valid = false;
     }
+    if (
+      origen.trim() !== "" &&
+      destino.trim() !== "" &&
+      origen.trim().toLowerCase() === destino.trim().toLowerCase()
+    ) {
+      newErrors.destino = "El destino debe ser distinto del origen";
+      valid = false;
+    }
     if (!range.from) {
       newErrors.fechaIda = "Campo obligatorio";
       valid = false;
