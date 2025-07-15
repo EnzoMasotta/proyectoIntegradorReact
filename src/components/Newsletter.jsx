@@ -3,7 +3,7 @@ import React from "react";
 
 export function Newsletter() {
   return (
-    <section className="flex flex-col items-center justify-center mt-4 gap-6 md:gap-4 py-3 bg-[#f4f4f4]">
+    <section className="flex flex-col items-center justify-center mt-4 gap-6 md:gap-4 py-3 bg-[#f2f4f5]">
       <h1 className="text-xl text-center px-[3%] text-[#4a4a4a]">
         Suscribíte a nuestro Newsletter y recibí ofertas exclusivas
       </h1>

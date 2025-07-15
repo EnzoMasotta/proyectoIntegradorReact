@@ -92,7 +92,7 @@ export function PackagesPageResults() {
         />
       </section>
 
-      <div className="bg-[#f4f4f4] flex flex-col lg:flex-row justify-between">
+      <div className="bg-[#f2f4f5] md:px-[3%] lg:px-[8%] flex flex-col lg:flex-row">
         <PackagesFilter />
 
         <PackagesResults

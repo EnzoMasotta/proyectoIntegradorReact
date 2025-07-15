@@ -6,6 +6,7 @@ import { HeaderNav } from "./components/HeaderNav";
 import { Footer } from "./components/Footer";
 import { PackagesPage } from "./pages/PackagesPage";
 import { PackagesPageResults } from "./pages/PackagesPageResults";
+import { PackagesDetails } from "./pages/PackagesDetails";
 
 function App() {
   return (
@@ -16,6 +17,10 @@ function App() {
         <Route path="/" element={<PackagesPage />} />
         <Route path="/paquetes" element={<PackagesPage />} />
         <Route path="/paquetes/resultados" element={<PackagesPageResults />} />
+        <Route
+          path="/paquetes/resultados/detalles/:nombre"
+          element={<PackagesDetails />}
+        />
         <Route path="/reservas" element={<h1>Aca vas a ver las reservas</h1>} />
         <Route path="/actividades" element={<h1>No hay nada gato</h1>} />
       </Routes>
