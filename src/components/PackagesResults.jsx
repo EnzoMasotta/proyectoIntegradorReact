@@ -14,7 +14,7 @@ export function PackagesResults({ results, iconMap, personas }) {
   }
 
   return (
-    <section className=" w-full flex flex-col p-[8%] md:p-[3%] lg:pr-25 gap-6">
+    <section className=" w-full flex flex-col p-[8%] md:p-[3%] md:pt-0 lg:pr-25 gap-6">
       {results.map((pkg) => (
         <NavLink
           to={`/paquetes/resultados/detalles/${slugify(pkg.title, {
@@ -22,13 +22,13 @@ export function PackagesResults({ results, iconMap, personas }) {
             strict: true,
           })}`}
           key={pkg.id || `${pkg.title}-${pkg.province}-${pkg.country}`}
-          className="bg-white w-full border-[#ececec] border hover:border-[#ad6771] transition-all duration-300 rounded flex flex-col md:flex-row md:justify-between cursor-pointer"
+          className="bg-white w-full border-[#dbdbdb] border transition duration-500 hover:shadow-lg  rounded-md flex flex-col md:flex-row md:justify-between cursor-pointer"
         >
           <img
             /*pkg.image pkg.title */
             src="/HotelPrueba.jpg"
             alt={pkg.title}
-            className="w-auto h-50 md:h-85 md:w-70 lg:h-100 lg:w-[40%] object-cover rounded-t md:rounded-l md:rounded-r-none"
+            className="w-auto h-50 md:h-70 md:w-70 lg:h-85 lg:w-[40%] object-cover rounded-t md:rounded-l md:rounded-r-none"
           />
 
           <section className="p-4 md:flex md:flex-1 md:justify-between">
@@ -67,7 +67,7 @@ export function PackagesResults({ results, iconMap, personas }) {
             </div>
 
             <div className="">
-              <span className="flex items-center gap-1 text-sm text-[#4a4a4a] border-t-1 md:border-t-0 border-[#ececec]">
+              <span className="flex items-center gap-1 text-sm text-[#4a4a4a] border-t-1 md:border-t-0 border-[#dbdbdb]">
                 <Plane size={14} />
                 <p>Vuelos + alojamiento</p>
               </span>

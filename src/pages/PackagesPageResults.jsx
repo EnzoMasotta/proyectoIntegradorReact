@@ -13,6 +13,7 @@ import {
   Snowflake,
   WavesLadder,
 } from "lucide-react";
+import { PackagesSteps } from "../components/PackagesSteps";
 
 export function PackagesPageResults() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -91,6 +92,8 @@ export function PackagesPageResults() {
           setRange={setRange}
         />
       </section>
+
+      <PackagesSteps />
 
       <div className="bg-[#f2f4f5] md:px-[3%] lg:px-[8%] flex flex-col lg:flex-row">
         <PackagesFilter />

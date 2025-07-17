@@ -2,6 +2,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import packages from "../data/packages.json";
 import slugify from "slugify";
+import { PackagesSteps } from "../components/PackagesSteps";
 
 export function PackagesDetails() {
   const { nombre } = useParams();
@@ -37,7 +38,8 @@ export function PackagesDetails() {
 
   return (
     <main className="">
-      <section className="p-5">
+      <section className="">
+        <PackagesSteps />
         <h1 className="text-2xl font-normal mb-4 text-[#4a4a4a]">
           {pkg.title}
         </h1>

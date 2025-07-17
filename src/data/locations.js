@@ -7,6 +7,7 @@ export const locationsByCountry = {
     { city: "Salta", province: "Salta" },
     { city: "Rosario", province: "Santa Fe" },
     { city: "Ushuaia", province: "Tierra del Fuego" },
+    { city: "Puerto Iguazú", province: "Misiones" },
   ],
   Uruguay: [
     { city: "Montevideo", province: "Montevideo" },

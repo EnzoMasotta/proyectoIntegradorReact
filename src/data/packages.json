@@ -6,7 +6,7 @@
         "title": "Hotel Obelisco",
         "stars": 4,
         "image": "/imagenes/obelisco.jpg",
-        "price": 120000,
+        "price": 589000,
         "services": ["wifi", "desayuno", "pileta"]
       },
       {
