@@ -1,10 +1,11 @@
-import React from "react";
-import { Star, Plane, Info } from "lucide-react";
-import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import React, { useState } from "react";
+import { Star, Plane } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import slugify from "slugify";
 
 export function PackagesResults({ results, iconMap, personas }) {
+  const navigate = useNavigate(); // <-- acá obtenés la función navigate
+
   if (results.length === 0) {
     return (
       <p className="text-center text-gray-600 mt-8">
@@ -14,25 +15,29 @@ export function PackagesResults({ results, iconMap, personas }) {
   }
 
   return (
-    <section className=" w-full flex flex-col p-[8%] md:p-[3%] md:pt-0 lg:pr-25 gap-6">
+    <section className="w-full flex flex-col p-[8%] md:p-[3%] md:pt-0 lg:pr-25 gap-6">
       {results.map((pkg) => (
-        <NavLink
-          to={`/paquetes/resultados/detalles/${slugify(pkg.title, {
-            lower: true,
-            strict: true,
-          })}`}
+        <div
+          onClick={() => {
+            sessionStorage.setItem("lastSearchQuery", location.search);
+            navigate(
+              `/paquetes/resultados/hospedajes/detalles/${slugify(pkg.title, {
+                lower: true,
+                strict: true,
+              })}`
+            );
+          }}
           key={pkg.id || `${pkg.title}-${pkg.province}-${pkg.country}`}
-          className="bg-white w-full border-[#dbdbdb] border transition duration-500 hover:shadow-lg  rounded-md flex flex-col md:flex-row md:justify-between cursor-pointer"
+          className="bg-white w-full border-[#dbdbdb] border transition duration-500 hover:shadow-lg rounded-md flex flex-col md:flex-row md:justify-between cursor-pointer"
         >
           <img
-            /*pkg.image pkg.title */
             src="/HotelPrueba.jpg"
             alt={pkg.title}
             className="w-auto h-50 md:h-70 md:w-70 lg:h-85 lg:w-[40%] object-cover rounded-t md:rounded-l md:rounded-r-none"
           />
 
           <section className="p-4 md:flex md:flex-1 md:justify-between">
-            <div className="">
+            <div>
               <div className="flex items-center gap-2 flex-wrap">
                 <h2 className="text-lg font-semibold text-[#2a2a2a]">
                   {pkg.title}
@@ -45,17 +50,14 @@ export function PackagesResults({ results, iconMap, personas }) {
               </div>
 
               {pkg.services?.length > 0 && (
-                <div
-                  className="flex gap-3 text-gray-600 text-sm mb-1 md:mt-2 md:flex-col md:gap-1
-                 "
-                >
+                <div className="flex gap-3 text-gray-600 text-sm mb-1 md:mt-2 md:flex-col md:gap-1">
                   {pkg.services.map((serv) => {
                     const IconComponent = iconMap[serv]?.icon;
                     const label = iconMap[serv]?.label;
 
                     return (
                       IconComponent && (
-                        <div key={serv} className="flex items-center gap-1 ">
+                        <div key={serv} className="flex items-center gap-1">
                           <IconComponent size={18} />
                           <span className="hidden md:flex">{label}</span>
                         </div>
@@ -66,7 +68,7 @@ export function PackagesResults({ results, iconMap, personas }) {
               )}
             </div>
 
-            <div className="">
+            <div className="flex flex-col">
               <span className="flex items-center gap-1 text-sm text-[#4a4a4a] border-t-1 md:border-t-0 border-[#dbdbdb]">
                 <Plane size={14} />
                 <p>Vuelos + alojamiento</p>
@@ -76,7 +78,7 @@ export function PackagesResults({ results, iconMap, personas }) {
                 <div>
                   <p className="text-sm text-[#4a4a4a] flex flex-col">
                     Precio por persona{" "}
-                    <span className="text-xl ">
+                    <span className="text-xl">
                       $
                       <span className="font-bold text-[#2a2a2a]">
                         {pkg.price.toLocaleString("es-AR")}
@@ -92,9 +94,13 @@ export function PackagesResults({ results, iconMap, personas }) {
               ) : (
                 <p className="text-sm text-red-500">Precio no disponible</p>
               )}
+
+              <button className="hidden md:flex mt-auto justify-center py-1 cursor-pointer rounded-2xl border-2 border-transparent bg-[#ad6771] text-white text-md font-bold transition-all duration-500 hover:bg-white hover:border-2 hover:border-[#ad6771] hover:text-[#ad6771]">
+                Seleccionar
+              </button>
             </div>
           </section>
-        </NavLink>
+        </div>
       ))}
     </section>
   );

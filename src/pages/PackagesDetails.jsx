@@ -39,7 +39,7 @@ export function PackagesDetails() {
   return (
     <main className="">
       <section className="">
-        <PackagesSteps />
+        <PackagesSteps selectedPackage={pkg} />
         <h1 className="text-2xl font-normal mb-4 text-[#4a4a4a]">
           {pkg.title}
         </h1>

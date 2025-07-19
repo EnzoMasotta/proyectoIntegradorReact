@@ -7,6 +7,7 @@ import { Footer } from "./components/Footer";
 import { PackagesPage } from "./pages/PackagesPage";
 import { PackagesPageResults } from "./pages/PackagesPageResults";
 import { PackagesDetails } from "./pages/PackagesDetails";
+import { PackagesFlightsDetails } from "./pages/PackagesFlightsDetails";
 
 function App() {
   return (
@@ -18,8 +19,12 @@ function App() {
         <Route path="/paquetes" element={<PackagesPage />} />
         <Route path="/paquetes/resultados" element={<PackagesPageResults />} />
         <Route
-          path="/paquetes/resultados/detalles/:nombre"
+          path="/paquetes/resultados/hospedajes/detalles/:nombre"
           element={<PackagesDetails />}
+        />
+        <Route
+          path="/paquetes/resultados/vuelos/detalles/:nombre"
+          element={<PackagesFlightsDetails />}
         />
         <Route path="/reservas" element={<h1>Aca vas a ver las reservas</h1>} />
         <Route path="/actividades" element={<h1>No hay nada gato</h1>} />
