@@ -10,7 +10,10 @@ export function PackagesSteps({ selectedPackage }) {
   const handleChange = () => {
     const lastQuery = sessionStorage.getItem("lastSearchQuery");
     if (lastQuery) {
-      navigate(`/paquetes/resultados${lastQuery}`);
+      const separator = lastQuery.includes("?") ? "&" : "?";
+      navigate(
+        `/paquetes/resultados${lastQuery}${separator}scrollTo=accommodation`
+      );
     } else {
       navigate("/paquetes");
     }

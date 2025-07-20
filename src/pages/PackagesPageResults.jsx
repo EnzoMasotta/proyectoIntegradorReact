@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import packages from "../data/packages.json";
 import { PackagesSearchBar } from "../components/PackagesSearchBar";
@@ -81,6 +81,17 @@ export function PackagesPageResults() {
     aire: { icon: Snowflake, label: "Aire acondicionado" },
   };
 
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    if (searchParams.get("scrollTo") === "accommodation") {
+      sectionRef.current?.scrollIntoView({ behavior: "smooth" });
+      const params = new URLSearchParams(searchParams);
+      params.delete("scrollTo");
+      setSearchParams(params, { replace: true });
+    }
+  }, [searchParams]);
+
   return (
     <main className="flex flex-col">
       <section className="bg-[#2a5732] px-3 py-6 lg:justify-center lg:flex lg:py-9">
@@ -95,7 +106,11 @@ export function PackagesPageResults() {
 
       <PackagesSteps />
 
-      <div className="bg-[#f2f4f5] md:px-[3%] lg:px-[8%] flex flex-col lg:flex-row">
+      <div
+        className="bg-[#f2f4f5] md:px-[3%] lg:px-[8%] flex flex-col lg:flex-row"
+        ref={sectionRef}
+        id="accommodation"
+      >
         <PackagesFilter />
 
         <PackagesResults

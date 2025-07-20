@@ -3,7 +3,7 @@ import React from "react";
 import { useIsMobile } from "../hooks/useIsMobile";
 
 export function AcommodationStep({ selectedPackage, onChange }) {
-  const isMobile = useIsMobile();
+  const isMobile = useIsMobile(1024);
 
   if (!selectedPackage) {
     return (
@@ -20,7 +20,7 @@ export function AcommodationStep({ selectedPackage, onChange }) {
 
   return (
     <section className="flex md:flex-col md:gap-2 flex-1 justify-center border-r border-[#dbdbdb] py-2">
-      <div className="flex md:flex-col lg:flex-row lg:items-center lg:justify-between lg:w-full md:px-[5%]">
+      <div className="flex items-center justify-center lg:justify-between lg:w-full md:px-[5%]">
         <h1
           className="flex gap-2 items-center text-sm md:text-lg text-[#ad6771] font-bold"
           onClick={isMobile ? onChange : undefined}
@@ -29,7 +29,7 @@ export function AcommodationStep({ selectedPackage, onChange }) {
           Hospedaje
         </h1>
         <p
-          className="hidden md:flex text-sm text-[#4a4a4a] hover:text-[#ad6771] cursor-pointer"
+          className="hidden lg:flex text-sm text-[#4a4a4a] hover:text-[#ad6771] cursor-pointer"
           onClick={onChange}
         >
           Cambiar opción

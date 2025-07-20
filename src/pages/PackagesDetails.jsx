@@ -37,12 +37,18 @@ export function PackagesDetails() {
   if (!pkg) return null;
 
   return (
-    <main className="">
+    <main className="bg-[#f2f4f5]">
       <section className="">
         <PackagesSteps selectedPackage={pkg} />
-        <h1 className="text-2xl font-normal mb-4 text-[#4a4a4a]">
-          {pkg.title}
-        </h1>
+
+        <div className="flex flex-col-reverse mt-2">
+          <h1 className="text-xl font-bold mb-4 text-[#2a2a2a]">{pkg.title}</h1>
+          <img
+            src="/HabitacionPrueba.webp"
+            alt=""
+            className="w-auto h-50 object-cover"
+          />
+        </div>
       </section>
     </main>
   );
