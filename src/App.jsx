@@ -6,7 +6,7 @@ import { HeaderNav } from "./components/HeaderNav";
 import { Footer } from "./components/Footer";
 import { PackagesPage } from "./pages/PackagesPage";
 import { PackagesPageResults } from "./pages/PackagesPageResults";
-import { PackagesDetails } from "./pages/PackagesDetails";
+import { PackagesAcommodationsDetails } from "./pages/PackagesAcommodationsDetails";
 import { PackagesFlightsDetails } from "./pages/PackagesFlightsDetails";
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
         <Route path="/paquetes/resultados" element={<PackagesPageResults />} />
         <Route
           path="/paquetes/resultados/hospedajes/detalles/:nombre"
-          element={<PackagesDetails />}
+          element={<PackagesAcommodationsDetails />}
         />
         <Route
           path="/paquetes/resultados/vuelos/detalles/:nombre"

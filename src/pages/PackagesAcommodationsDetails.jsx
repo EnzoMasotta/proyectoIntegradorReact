@@ -6,7 +6,7 @@ import slugify from "slugify";
 import { PackagesSteps } from "../components/PackagesSteps";
 import { Star } from "lucide-react";
 
-export function PackagesDetails() {
+export function PackagesAcommodationsDetails() {
   const { nombre } = useParams();
   const navigate = useNavigate();
   const isMobile = useIsMobile();
@@ -44,7 +44,7 @@ export function PackagesDetails() {
       <section className="">
         <PackagesSteps selectedPackage={pkg} />
 
-        <div className="flex flex-col-reverse mt-2">
+        <div className="flex flex-col-reverse">
           <div className="flex items-center gap-2">
             <h1 className="text-xl font-bold text-[#2a2a2a]">{pkg.title}</h1>
             <span className="flex gap-1">
@@ -52,29 +52,11 @@ export function PackagesDetails() {
                 <Star key={i} size={16} className="text-yellow-500" />
               ))}
             </span>
-            <button className="bg-[#ad6771]">Elegir opcion</button>
+            <button className="hidden lg:flex bg-[#2a5732]">
+              Elegir opcion
+            </button>
           </div>
 
-          <img
-            src="/HabitacionPrueba.webp"
-            alt=""
-            className="w-auto h-50 object-cover"
-          />
-          <img
-            src="/HabitacionPrueba.webp"
-            alt=""
-            className="w-auto h-50 object-cover"
-          />
-          <img
-            src="/HabitacionPrueba.webp"
-            alt=""
-            className="w-auto h-50 object-cover"
-          />
-          <img
-            src="/HabitacionPrueba.webp"
-            alt=""
-            className="w-auto h-50 object-cover"
-          />
           <img
             src="/HabitacionPrueba.webp"
             alt=""
@@ -84,12 +66,12 @@ export function PackagesDetails() {
       </section>
 
       {isMobile && (
-        <section className="fixed bottom-0 w-full bg-white shadow-lg p-4 border-t z-50">
+        <section className="fixed bottom-0 w-full bg-white p-4 border border-[#dbdbdb] rounded-t-lg z-50">
           <div className="flex items-center justify-between">
             <div>
               <p className="text-sm text-gray-600">{pkg.title}</p>
               <p className="text-base font-semibold text-[#2a2a2a]">
-                Desde ${pkg.price}
+                Desde ${pkg.totalPrice}
               </p>
             </div>
             <button className="bg-[#2a5732] text-white px-4 py-2 rounded-md">

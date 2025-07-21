@@ -114,7 +114,7 @@ export const GuestsAndRoomsInput = ({
 
       {open &&
         (isMobile ? (
-          <div className="fixed inset-0 bg-black bg-opacity-60 flex flex-col z-50">
+          <div className="fixed inset-0 bg-white bg-opacity-60 flex flex-col z-50">
             <div className="bg-white flex flex-col flex-grow p-4 overflow-auto">
               <button
                 onClick={toggleOpen}
@@ -177,7 +177,7 @@ export const GuestsAndRoomsInput = ({
               </button>
               <button
                 onClick={toggleOpen}
-                className="bg-[#2a5732] text-white py-1.5 px-4 rounded-md"
+                className="bg-[#2a5732] text-white py-1.5 px-4 rounded-md cursor-pointer"
               >
                 Aplicar
               </button>

@@ -19,12 +19,12 @@ export function AcommodationStep({ selectedPackage, onChange }) {
   }
 
   return (
-    <section className="flex md:flex-col md:gap-2 flex-1 justify-center border-r border-[#dbdbdb] py-2">
+    <section
+      className="flex md:flex-col md:gap-2 flex-1 justify-center border-r border-[#dbdbdb] py-2"
+      onClick={isMobile ? onChange : undefined}
+    >
       <div className="flex items-center justify-center lg:justify-between lg:w-full md:px-[5%]">
-        <h1
-          className="flex gap-2 items-center text-sm md:text-lg text-[#ad6771] font-bold"
-          onClick={isMobile ? onChange : undefined}
-        >
+        <h1 className="flex gap-2 items-center text-sm md:text-lg text-[#ad6771] font-bold">
           <BedDouble size={18} strokeWidth={2} />
           Hospedaje
         </h1>

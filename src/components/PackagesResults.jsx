@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import slugify from "slugify";
 
 export function PackagesResults({ results, iconMap, personas }) {
-  const navigate = useNavigate(); // <-- acá obtenés la función navigate
+  const navigate = useNavigate();
 
   if (results.length === 0) {
     return (
@@ -28,15 +28,15 @@ export function PackagesResults({ results, iconMap, personas }) {
             );
           }}
           key={pkg.id || `${pkg.title}-${pkg.province}-${pkg.country}`}
-          className="bg-white w-full border-[#dbdbdb] border transition duration-500 hover:shadow-lg rounded-md flex flex-col md:flex-row md:justify-between cursor-pointer"
+          className="bg-white w-full border-[#dbdbdb] border transition duration-500 hover:shadow-lg rounded-lg flex flex-col md:flex-row md:justify-between cursor-pointer"
         >
           <img
             src="/HotelPrueba.jpg"
             alt={pkg.title}
-            className="w-auto h-50 md:h-70 md:w-70 lg:h-85 lg:w-[40%] object-cover rounded-t md:rounded-l md:rounded-r-none"
+            className="w-auto h-50 md:h-70 md:w-70 lg:h-85 lg:w-[40%] object-cover rounded-t-lg md:rounded-l-lg md:rounded-r-none"
           />
 
-          <section className="p-4 md:flex md:flex-1 md:justify-between">
+          <section className="px-4 py-2 md:py-4 md:flex md:flex-1 md:justify-between">
             <div>
               <div className="flex items-center gap-2 flex-wrap">
                 <h2 className="text-lg font-semibold text-[#2a2a2a]">
@@ -69,26 +69,26 @@ export function PackagesResults({ results, iconMap, personas }) {
             </div>
 
             <div className="flex flex-col">
-              <span className="flex items-center gap-1 text-sm text-[#4a4a4a] border-t-1 md:border-t-0 border-[#dbdbdb]">
+              <span className="flex items-center gap-1 pt-1 md:pt-0 text-sm text-[#4a4a4a] border-t-1 md:border-t-0 border-[#dbdbdb]">
                 <Plane size={14} />
                 <p>Vuelos + alojamiento</p>
               </span>
 
-              {typeof pkg.price === "number" ? (
+              {typeof pkg.totalPrice === "number" ? (
                 <div>
                   <p className="text-sm text-[#4a4a4a] flex flex-col">
                     Precio por persona{" "}
                     <span className="text-xl">
                       $
                       <span className="font-bold text-[#2a2a2a]">
-                        {pkg.price.toLocaleString("es-AR")}
+                        {pkg.totalPrice.toLocaleString("es-AR")}
                       </span>
                     </span>
                   </p>
                   <p className="text-xs text-[#4a4a4a]">
                     Precio final para {personas}{" "}
                     {personas === 1 ? "persona" : "personas"} $
-                    {(pkg.price * personas).toLocaleString("es-AR")}
+                    {(pkg.totalPrice * personas).toLocaleString("es-AR")}
                   </p>
                 </div>
               ) : (

@@ -14,6 +14,8 @@ import {
   WavesLadder,
 } from "lucide-react";
 import { PackagesSteps } from "../components/PackagesSteps";
+import { calculateDistanceInKm } from "../utils/distanceCalculator";
+import { locationsByCountry } from "../data/locations";
 
 export function PackagesPageResults() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -23,9 +25,6 @@ export function PackagesPageResults() {
   const destinoParam = searchParams.get("destino") || "";
   const personas = parseInt(searchParams.get("people") || "1", 10);
 
-  const idaParam = searchParams.get("ida");
-  const vueltaParam = searchParams.get("vuelta");
-
   const parseDate = (iso) => {
     if (!iso) return undefined;
     const d = new Date(iso);
@@ -33,21 +32,19 @@ export function PackagesPageResults() {
   };
 
   const [range, setRange] = useState({
-    from: parseDate(idaParam),
-    to: parseDate(vueltaParam),
+    from: parseDate(searchParams.get("ida")),
+    to: parseDate(searchParams.get("vuelta")),
   });
 
   useEffect(() => {
-    if (range.from && range.to) {
-      const params = new URLSearchParams(searchParams);
-      params.set("ida", range.from.toISOString());
-      params.set("vuelta", range.to.toISOString());
-      setSearchParams(params, { replace: true });
-    }
-  }, [range.from, range.to]);
+    setRange({
+      from: parseDate(searchParams.get("ida")),
+      to: parseDate(searchParams.get("vuelta")),
+    });
+  }, [searchParams]);
 
-  const origen = origenParam.split(",")[0].trim().toLowerCase();
-  const destino = destinoParam.split(",")[0].trim().toLowerCase();
+  const origenCity = origenParam.split(",")[0].trim();
+  const destinoCity = destinoParam.split(",")[0].trim().toLowerCase();
 
   const allPackages = [];
 
@@ -60,17 +57,69 @@ export function PackagesPageResults() {
           ...hotel,
           country: pais,
           province: provincia,
+          city: provincia,
         });
       });
     }
   }
 
-  const results = allPackages.filter(
-    (pkg) =>
-      pkg.province?.toLowerCase().includes(destino) ||
-      pkg.country?.toLowerCase().includes(destino) ||
-      pkg.title?.toLowerCase().includes(destino)
-  );
+  const findCityCoords = (cityName) => {
+    for (const country in locationsByCountry) {
+      const cityObj = locationsByCountry[country].find(
+        (c) => c.city.toLowerCase() === cityName.toLowerCase()
+      );
+      if (cityObj) return cityObj;
+    }
+    return null;
+  };
+
+  const fromCoords = findCityCoords(origenCity);
+
+  const fixedFlightCost = 100000;
+  const pricePerKm = 150;
+
+  const results = allPackages
+    .filter(
+      (pkg) =>
+        pkg.province?.toLowerCase().includes(destinoCity) ||
+        pkg.country?.toLowerCase().includes(destinoCity) ||
+        pkg.title?.toLowerCase().includes(destinoCity)
+    )
+    .map((pkg) => {
+      const toCoords = findCityCoords(pkg.city);
+      let distanceCost = 0;
+
+      if (fromCoords && toCoords) {
+        const distance = calculateDistanceInKm(
+          fromCoords.lat,
+          fromCoords.lon,
+          toCoords.lat,
+          toCoords.lon
+        );
+        distanceCost = Math.round(distance * pricePerKm);
+      }
+
+      const totalNights =
+        range.from && range.to
+          ? Math.max(
+              1,
+              Math.round((range.to - range.from) / (1000 * 60 * 60 * 24))
+            )
+          : 1;
+
+      const totalFlightCost = fixedFlightCost + distanceCost;
+      const totalPrice = pkg.pricePerNight * totalNights + totalFlightCost;
+
+      return {
+        ...pkg,
+        pricePerNight: pkg.pricePerNight,
+        nights: totalNights,
+        flightCostFixed: fixedFlightCost,
+        flightCostVariable: distanceCost,
+        totalFlightCost,
+        totalPrice,
+      };
+    });
 
   const iconMap = {
     wifi: { icon: Wifi, label: "Wifi incluido" },

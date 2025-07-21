@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { SearchInput } from "./SearchInput";
 import { DatePicker } from "./DatePicker";
@@ -20,11 +20,20 @@ export function PackagesSearchBar({
     fechaIda: "",
     fechaVuelta: "",
   });
+  const [submitted, setSubmitted] = useState(false);
 
   const navigate = useNavigate();
 
+  useEffect(() => {
+    if (submitted) {
+      setSubmitted(false);
+    }
+  }, [people]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    setSubmitted(true);
 
     let valid = true;
     const newErrors = {
@@ -63,6 +72,8 @@ export function PackagesSearchBar({
 
     if (!valid) return;
 
+    setSubmitted(false);
+
     const params = new URLSearchParams();
     params.append("origen", origen.trim());
     params.append("destino", destino.trim());
@@ -72,6 +83,19 @@ export function PackagesSearchBar({
     params.append("scrollTo", "accommodation");
 
     navigate(`/paquetes/resultados?${params.toString()}`);
+  };
+
+  const handleChangeOrigen = (e) => {
+    setOrigen(e.target.value);
+    if (submitted) setSubmitted(false);
+  };
+  const handleChangeDestino = (e) => {
+    setDestino(e.target.value);
+    if (submitted) setSubmitted(false);
+  };
+  const handleRangeChange = (newRange) => {
+    setRange(newRange);
+    if (submitted) setSubmitted(false);
   };
 
   return (
@@ -90,8 +114,8 @@ export function PackagesSearchBar({
           name="origen"
           id="origen"
           value={origen}
-          onChange={(e) => setOrigen(e.target.value)}
-          error={errors.origen}
+          onChange={handleChangeOrigen}
+          error={submitted ? errors.origen : ""}
         />
 
         <SearchInput
@@ -100,15 +124,15 @@ export function PackagesSearchBar({
           name="destino"
           id="destino"
           value={destino}
-          onChange={(e) => setDestino(e.target.value)}
-          error={errors.destino}
+          onChange={handleChangeDestino}
+          error={submitted ? errors.destino : ""}
         />
 
         <DatePicker
           range={range}
-          setRange={setRange}
-          errorFrom={errors.fechaIda}
-          errorTo={errors.fechaVuelta}
+          setRange={handleRangeChange}
+          errorFrom={submitted ? errors.fechaIda : ""}
+          errorTo={submitted ? errors.fechaVuelta : ""}
         />
 
         <GuestsAndRoomsInput
