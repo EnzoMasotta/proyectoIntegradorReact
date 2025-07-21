@@ -69,6 +69,7 @@ export function PackagesSearchBar({
     params.append("ida", range.from.toISOString());
     params.append("vuelta", range.to.toISOString());
     params.append("people", people.toString());
+    params.append("scrollTo", "accommodation");
 
     navigate(`/paquetes/resultados?${params.toString()}`);
   };

@@ -49,8 +49,9 @@ body {
 }
 
 .rdp-today {
-  color: #212622 !important;
-  font-weight: bold !important;
+  color: #5a5d5b !important;
+  background-color: #ebebeb !important;
+  border-radius: 50% !important;
 }
 
 .rdp-chevron {
