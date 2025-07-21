@@ -4,7 +4,16 @@ import { useIsMobile } from "../hooks/useIsMobile";
 import packages from "../data/packages.json";
 import slugify from "slugify";
 import { PackagesSteps } from "../components/PackagesSteps";
-import { Star } from "lucide-react";
+import {
+  Star,
+  Wifi,
+  Coffee,
+  Bath,
+  Utensils,
+  ParkingCircle,
+  Snowflake,
+  WavesLadder,
+} from "lucide-react";
 
 export function PackagesAcommodationsDetails() {
   const { nombre } = useParams();
@@ -39,6 +48,15 @@ export function PackagesAcommodationsDetails() {
 
   if (!pkg) return null;
 
+  const iconMap = {
+    wifi: { icon: Wifi, label: "Wifi incluido" },
+    desayuno: { icon: Coffee, label: "Desayuno" },
+    pileta: { icon: WavesLadder, label: "Pileta" },
+    restaurante: { icon: Utensils, label: "Restaurante" },
+    estacionamiento: { icon: ParkingCircle, label: "Estacionamiento" },
+    aire: { icon: Snowflake, label: "Aire acondicionado" },
+  };
+
   return (
     <main className="bg-[#f2f4f5]">
       <section className="">
@@ -63,6 +81,24 @@ export function PackagesAcommodationsDetails() {
             className="w-auto h-50 object-cover"
           />
         </div>
+
+        {pkg.services?.length > 0 && (
+          <div className="flex gap-3 text-gray-600 text-sm mb-1 md:mt-2 md:flex-col md:gap-1">
+            {pkg.services.map((serv) => {
+              const IconComponent = iconMap[serv]?.icon;
+              const label = iconMap[serv]?.label;
+
+              return (
+                IconComponent && (
+                  <div key={serv} className="flex items-center gap-1">
+                    <IconComponent size={18} />
+                    <span className="hidden md:flex">{label}</span>
+                  </div>
+                )
+              );
+            })}
+          </div>
+        )}
       </section>
 
       {isMobile && (
