@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import { Star, Plane } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import slugify from "slugify";
+import { useTotalPrice } from "../contexts/TotalPriceContext";
 
 export function PackagesResults({ results, iconMap, personas }) {
   const navigate = useNavigate();
+  const { setTotalPrice, setPersonas } = useTotalPrice();
 
   if (results.length === 0) {
     return (
@@ -20,6 +22,8 @@ export function PackagesResults({ results, iconMap, personas }) {
         <div
           onClick={() => {
             sessionStorage.setItem("lastSearchQuery", location.search);
+            setTotalPrice(pkg.totalPrice);
+            setPersonas(personas);
             navigate(
               `/paquetes/resultados/hospedajes/detalles/${slugify(pkg.title, {
                 lower: true,

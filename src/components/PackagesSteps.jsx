@@ -21,7 +21,7 @@ export function PackagesSteps({ selectedPackage }) {
 
   return (
     <main className="bg-[#f2f4f5] h-auto flex justify-center px-[3%] md:px-[8%] py-6">
-      <section className="bg-white flex justify-between items-center border border-[#dbdbdb] rounded-lg w-full p-2 overflow-x-auto">
+      <section className="bg-white flex justify-between items-center border border-[#dbdbdb] rounded-lg w-full overflow-x-auto">
         <AcommodationStep
           selectedPackage={selectedPackage}
           onChange={handleChange}

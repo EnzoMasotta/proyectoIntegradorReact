@@ -14,11 +14,13 @@ import {
   Snowflake,
   WavesLadder,
 } from "lucide-react";
+import { useTotalPrice } from "../contexts/TotalPriceContext";
 
 export function PackagesAcommodationsDetails() {
   const { nombre } = useParams();
   const navigate = useNavigate();
   const isMobile = useIsMobile();
+  const { totalPrice, personas } = useTotalPrice();
 
   const allPackages = [];
 
@@ -106,8 +108,8 @@ export function PackagesAcommodationsDetails() {
           <div className="flex items-center justify-between">
             <div>
               <p className="text-sm text-gray-600">{pkg.title}</p>
-              <p className="text-base font-semibold text-[#2a2a2a]">
-                Desde ${pkg.totalPrice}
+              <p className="font-semibold text-[#2a2a2a]">
+                Desde ${(totalPrice * personas).toLocaleString("es-AR")}
               </p>
             </div>
             <button className="bg-[#2a5732] text-white px-4 py-2 rounded-md">

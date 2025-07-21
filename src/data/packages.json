@@ -6,26 +6,29 @@
         "title": "Hotel Obelisco",
         "stars": 4,
         "image": "/imagenes/obelisco.jpg",
-        "pricePerNight": 589000,
+        "pricePerNight": 125000,
         "services": ["wifi", "desayuno", "pileta"]
       },
       {
         "id": 2,
         "title": "Palacio Plaza",
+        "stars": 5,
         "image": "/imagenes/palacio.jpg",
-        "pricePerNight": 180000
+        "pricePerNight": 320000
       },
       {
         "id": 3,
         "title": "Recoleta Boutique Hotel",
+        "stars": 3,
         "image": "/imagenes/recoleta.jpg",
-        "pricePerNight": 150000
+        "pricePerNight": 87000
       },
       {
         "id": 4,
         "title": "Puerto Madero Luxury",
+        "stars": 5,
         "image": "/imagenes/puertomadero.jpg",
-        "pricePerNight": 200000
+        "pricePerNight": 158000
       }
     ],
     "Córdoba": [
