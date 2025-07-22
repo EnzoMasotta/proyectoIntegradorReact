@@ -113,7 +113,7 @@ export function PackagesPageResults() {
       return {
         ...pkg,
         pricePerNight: pkg.pricePerNight,
-        nights: totalNights,
+        totalNights,
         flightCostFixed: fixedFlightCost,
         flightCostVariable: distanceCost,
         totalFlightCost,

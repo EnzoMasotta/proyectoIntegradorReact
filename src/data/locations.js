@@ -6,6 +6,12 @@ export const locationsByCountry = {
       lat: -34.6037,
       lon: -58.3816,
     },
+    {
+      city: "La Plata",
+      province: "Buenos Aires",
+      lat: -34.9204,
+      lon: -57.9535,
+    },
     { city: "Córdoba", province: "Córdoba", lat: -31.4201, lon: -64.1888 },
     { city: "Mendoza", province: "Mendoza", lat: -32.8908, lon: -68.8272 },
     { city: "Bariloche", province: "Río Negro", lat: -41.1335, lon: -71.3103 },

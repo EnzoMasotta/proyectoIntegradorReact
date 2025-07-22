@@ -20,7 +20,7 @@ export function PackagesAcommodationsDetails() {
   const { nombre } = useParams();
   const navigate = useNavigate();
   const isMobile = useIsMobile();
-  const { totalPrice, personas } = useTotalPrice();
+  const { totalPrice, personas, totalNights } = useTotalPrice();
 
   const allPackages = [];
 
@@ -64,8 +64,14 @@ export function PackagesAcommodationsDetails() {
       <section className="">
         <PackagesSteps selectedPackage={pkg} />
 
-        <div className="flex flex-col-reverse">
-          <div className="flex items-center gap-2">
+        <div className="flex flex-col relative">
+          <img
+            src="/HabitacionPrueba.webp"
+            alt=""
+            className="w-auto h-50 object-cover"
+          />
+
+          <div className="flex px-[3%] items-center gap-2 rounded-t-full bg-[#f2f4f5] z-50 overflow-hidden absolute bottom-0 w-full">
             <h1 className="text-xl font-bold text-[#2a2a2a]">{pkg.title}</h1>
             <span className="flex gap-1">
               {[...Array(pkg.stars)].map((_, i) => (
@@ -76,16 +82,10 @@ export function PackagesAcommodationsDetails() {
               Elegir opcion
             </button>
           </div>
-
-          <img
-            src="/HabitacionPrueba.webp"
-            alt=""
-            className="w-auto h-50 object-cover"
-          />
         </div>
 
         {pkg.services?.length > 0 && (
-          <div className="flex gap-3 text-gray-600 text-sm mb-1 md:mt-2 md:flex-col md:gap-1">
+          <div className="flex gap-3 text-gray-600 text-sm">
             {pkg.services.map((serv) => {
               const IconComponent = iconMap[serv]?.icon;
               const label = iconMap[serv]?.label;
@@ -107,7 +107,7 @@ export function PackagesAcommodationsDetails() {
         <section className="fixed bottom-0 w-full bg-white p-4 border border-[#dbdbdb] rounded-t-lg z-50">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm text-gray-600">{pkg.title}</p>
+              <p className="text-sm text-gray-600">{totalNights}</p>
               <p className="font-semibold text-[#2a2a2a]">
                 Desde ${(totalPrice * personas).toLocaleString("es-AR")}
               </p>

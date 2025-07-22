@@ -31,6 +31,37 @@
         "pricePerNight": 158000
       }
     ],
+    "La Plata": [
+      {
+        "id": 1,
+        "title": "Hotel Plata",
+        "stars": 4,
+        "image": "/imagenes/obelisco.jpg",
+        "pricePerNight": 125000,
+        "services": ["wifi", "desayuno", "pileta"]
+      },
+      {
+        "id": 2,
+        "title": "Palacio Plata",
+        "stars": 5,
+        "image": "/imagenes/palacio.jpg",
+        "pricePerNight": 320000
+      },
+      {
+        "id": 3,
+        "title": "Recoleta Boutique Hotel",
+        "stars": 3,
+        "image": "/imagenes/recoleta.jpg",
+        "pricePerNight": 87000
+      },
+      {
+        "id": 4,
+        "title": "Puerto Madero Luxury",
+        "stars": 5,
+        "image": "/imagenes/puertomadero.jpg",
+        "pricePerNight": 158000
+      }
+    ],
     "Córdoba": [
       {
         "id": 5,
