@@ -1,0 +1,235 @@
+{
+  "Argentina": [
+    {
+      "city": "Buenos Aires",
+      "province": "Buenos Aires",
+      "airports": [
+        {
+          "name": "Aeropuerto Internacional Ministro Pistarini (Ezeiza)",
+          "code": "EZE"
+        },
+        { "name": "Aeroparque Jorge Newbery", "code": "AEP" }
+      ]
+    },
+    {
+      "city": "Córdoba",
+      "province": "Córdoba",
+      "airports": [
+        {
+          "name": "Aeropuerto Internacional Ingeniero Ambrosio Taravella",
+          "code": "COR"
+        }
+      ]
+    },
+    {
+      "city": "Mendoza",
+      "province": "Mendoza",
+      "airports": [
+        { "name": "Aeropuerto Internacional El Plumerillo", "code": "MDZ" }
+      ]
+    },
+    {
+      "city": "Bariloche",
+      "province": "Río Negro",
+      "airports": [
+        {
+          "name": "Aeropuerto Internacional Teniente Luis Candelaria",
+          "code": "BRC"
+        }
+      ]
+    },
+    {
+      "city": "Salta",
+      "province": "Salta",
+      "airports": [
+        {
+          "name": "Aeropuerto Internacional Martín Miguel de Güemes",
+          "code": "SLA"
+        }
+      ]
+    },
+    {
+      "city": "Ushuaia",
+      "province": "Tierra del Fuego",
+      "airports": [
+        {
+          "name": "Aeropuerto Internacional Malvinas Argentinas",
+          "code": "USH"
+        }
+      ]
+    },
+    {
+      "city": "Puerto Iguazú",
+      "province": "Misiones",
+      "airports": [
+        {
+          "name": "Aeropuerto Internacional Cataratas del Iguazú",
+          "code": "IGR"
+        }
+      ]
+    }
+  ],
+  "Uruguay": [
+    {
+      "city": "Montevideo",
+      "province": "Montevideo",
+      "airports": [
+        { "name": "Aeropuerto Internacional de Carrasco", "code": "MVD" }
+      ]
+    },
+    {
+      "city": "Punta del Este",
+      "province": "Maldonado",
+      "airports": [
+        {
+          "name": "Aeropuerto Internacional Capitán de Corbeta Carlos A. Curbelo",
+          "code": "PDP"
+        }
+      ]
+    }
+  ],
+  "Brasil": [
+    {
+      "city": "São Paulo",
+      "province": "São Paulo",
+      "airports": [
+        {
+          "name": "Aeropuerto Internacional de São Paulo-Guarulhos",
+          "code": "GRU"
+        },
+        { "name": "Aeropuerto de Congonhas", "code": "CGH" }
+      ]
+    },
+    {
+      "city": "Río de Janeiro",
+      "province": "Río de Janeiro",
+      "airports": [
+        { "name": "Aeropuerto Internacional de Galeão", "code": "GIG" },
+        { "name": "Aeropuerto Santos Dumont", "code": "SDU" }
+      ]
+    },
+    {
+      "city": "Florianópolis",
+      "province": "Santa Catarina",
+      "airports": [
+        { "name": "Aeropuerto Internacional Hercílio Luz", "code": "FLN" }
+      ]
+    }
+  ],
+  "España": [
+    {
+      "city": "Madrid",
+      "province": "Comunidad de Madrid",
+      "airports": [
+        { "name": "Aeropuerto Adolfo Suárez Madrid-Barajas", "code": "MAD" }
+      ]
+    },
+    {
+      "city": "Barcelona",
+      "province": "Cataluña",
+      "airports": [{ "name": "Aeropuerto de Barcelona-El Prat", "code": "BCN" }]
+    },
+    {
+      "city": "Valencia",
+      "province": "Comunidad Valenciana",
+      "airports": [{ "name": "Aeropuerto de Valencia", "code": "VLC" }]
+    }
+  ],
+  "Chile": [
+    {
+      "city": "Santiago",
+      "province": "Región Metropolitana",
+      "airports": [
+        {
+          "name": "Aeropuerto Internacional Arturo Merino Benítez",
+          "code": "SCL"
+        }
+      ]
+    },
+    {
+      "city": "Calama",
+      "province": "Antofagasta",
+      "airports": [{ "name": "Aeropuerto El Loa", "code": "CJC" }]
+    },
+    {
+      "city": "Punta Arenas",
+      "province": "Magallanes",
+      "airports": [
+        {
+          "name": "Aeropuerto Presidente Carlos Ibáñez del Campo",
+          "code": "PUQ"
+        }
+      ]
+    }
+  ],
+  "México": [
+    {
+      "city": "Ciudad de México",
+      "province": "CDMX",
+      "airports": [
+        { "name": "Aeropuerto Internacional Benito Juárez", "code": "MEX" }
+      ]
+    },
+    {
+      "city": "Cancún",
+      "province": "Quintana Roo",
+      "airports": [
+        { "name": "Aeropuerto Internacional de Cancún", "code": "CUN" }
+      ]
+    }
+  ],
+  "Estados Unidos de América": [
+    {
+      "city": "Miami",
+      "province": "Florida",
+      "airports": [
+        { "name": "Aeropuerto Internacional de Miami", "code": "MIA" }
+      ]
+    },
+    {
+      "city": "Nueva York",
+      "province": "Nueva York",
+      "airports": [
+        { "name": "Aeropuerto Internacional John F. Kennedy", "code": "JFK" },
+        { "name": "Aeropuerto LaGuardia", "code": "LGA" }
+      ]
+    },
+    {
+      "city": "Los Ángeles",
+      "province": "California",
+      "airports": [
+        { "name": "Aeropuerto Internacional de Los Ángeles", "code": "LAX" }
+      ]
+    }
+  ],
+  "Italia": [
+    {
+      "city": "Roma",
+      "province": "Lacio",
+      "airports": [
+        {
+          "name": "Aeropuerto Internacional Leonardo da Vinci (Fiumicino)",
+          "code": "FCO"
+        }
+      ]
+    },
+    {
+      "city": "Milán",
+      "province": "Lombardía",
+      "airports": [
+        { "name": "Aeropuerto de Milán-Malpensa", "code": "MXP" },
+        { "name": "Aeropuerto de Milán-Linate", "code": "LIN" }
+      ]
+    }
+  ],
+  "Francia": [
+    {
+      "city": "París",
+      "province": "Isla de Francia",
+      "airports": [
+        { "name": "Aeropuerto Charles de Gaulle", "code": "CDG" },
+        { "name": "Aeropuerto de Orly", "code": "ORY" }
+      ]
+    }
+  ]
+}

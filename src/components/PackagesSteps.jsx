@@ -26,7 +26,7 @@ export function PackagesSteps({ selectedPackage }) {
           selectedPackage={selectedPackage}
           onChange={handleChange}
         />
-        <FlightStep />
+        <FlightStep selectedPackage={selectedPackage} />
         <StepsTotalPrice />
       </section>
     </main>

@@ -117,6 +117,7 @@ export const GuestsAndRoomsInput = ({
           <div className="fixed inset-0 bg-white bg-opacity-60 flex flex-col z-50">
             <div className="bg-white flex flex-col flex-grow p-4 overflow-auto">
               <button
+                type="button"
                 onClick={toggleOpen}
                 className=" text-xl font-bold mb-4 text-[#4a4a4a]"
                 aria-label="Cerrar"
@@ -134,6 +135,7 @@ export const GuestsAndRoomsInput = ({
               ))}
               <div className="flex justify-between items-center">
                 <button
+                  type="button"
                   onClick={addRoom}
                   disabled={rooms.length >= MAX_ROOMS}
                   className={`text-[#2a5732] font-medium cursor-pointer ${
@@ -145,6 +147,7 @@ export const GuestsAndRoomsInput = ({
                   Agregar habitación
                 </button>
                 <button
+                  type="button"
                   onClick={toggleOpen}
                   className="bg-[#2a5732] text-white py-2 px-4 rounded-md"
                 >
@@ -167,6 +170,7 @@ export const GuestsAndRoomsInput = ({
 
             <div className="flex justify-between items-center ">
               <button
+                type="button"
                 onClick={addRoom}
                 disabled={rooms.length >= MAX_ROOMS}
                 className={`text-[#2a5732] font-medium cursor-pointer ${
@@ -176,6 +180,7 @@ export const GuestsAndRoomsInput = ({
                 Agregar habitación
               </button>
               <button
+                type="button"
                 onClick={toggleOpen}
                 className="bg-[#2a5732] text-white py-1.5 px-4 rounded-md cursor-pointer"
               >

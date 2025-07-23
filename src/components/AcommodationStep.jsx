@@ -20,7 +20,7 @@ export function AcommodationStep({ selectedPackage, onChange }) {
 
   return (
     <section
-      className="flex flex-col flex-1 justify-center py-2 rounded-lg rounded-r-none border-3 border-[#ad6771] border-r-0"
+      className="flex flex-col flex-1 justify-center py-2 lg:py-4 rounded-lg rounded-r-none border-3 border-[#ad6771] border-r-0"
       onClick={isMobile ? onChange : undefined}
     >
       <div className="lg:flex lg:flex-col lg:gap-2 border-r border-[#dbdbdb] py-2">
@@ -40,7 +40,7 @@ export function AcommodationStep({ selectedPackage, onChange }) {
           <img
             src="/HotelPrueba.jpg" /*{selectedPackage.image}*/
             alt={selectedPackage.title}
-            className="w-30 h-30 rounded-lg object-cover"
+            className="w-25 h-25 rounded-lg object-cover"
           />
 
           <div className="flex flex-col gap-1">
