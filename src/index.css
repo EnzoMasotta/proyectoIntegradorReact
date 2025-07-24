@@ -9,14 +9,13 @@ body {
   color: #000;
 }
 
-/* tailwind.config.js > extend it si querés */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
 
 .no-scrollbar {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .rdp-range_middle {
@@ -49,9 +48,17 @@ body {
 }
 
 .rdp-today {
-  color: #5a5d5b !important;
-  background-color: #ebebeb !important;
-  border-radius: 50% !important;
+  position: relative !important;
+  color: #2a5732 !important;
+}
+
+.rdp-today::after {
+  content: "HOY" !important;
+  position: absolute !important;
+  font-size: 10px !important;
+  color: #888 !important;
+  bottom: 0 !important;
+  right: 28% !important;
 }
 
 .rdp-chevron {

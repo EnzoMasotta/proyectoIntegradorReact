@@ -19,11 +19,11 @@ function App() {
         <Route path="/paquetes" element={<PackagesPage />} />
         <Route path="/paquetes/resultados" element={<PackagesPageResults />} />
         <Route
-          path="/paquetes/resultados/hospedajes/detalles/:nombre"
+          path="/paquetes/resultados/hospedajes/detalles/:id"
           element={<PackagesAcommodationsDetails />}
         />
         <Route
-          path="/paquetes/resultados/vuelos/detalles/:nombre"
+          path="/paquetes/resultados/vuelos/detalles/:id"
           element={<PackagesFlightsDetails />}
         />
         <Route path="/reservas" element={<h1>Aca vas a ver las reservas</h1>} />

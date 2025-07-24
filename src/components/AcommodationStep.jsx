@@ -7,8 +7,8 @@ export function AcommodationStep({ selectedPackage, onChange }) {
 
   if (!selectedPackage) {
     return (
-      <section className="flex flex-col md:gap-2 flex-1 justify-center py-2 rounded-lg rounded-r-none">
-        <div className="flex items-center justify-center lg:w-full lg:px-[5%] border-r border-[#dbdbdb] py-2">
+      <section className="flex flex-1 justify-center border-r border-[#dbdbdb] my-2">
+        <div className="flex flex-col py-2">
           <h1 className="flex gap-2 items-center text-sm md:text-lg text-[#ad6771] font-bold">
             <BedDouble size={18} strokeWidth={2} />
             Hospedaje

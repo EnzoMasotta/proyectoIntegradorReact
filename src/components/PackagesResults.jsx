@@ -25,12 +25,7 @@ export function PackagesResults({ results, iconMap, personas }) {
             setTotalPrice(pkg.totalPrice);
             setPersonas(personas);
             setTotalNights(pkg.totalNights);
-            navigate(
-              `/paquetes/resultados/hospedajes/detalles/${slugify(pkg.title, {
-                lower: true,
-                strict: true,
-              })}`
-            );
+            navigate(`/paquetes/resultados/hospedajes/detalles/${pkg.id}`);
           }}
           key={pkg.id || `${pkg.title}-${pkg.province}-${pkg.country}`}
           className="bg-white w-full border-[#dbdbdb] border transition duration-500 hover:shadow-lg rounded-lg flex flex-col md:flex-row md:justify-between cursor-pointer"

@@ -136,7 +136,15 @@ export function DatePicker({ range, setRange, errorFrom, errorTo }) {
               selected={range}
               onSelect={handleSelect}
               showOutsideDays
-              disabled={{ before: new Date() }}
+              disabled={(date) => {
+                const today = new Date();
+                const todayStart = new Date(
+                  today.getFullYear(),
+                  today.getMonth(),
+                  today.getDate()
+                );
+                return date <= todayStart;
+              }}
               numberOfMonths={1}
             />
 
@@ -157,7 +165,16 @@ export function DatePicker({ range, setRange, errorFrom, errorTo }) {
               numberOfMonths={2}
               pagedNavigation
               showOutsideDays
-              disabled={{ before: new Date() }}
+              disabled={(date) => {
+                const today = new Date();
+
+                const todayStart = new Date(
+                  today.getFullYear(),
+                  today.getMonth(),
+                  today.getDate()
+                );
+                return date <= todayStart;
+              }}
             />
           </div>
         ))}

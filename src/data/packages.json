@@ -33,7 +33,7 @@
     ],
     "La Plata": [
       {
-        "id": 1,
+        "id": 5,
         "title": "Hotel Plata",
         "stars": 4,
         "image": "/imagenes/obelisco.jpg",
@@ -41,21 +41,21 @@
         "services": ["wifi", "desayuno", "pileta"]
       },
       {
-        "id": 2,
+        "id": 6,
         "title": "Palacio Plata",
         "stars": 5,
         "image": "/imagenes/palacio.jpg",
         "pricePerNight": 320000
       },
       {
-        "id": 3,
+        "id": 7,
         "title": "Recoleta Boutique Hotel",
         "stars": 3,
         "image": "/imagenes/recoleta.jpg",
         "pricePerNight": 87000
       },
       {
-        "id": 4,
+        "id": 8,
         "title": "Puerto Madero Luxury",
         "stars": 5,
         "image": "/imagenes/puertomadero.jpg",
@@ -64,29 +64,29 @@
     ],
     "Córdoba": [
       {
-        "id": 5,
+        "id": 9,
         "title": "Córdoba Suite Hotel",
         "image": "/imagenes/cordoba.jpg",
-        "pricePerNight": 95000
+        "pricePerNight": 50000
       },
       {
-        "id": 6,
+        "id": 10,
         "title": "Hotel Nueva Córdoba",
         "image": "/imagenes/nuevacordoba.jpg",
-        "pricePerNight": 90000
+        "pricePerNight": 45000
       }
     ]
   },
   "Uruguay": {
     "Montevideo": [
       {
-        "id": 7,
+        "id": 11,
         "title": "Montevideo Plaza",
         "image": "/imagenes/montevideo.jpg",
         "pricePerNight": 115000
       },
       {
-        "id": 8,
+        "id": 12,
         "title": "Hotel Rambla",
         "image": "/imagenes/rambla.jpg",
         "pricePerNight": 120000
@@ -94,7 +94,7 @@
     ],
     "Maldonado": [
       {
-        "id": 9,
+        "id": 13,
         "title": "Punta del Este Beach Hotel",
         "image": "/imagenes/punta.jpg",
         "pricePerNight": 175000
@@ -104,13 +104,13 @@
   "Brasil": {
     "São Paulo": [
       {
-        "id": 10,
+        "id": 14,
         "title": "Paulista Inn",
         "image": "/imagenes/saopaulo.jpg",
         "pricePerNight": 160000
       },
       {
-        "id": 11,
+        "id": 15,
         "title": "Hotel Jardins",
         "image": "/imagenes/jardins.jpg",
         "pricePerNight": 155000
@@ -118,13 +118,13 @@
     ],
     "Río de Janeiro": [
       {
-        "id": 12,
+        "id": 16,
         "title": "Copacabana Hotel",
         "image": "/imagenes/copacabana.jpg",
         "pricePerNight": 190000
       },
       {
-        "id": 13,
+        "id": 17,
         "title": "Ipanema Suites",
         "image": "/imagenes/ipanema.jpg",
         "pricePerNight": 185000
@@ -134,13 +134,13 @@
   "España": {
     "Madrid": [
       {
-        "id": 14,
+        "id": 18,
         "title": "Madrid Centro Hotel",
         "image": "/imagenes/madrid.jpg",
         "pricePerNight": 200000
       },
       {
-        "id": 15,
+        "id": 19,
         "title": "Hotel Gran Vía",
         "image": "/imagenes/granvia.jpg",
         "pricePerNight": 210000
@@ -148,13 +148,13 @@
     ],
     "Barcelona": [
       {
-        "id": 16,
+        "id": 20,
         "title": "Barcelona Rambla Inn",
         "image": "/imagenes/barcelona.jpg",
         "pricePerNight": 195000
       },
       {
-        "id": 17,
+        "id": 21,
         "title": "Hotel Gótico",
         "image": "/imagenes/gotico.jpg",
         "pricePerNight": 180000

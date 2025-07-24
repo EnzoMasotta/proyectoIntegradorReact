@@ -19,7 +19,7 @@ import { useTotalPrice } from "../contexts/TotalPriceContext";
 import { AcommodationDetails } from "../components/AcommodationDetails";
 
 export function PackagesAcommodationsDetails() {
-  const { nombre } = useParams();
+  const { id } = useParams();
   const navigate = useNavigate();
   const isMobile = useIsMobile(1024);
   const { totalPrice, personas, totalNights } = useTotalPrice();
@@ -40,9 +40,7 @@ export function PackagesAcommodationsDetails() {
     }
   }
 
-  const pkg = allPackages.find(
-    (p) => slugify(p.title, { lower: true, strict: true }) === nombre
-  );
+  const pkg = allPackages.find((p) => String(p.id) === id);
 
   useEffect(() => {
     if (!pkg) {
