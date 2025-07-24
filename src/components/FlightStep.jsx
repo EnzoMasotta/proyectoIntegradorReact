@@ -78,10 +78,22 @@ export function FlightStep({ selectedPackage }) {
     const destinationCity = destinationParts[0];
     const destinationCountry = destinationParts[2];
 
+    const pkgId = selectedPackage.id;
+    const flightKey = `flightData-${pkgId}-${originCity}-${originCountry}`;
+    const storedData = sessionStorage.getItem(flightKey);
+    if (storedData) {
+      const parsed = JSON.parse(storedData);
+      return {
+        ...parsed,
+        departureTime: new Date(parsed.departureTime),
+        arrivalTime: new Date(parsed.arrivalTime),
+        returnDepartureTime: new Date(parsed.returnDepartureTime),
+        returnArrivalTime: new Date(parsed.returnArrivalTime),
+      };
+    }
+
     const departureDate = new Date(params.get("ida"));
     const returnDate = new Date(params.get("vuelta"));
-    const diffDays =
-      (returnDate.getTime() - departureDate.getTime()) / (1000 * 60 * 60 * 24);
 
     const originCoords = getCoordsFromCity(originCity, originCountry);
     const destinationCoords = getCoordsFromCity(
@@ -130,7 +142,7 @@ export function FlightStep({ selectedPackage }) {
       returnDepartureTime.getTime() + durationHrs * 3600 * 1000
     );
 
-    return {
+    const flightData = {
       originAirport,
       destinationAirport,
       distanceKm,
@@ -140,6 +152,10 @@ export function FlightStep({ selectedPackage }) {
       returnDepartureTime,
       returnArrivalTime,
     };
+
+    sessionStorage.setItem(flightKey, JSON.stringify(flightData));
+
+    return flightData;
   }, [query, selectedPackage]);
 
   const formatTime = (date) =>
@@ -187,13 +203,12 @@ export function FlightStep({ selectedPackage }) {
         </div>
 
         {originAirport && destinationAirport && (
-          <div className="hidden lg:flex justify-between items-center gap-2 text-base text-[#4a4a4a] lg:px-[15%]">
+          <div className="hidden lg:flex justify-between items-center gap-2 text-base text-[#2a2a2a] lg:px-[15%]">
             <div className="flex flex-col font-bold text-base tracking-widest">
               <span className="text-xs">{originAirport.code}</span>
-
               <span>{formatTime(departureTime)}</span>
             </div>
-            <span className="text-xs border-b-2 border-[#2a5732] px-8 text-[#4a4a4a]">
+            <span className="text-xs border-b-2 border-[#2a5732] px-8 text-[#2a2a2a]">
               Directo
             </span>
             <div className="flex flex-col font-bold text-base tracking-widest">
@@ -204,12 +219,12 @@ export function FlightStep({ selectedPackage }) {
         )}
 
         {originAirport && destinationAirport && returnDepartureTime && (
-          <div className="hidden lg:flex justify-between items-center gap-2 text-base text-[#4a4a4a] lg:px-[15%]">
+          <div className="hidden lg:flex justify-between items-center gap-2 text-base text-[#2a2a2a] lg:px-[15%]">
             <div className="flex flex-col font-bold text-base tracking-widest">
               <span className="text-xs">{destinationAirport.code}</span>
               <span>{formatTime(returnDepartureTime)}</span>
             </div>
-            <span className="text-xs border-b-2 border-[#2a5732] px-8 text-[#4a4a4a]">
+            <span className="text-xs border-b-2 border-[#2a5732] px-8 text-[#2a2a2a]">
               Directo
             </span>
             <div className="flex flex-col font-bold text-base tracking-widest">

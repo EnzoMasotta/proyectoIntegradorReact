@@ -6,9 +6,16 @@
       "airports": [
         {
           "name": "Aeropuerto Internacional Ministro Pistarini (Ezeiza)",
-          "code": "EZE"
+          "code": "EZE",
+          "isGlobal": true,
+          "hasDirectConnections": true
         },
-        { "name": "Aeroparque Jorge Newbery", "code": "AEP" }
+        {
+          "name": "Aeroparque Jorge Newbery",
+          "code": "AEP",
+          "isGlobal": false,
+          "hasDirectConnections": false
+        }
       ]
     },
     {
@@ -17,7 +24,9 @@
       "airports": [
         {
           "name": "Aeropuerto Internacional Ingeniero Ambrosio Taravella",
-          "code": "COR"
+          "code": "COR",
+          "isGlobal": false,
+          "hasDirectConnections": false
         }
       ]
     },
@@ -25,7 +34,12 @@
       "city": "Mendoza",
       "province": "Mendoza",
       "airports": [
-        { "name": "Aeropuerto Internacional El Plumerillo", "code": "MDZ" }
+        {
+          "name": "Aeropuerto Internacional El Plumerillo",
+          "code": "MDZ",
+          "isGlobal": false,
+          "hasDirectConnections": false
+        }
       ]
     },
     {
@@ -34,7 +48,9 @@
       "airports": [
         {
           "name": "Aeropuerto Internacional Teniente Luis Candelaria",
-          "code": "BRC"
+          "code": "BRC",
+          "isGlobal": false,
+          "hasDirectConnections": false
         }
       ]
     },
@@ -44,7 +60,9 @@
       "airports": [
         {
           "name": "Aeropuerto Internacional Martín Miguel de Güemes",
-          "code": "SLA"
+          "code": "SLA",
+          "isGlobal": false,
+          "hasDirectConnections": false
         }
       ]
     },
@@ -54,7 +72,9 @@
       "airports": [
         {
           "name": "Aeropuerto Internacional Malvinas Argentinas",
-          "code": "USH"
+          "code": "USH",
+          "isGlobal": false,
+          "hasDirectConnections": false
         }
       ]
     },
@@ -64,7 +84,9 @@
       "airports": [
         {
           "name": "Aeropuerto Internacional Cataratas del Iguazú",
-          "code": "IGR"
+          "code": "IGR",
+          "isGlobal": false,
+          "hasDirectConnections": false
         }
       ]
     }
@@ -74,7 +96,12 @@
       "city": "Montevideo",
       "province": "Montevideo",
       "airports": [
-        { "name": "Aeropuerto Internacional de Carrasco", "code": "MVD" }
+        {
+          "name": "Aeropuerto Internacional de Carrasco",
+          "code": "MVD",
+          "isGlobal": true,
+          "hasDirectConnections": true
+        }
       ]
     },
     {
@@ -83,7 +110,9 @@
       "airports": [
         {
           "name": "Aeropuerto Internacional Capitán de Corbeta Carlos A. Curbelo",
-          "code": "PDP"
+          "code": "PDP",
+          "isGlobal": false,
+          "hasDirectConnections": false
         }
       ]
     }
@@ -95,24 +124,46 @@
       "airports": [
         {
           "name": "Aeropuerto Internacional de São Paulo-Guarulhos",
-          "code": "GRU"
+          "code": "GRU",
+          "isGlobal": true,
+          "hasDirectConnections": true
         },
-        { "name": "Aeropuerto de Congonhas", "code": "CGH" }
+        {
+          "name": "Aeropuerto de Congonhas",
+          "code": "CGH",
+          "isGlobal": false,
+          "hasDirectConnections": false
+        }
       ]
     },
     {
       "city": "Río de Janeiro",
       "province": "Río de Janeiro",
       "airports": [
-        { "name": "Aeropuerto Internacional de Galeão", "code": "GIG" },
-        { "name": "Aeropuerto Santos Dumont", "code": "SDU" }
+        {
+          "name": "Aeropuerto Internacional de Galeão",
+          "code": "GIG",
+          "isGlobal": true,
+          "hasDirectConnections": true
+        },
+        {
+          "name": "Aeropuerto Santos Dumont",
+          "code": "SDU",
+          "isGlobal": false,
+          "hasDirectConnections": false
+        }
       ]
     },
     {
       "city": "Florianópolis",
       "province": "Santa Catarina",
       "airports": [
-        { "name": "Aeropuerto Internacional Hercílio Luz", "code": "FLN" }
+        {
+          "name": "Aeropuerto Internacional Hercílio Luz",
+          "code": "FLN",
+          "isGlobal": false,
+          "hasDirectConnections": false
+        }
       ]
     }
   ],
@@ -121,18 +172,37 @@
       "city": "Madrid",
       "province": "Comunidad de Madrid",
       "airports": [
-        { "name": "Aeropuerto Adolfo Suárez Madrid-Barajas", "code": "MAD" }
+        {
+          "name": "Aeropuerto Adolfo Suárez Madrid-Barajas",
+          "code": "MAD",
+          "isGlobal": true,
+          "hasDirectConnections": true
+        }
       ]
     },
     {
       "city": "Barcelona",
       "province": "Cataluña",
-      "airports": [{ "name": "Aeropuerto de Barcelona-El Prat", "code": "BCN" }]
+      "airports": [
+        {
+          "name": "Aeropuerto de Barcelona-El Prat",
+          "code": "BCN",
+          "isGlobal": true,
+          "hasDirectConnections": true
+        }
+      ]
     },
     {
       "city": "Valencia",
       "province": "Comunidad Valenciana",
-      "airports": [{ "name": "Aeropuerto de Valencia", "code": "VLC" }]
+      "airports": [
+        {
+          "name": "Aeropuerto de Valencia",
+          "code": "VLC",
+          "isGlobal": false,
+          "hasDirectConnections": false
+        }
+      ]
     }
   ],
   "Chile": [
@@ -142,14 +212,23 @@
       "airports": [
         {
           "name": "Aeropuerto Internacional Arturo Merino Benítez",
-          "code": "SCL"
+          "code": "SCL",
+          "isGlobal": true,
+          "hasDirectConnections": true
         }
       ]
     },
     {
       "city": "Calama",
       "province": "Antofagasta",
-      "airports": [{ "name": "Aeropuerto El Loa", "code": "CJC" }]
+      "airports": [
+        {
+          "name": "Aeropuerto El Loa",
+          "code": "CJC",
+          "isGlobal": false,
+          "hasDirectConnections": false
+        }
+      ]
     },
     {
       "city": "Punta Arenas",
@@ -157,7 +236,9 @@
       "airports": [
         {
           "name": "Aeropuerto Presidente Carlos Ibáñez del Campo",
-          "code": "PUQ"
+          "code": "PUQ",
+          "isGlobal": false,
+          "hasDirectConnections": false
         }
       ]
     }
@@ -167,14 +248,24 @@
       "city": "Ciudad de México",
       "province": "CDMX",
       "airports": [
-        { "name": "Aeropuerto Internacional Benito Juárez", "code": "MEX" }
+        {
+          "name": "Aeropuerto Internacional Benito Juárez",
+          "code": "MEX",
+          "isGlobal": true,
+          "hasDirectConnections": true
+        }
       ]
     },
     {
       "city": "Cancún",
       "province": "Quintana Roo",
       "airports": [
-        { "name": "Aeropuerto Internacional de Cancún", "code": "CUN" }
+        {
+          "name": "Aeropuerto Internacional de Cancún",
+          "code": "CUN",
+          "isGlobal": true,
+          "hasDirectConnections": true
+        }
       ]
     }
   ],
@@ -183,22 +274,42 @@
       "city": "Miami",
       "province": "Florida",
       "airports": [
-        { "name": "Aeropuerto Internacional de Miami", "code": "MIA" }
+        {
+          "name": "Aeropuerto Internacional de Miami",
+          "code": "MIA",
+          "isGlobal": true,
+          "hasDirectConnections": true
+        }
       ]
     },
     {
       "city": "Nueva York",
       "province": "Nueva York",
       "airports": [
-        { "name": "Aeropuerto Internacional John F. Kennedy", "code": "JFK" },
-        { "name": "Aeropuerto LaGuardia", "code": "LGA" }
+        {
+          "name": "Aeropuerto Internacional John F. Kennedy",
+          "code": "JFK",
+          "isGlobal": true,
+          "hasDirectConnections": true
+        },
+        {
+          "name": "Aeropuerto LaGuardia",
+          "code": "LGA",
+          "isGlobal": false,
+          "hasDirectConnections": false
+        }
       ]
     },
     {
       "city": "Los Ángeles",
       "province": "California",
       "airports": [
-        { "name": "Aeropuerto Internacional de Los Ángeles", "code": "LAX" }
+        {
+          "name": "Aeropuerto Internacional de Los Ángeles",
+          "code": "LAX",
+          "isGlobal": true,
+          "hasDirectConnections": true
+        }
       ]
     }
   ],
@@ -209,7 +320,9 @@
       "airports": [
         {
           "name": "Aeropuerto Internacional Leonardo da Vinci (Fiumicino)",
-          "code": "FCO"
+          "code": "FCO",
+          "isGlobal": true,
+          "hasDirectConnections": true
         }
       ]
     },
@@ -217,8 +330,18 @@
       "city": "Milán",
       "province": "Lombardía",
       "airports": [
-        { "name": "Aeropuerto de Milán-Malpensa", "code": "MXP" },
-        { "name": "Aeropuerto de Milán-Linate", "code": "LIN" }
+        {
+          "name": "Aeropuerto de Milán-Malpensa",
+          "code": "MXP",
+          "isGlobal": true,
+          "hasDirectConnections": true
+        },
+        {
+          "name": "Aeropuerto de Milán-Linate",
+          "code": "LIN",
+          "isGlobal": false,
+          "hasDirectConnections": false
+        }
       ]
     }
   ],
@@ -227,8 +350,18 @@
       "city": "París",
       "province": "Isla de Francia",
       "airports": [
-        { "name": "Aeropuerto Charles de Gaulle", "code": "CDG" },
-        { "name": "Aeropuerto de Orly", "code": "ORY" }
+        {
+          "name": "Aeropuerto Charles de Gaulle",
+          "code": "CDG",
+          "isGlobal": true,
+          "hasDirectConnections": true
+        },
+        {
+          "name": "Aeropuerto de Orly",
+          "code": "ORY",
+          "isGlobal": false,
+          "hasDirectConnections": false
+        }
       ]
     }
   ]

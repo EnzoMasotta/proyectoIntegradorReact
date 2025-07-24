@@ -33,9 +33,6 @@ export function AcommodationDetails({ pkg }) {
               <Star key={i} size={16} className="text-yellow-500" />
             ))}
           </span>
-          <button className="hidden lg:flex bg-[#2a5732] text-white px-4 py-2 rounded-md">
-            Elegir opcion
-          </button>
         </div>
 
         {pkg.services?.length > 0 && (

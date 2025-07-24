@@ -80,7 +80,12 @@ export function PackagesAcommodationsDetails() {
                 {(totalPrice * personas).toLocaleString("es-AR")}
               </p>
             </div>
-            <button className="bg-[#2a5732] text-white px-4 py-2 rounded-md">
+            <button
+              onClick={() => {
+                navigate(`/paquetes/resultados/vuelos/detalles/${pkg.id}`);
+              }}
+              className="bg-[#2a5732] text-white px-4 py-2 rounded-md"
+            >
               Elegir
             </button>
           </div>
