@@ -159,6 +159,20 @@
         "image": "/imagenes/gotico.jpg",
         "pricePerNight": 180000
       }
+    ],
+    "Valencia": [
+      {
+        "id": 50,
+        "title": "Chulitos",
+        "image": "/imagenes/barcelona.jpg",
+        "pricePerNight": 195000
+      },
+      {
+        "id": 51,
+        "title": "Hotel Picante",
+        "image": "/imagenes/gotico.jpg",
+        "pricePerNight": 180000
+      }
     ]
   }
 }

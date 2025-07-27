@@ -1,8 +1,8 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
-import { FlightStep } from "../components/FlightStep";
 import packages from "../data/packages.json";
 import { PackagesSteps } from "../components/PackagesSteps";
+import { FlightsDetails } from "../components/FlightsDetails";
 
 export function PackagesFlightsDetails() {
   const { id } = useParams();
@@ -32,7 +32,7 @@ export function PackagesFlightsDetails() {
   return (
     <main className="bg-[#f2f4f5]">
       <PackagesSteps selectedPackage={pkg} />
-      <h1>hola</h1>
+      <FlightsDetails />
     </main>
   );
 }

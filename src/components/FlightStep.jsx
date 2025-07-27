@@ -43,6 +43,30 @@ export function FlightStep({ selectedPackage }) {
     return distanceKm / 800;
   };
 
+  const getFlightType = (
+    origin,
+    destination,
+    originCountry,
+    destinationCountry
+  ) => {
+    if (!origin || !destination) return "Desconocido";
+
+    if (
+      originCountry &&
+      destinationCountry &&
+      originCountry.toLowerCase() === destinationCountry.toLowerCase()
+    ) {
+      return "Directo";
+    }
+
+    const isOriginGlobal = origin.isGlobal;
+    const isDestinationGlobal = destination.isGlobal;
+
+    if (isOriginGlobal && isDestinationGlobal) return "Directo";
+    if (isOriginGlobal || isDestinationGlobal) return "1 escala";
+    return "2 escalas";
+  };
+
   const {
     originAirport,
     destinationAirport,
@@ -52,6 +76,8 @@ export function FlightStep({ selectedPackage }) {
     arrivalTime,
     returnDepartureTime,
     returnArrivalTime,
+    originCountry,
+    destinationCountry,
   } = useMemo(() => {
     if (!query || !selectedPackage)
       return {
@@ -63,6 +89,8 @@ export function FlightStep({ selectedPackage }) {
         arrivalTime: null,
         returnDepartureTime: null,
         returnArrivalTime: null,
+        originCountry: null,
+        destinationCountry: null,
       };
 
     const params = new URLSearchParams(query);
@@ -89,6 +117,8 @@ export function FlightStep({ selectedPackage }) {
         arrivalTime: new Date(parsed.arrivalTime),
         returnDepartureTime: new Date(parsed.returnDepartureTime),
         returnArrivalTime: new Date(parsed.returnArrivalTime),
+        originCountry,
+        destinationCountry,
       };
     }
 
@@ -114,6 +144,8 @@ export function FlightStep({ selectedPackage }) {
         arrivalTime: null,
         returnDepartureTime: null,
         returnArrivalTime: null,
+        originCountry,
+        destinationCountry,
       };
     }
 
@@ -151,6 +183,8 @@ export function FlightStep({ selectedPackage }) {
       arrivalTime,
       returnDepartureTime,
       returnArrivalTime,
+      originCountry,
+      destinationCountry,
     };
 
     sessionStorage.setItem(flightKey, JSON.stringify(flightData));
@@ -162,6 +196,13 @@ export function FlightStep({ selectedPackage }) {
     date
       ? date.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })
       : "";
+
+  const flightType = getFlightType(
+    originAirport,
+    destinationAirport,
+    originCountry,
+    destinationCountry
+  );
 
   if (!selectedPackage) {
     return (
@@ -204,14 +245,14 @@ export function FlightStep({ selectedPackage }) {
 
         {originAirport && destinationAirport && (
           <div className="hidden lg:flex justify-between items-center gap-2 text-base text-[#2a2a2a] lg:px-[15%]">
-            <div className="flex flex-col font-bold text-base tracking-widest">
+            <div className="flex flex-col items-center font-bold text-base">
               <span className="text-xs">{originAirport.code}</span>
               <span>{formatTime(departureTime)}</span>
             </div>
             <span className="text-xs border-b-2 border-[#2a5732] px-8 text-[#2a2a2a]">
-              Directo
+              {flightType}
             </span>
-            <div className="flex flex-col font-bold text-base tracking-widest">
+            <div className="flex flex-col items-center  font-bold text-base">
               <span className="text-xs">{destinationAirport.code}</span>
               <span>{formatTime(arrivalTime)}</span>
             </div>
@@ -220,14 +261,14 @@ export function FlightStep({ selectedPackage }) {
 
         {originAirport && destinationAirport && returnDepartureTime && (
           <div className="hidden lg:flex justify-between items-center gap-2 text-base text-[#2a2a2a] lg:px-[15%]">
-            <div className="flex flex-col font-bold text-base tracking-widest">
+            <div className="flex flex-col items-center  font-bold text-base">
               <span className="text-xs">{destinationAirport.code}</span>
               <span>{formatTime(returnDepartureTime)}</span>
             </div>
             <span className="text-xs border-b-2 border-[#2a5732] px-8 text-[#2a2a2a]">
-              Directo
+              {flightType}
             </span>
-            <div className="flex flex-col font-bold text-base tracking-widest">
+            <div className="flex flex-col items-center  font-bold text-base">
               <span className="text-xs">{originAirport.code}</span>
               <span>{formatTime(returnArrivalTime)}</span>
             </div>
