@@ -169,7 +169,7 @@
       "province": "Cataluña",
       "airports": [
         {
-          "name": "Aeropuerto de Barcelona-El Prat",
+          "name": "Aeropuerto Josep Tarradellas Barcelona-El Prat",
           "code": "BCN",
           "isGlobal": true
         }

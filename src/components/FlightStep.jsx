@@ -6,7 +6,7 @@ import { calculateDistanceInKm } from "../utils/distanceCalculator";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useIsMobile } from "../hooks/useIsMobile";
 
-export function FlightStep({ selectedPackage }) {
+export function FlightStep({ selectedPackage, onChange }) {
   const navigate = useNavigate();
   const query = sessionStorage.getItem("lastSearchQuery");
   const isMobile = useIsMobile(1024);
@@ -14,7 +14,13 @@ export function FlightStep({ selectedPackage }) {
   const isFirstPage = location.pathname.includes(
     "/paquetes/resultados/hospedajes/detalles/"
   );
-  const showBorder = !isMobile || !isFirstPage;
+  const thisPage = location.pathname.includes(
+    "/paquetes/resultados/vuelos/detalles/"
+  );
+  const showBorder =
+    (!isMobile || !isFirstPage) &&
+    location.pathname !== "/paquetes/resultados/vuelos/detalles/";
+  const disableButton = thisPage;
 
   const getCoordsFromCity = (city, country) => {
     if (!city || !country) return null;
@@ -67,6 +73,43 @@ export function FlightStep({ selectedPackage }) {
     return "2 escalas";
   };
 
+  const findClosestGlobalAirport = (fromCoords, excludeCity = "") => {
+    let closestAirport = null;
+    let minDistance = Infinity;
+
+    for (const [country, locations] of Object.entries(airports)) {
+      for (const loc of locations) {
+        if (loc.city.toLowerCase() === excludeCity.toLowerCase()) continue;
+
+        for (const airport of loc.airports) {
+          if (airport.isGlobal) {
+            const coords = getCoordsFromCity(loc.city, country);
+            if (!coords) continue;
+
+            const distance = calculateDistanceInKm(
+              fromCoords.lat,
+              fromCoords.lon,
+              coords.lat,
+              coords.lon
+            );
+
+            if (distance < minDistance) {
+              minDistance = distance;
+              closestAirport = {
+                name: airport.name,
+                code: airport.code,
+                city: loc.city,
+                country,
+              };
+            }
+          }
+        }
+      }
+    }
+
+    return closestAirport;
+  };
+
   const {
     originAirport,
     destinationAirport,
@@ -78,6 +121,7 @@ export function FlightStep({ selectedPackage }) {
     returnArrivalTime,
     originCountry,
     destinationCountry,
+    layoverAirports,
   } = useMemo(() => {
     if (!query || !selectedPackage)
       return {
@@ -91,6 +135,7 @@ export function FlightStep({ selectedPackage }) {
         returnArrivalTime: null,
         originCountry: null,
         destinationCountry: null,
+        layoverAirports: [],
       };
 
     const params = new URLSearchParams(query);
@@ -146,6 +191,7 @@ export function FlightStep({ selectedPackage }) {
         returnArrivalTime: null,
         originCountry,
         destinationCountry,
+        layoverAirports: [],
       };
     }
 
@@ -159,8 +205,11 @@ export function FlightStep({ selectedPackage }) {
     const durationHrs = calculateFlightDuration(distanceKm);
 
     const randomHour = Math.floor(Math.random() * (22 - 6 + 1)) + 6;
+    const fixedMinutes = [0, 15, 30, 45];
+    const randomMinute =
+      fixedMinutes[Math.floor(Math.random() * fixedMinutes.length)];
     const departureTime = new Date(departureDate);
-    departureTime.setHours(randomHour, 0, 0, 0);
+    departureTime.setHours(randomHour, randomMinute, 0, 0);
 
     const arrivalTime = new Date(
       departureTime.getTime() + durationHrs * 3600 * 1000
@@ -174,6 +223,38 @@ export function FlightStep({ selectedPackage }) {
       returnDepartureTime.getTime() + durationHrs * 3600 * 1000
     );
 
+    const flightType = getFlightType(
+      originAirport,
+      destinationAirport,
+      originCountry,
+      destinationCountry
+    );
+    let layoverAirports = [];
+
+    if (flightType === "1 escala") {
+      if (!originAirport?.isGlobal) {
+        const closest = findClosestGlobalAirport(originCoords, originCity);
+        if (closest) layoverAirports.push(closest);
+      } else if (!destinationAirport?.isGlobal) {
+        const closest = findClosestGlobalAirport(
+          destinationCoords,
+          destinationCity
+        );
+        if (closest) layoverAirports.push(closest);
+      }
+    } else if (flightType === "2 escalas") {
+      const closestToOrigin = findClosestGlobalAirport(
+        originCoords,
+        originCity
+      );
+      const closestToDest = findClosestGlobalAirport(
+        destinationCoords,
+        destinationCity
+      );
+      if (closestToOrigin) layoverAirports.push(closestToOrigin);
+      if (closestToDest) layoverAirports.push(closestToDest);
+    }
+
     const flightData = {
       originAirport,
       destinationAirport,
@@ -185,6 +266,7 @@ export function FlightStep({ selectedPackage }) {
       returnArrivalTime,
       originCountry,
       destinationCountry,
+      layoverAirports,
     };
 
     sessionStorage.setItem(flightKey, JSON.stringify(flightData));
@@ -224,6 +306,7 @@ export function FlightStep({ selectedPackage }) {
           ? "border-3 border-r-0 border-l-0 border-[#ad6771]"
           : "border-0"
       }`}
+      onClick={isMobile ? () => onChange(selectedPackage.id) : undefined}
     >
       <div className="lg:flex lg:flex-col gap-[14px] border-r border-[#dbdbdb] py-2">
         <div className="flex items-center justify-center lg:justify-between lg:w-full lg:px-[5%] ">
@@ -232,12 +315,14 @@ export function FlightStep({ selectedPackage }) {
             Vuelos
           </h1>
           <p
-            className="hidden lg:flex text-sm text-[#4a4a4a] hover:text-[#ad6771] cursor-pointer"
-            onClick={() => {
-              navigate(
-                `/paquetes/resultados/vuelos/detalles/${selectedPackage.id}`
-              );
-            }}
+            className={`hidden lg:flex text-sm  ${
+              disableButton
+                ? "text-gray-400 cursor-default"
+                : "text-[#4a4a4a] hover:text-[#ad6771] cursor-pointer"
+            }`}
+            onClick={
+              disableButton ? undefined : () => onChange(selectedPackage.id)
+            }
           >
             Cambiar opción
           </p>
@@ -245,33 +330,33 @@ export function FlightStep({ selectedPackage }) {
 
         {originAirport && destinationAirport && (
           <div className="hidden lg:flex justify-between items-center gap-2 text-base text-[#2a2a2a] lg:px-[15%]">
-            <div className="flex flex-col items-center font-bold text-base">
+            <p className="flex flex-col items-center font-bold text-base">
               <span className="text-xs">{originAirport.code}</span>
               <span>{formatTime(departureTime)}</span>
-            </div>
-            <span className="text-xs border-b-2 border-[#2a5732] px-8 text-[#2a2a2a]">
+            </p>
+            <p className="text-xs border-b-2 border-[#2a5732] px-8 text-[#2a2a2a]">
               {flightType}
-            </span>
-            <div className="flex flex-col items-center  font-bold text-base">
+            </p>
+            <p className="flex flex-col items-center font-bold text-base">
               <span className="text-xs">{destinationAirport.code}</span>
               <span>{formatTime(arrivalTime)}</span>
-            </div>
+            </p>
           </div>
         )}
 
         {originAirport && destinationAirport && returnDepartureTime && (
           <div className="hidden lg:flex justify-between items-center gap-2 text-base text-[#2a2a2a] lg:px-[15%]">
-            <div className="flex flex-col items-center  font-bold text-base">
+            <p className="flex flex-col items-center  font-bold text-base">
               <span className="text-xs">{destinationAirport.code}</span>
               <span>{formatTime(returnDepartureTime)}</span>
-            </div>
-            <span className="text-xs border-b-2 border-[#2a5732] px-8 text-[#2a2a2a]">
+            </p>
+            <p className="text-xs border-b-2 border-[#2a5732] px-8 text-[#2a2a2a]">
               {flightType}
-            </span>
-            <div className="flex flex-col items-center  font-bold text-base">
+            </p>
+            <p className="flex flex-col items-center  font-bold text-base">
               <span className="text-xs">{originAirport.code}</span>
               <span>{formatTime(returnArrivalTime)}</span>
-            </div>
+            </p>
           </div>
         )}
       </div>

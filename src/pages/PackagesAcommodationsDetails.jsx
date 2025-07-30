@@ -86,7 +86,7 @@ export function PackagesAcommodationsDetails() {
               }}
               className="bg-[#2a5732] text-white px-4 py-2 rounded-md"
             >
-              Elegir
+              Continuar
             </button>
           </div>
         </section>

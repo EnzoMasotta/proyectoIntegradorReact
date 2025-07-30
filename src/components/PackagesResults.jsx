@@ -17,7 +17,7 @@ export function PackagesResults({ results, iconMap, personas }) {
   }
 
   return (
-    <section className="w-full flex flex-col p-[8%] md:p-[3%] md:pt-0 lg:pr-25 gap-6">
+    <section className="w-full flex flex-col px-[3%] lg:pr-25 gap-6">
       {results.map((pkg) => (
         <div
           onClick={() => {
