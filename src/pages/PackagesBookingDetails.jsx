@@ -2,6 +2,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import packages from "../data/packages.json";
 import { PackagesSteps } from "../components/PackagesSteps";
+import { BookingDetails } from "../components/BookingDetails";
 
 export function PackagesBookingDetails() {
   const { id } = useParams();
@@ -29,8 +30,8 @@ export function PackagesBookingDetails() {
   if (!pkg) return null;
 
   return (
-    <main className="bg-[#f2f4f5]">
-      <PackagesSteps selectedPackage={pkg} />
+    <main className="bg-[#f2f4f5] px-[3%] py-6">
+      <BookingDetails selectedPackage={pkg} />
     </main>
   );
 }

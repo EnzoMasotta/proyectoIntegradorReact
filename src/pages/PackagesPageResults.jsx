@@ -21,6 +21,12 @@ export function PackagesPageResults() {
   const [searchParams, setSearchParams] = useSearchParams();
   const navigate = useNavigate();
 
+  const [filters, setFilters] = useState({
+    stars: null,
+    services: [],
+  });
+  const [sortBy, setSortBy] = useState("");
+
   const origenParam = searchParams.get("origen") || "";
   const destinoParam = searchParams.get("destino") || "";
   const personas = parseInt(searchParams.get("people") || "1", 10);
@@ -78,13 +84,25 @@ export function PackagesPageResults() {
   const fixedFlightCost = 100000;
   const pricePerKm = 150;
 
-  const results = allPackages
+  const filteredPackages = allPackages
     .filter(
       (pkg) =>
         pkg.province?.toLowerCase().includes(destinoCity) ||
         pkg.country?.toLowerCase().includes(destinoCity) ||
         pkg.title?.toLowerCase().includes(destinoCity)
     )
+    .filter((pkg) => {
+      if (filters.stars && pkg.stars !== filters.stars) return false;
+
+      if (
+        filters.services.length > 0 &&
+        !filters.services.every((s) => pkg.services?.includes(s))
+      ) {
+        return false;
+      }
+
+      return true;
+    })
     .map((pkg) => {
       const toCoords = findCityCoords(pkg.city);
       let distanceCost = 0;
@@ -121,6 +139,21 @@ export function PackagesPageResults() {
       };
     });
 
+  const sortedPackages = filteredPackages.sort((a, b) => {
+    switch (sortBy) {
+      case "price-asc":
+        return a.totalPrice - b.totalPrice;
+      case "price-desc":
+        return b.totalPrice - a.totalPrice;
+      case "stars-asc":
+        return a.stars - b.stars;
+      case "stars-desc":
+        return b.stars - a.stars;
+      default:
+        return 0;
+    }
+  });
+
   const iconMap = {
     wifi: { icon: Wifi, label: "Wifi incluido" },
     desayuno: { icon: Coffee, label: "Desayuno" },
@@ -141,6 +174,14 @@ export function PackagesPageResults() {
     }
   }, [searchParams]);
 
+  useEffect(() => {
+    setFilters({
+      stars: null,
+      services: [],
+    });
+    setSortBy("");
+  }, [origenParam, destinoParam, range.from, range.to, personas]);
+
   return (
     <main className="flex flex-col">
       <section className="bg-[#2a5732] px-3 py-6 lg:justify-center lg:flex lg:py-9">
@@ -156,14 +197,19 @@ export function PackagesPageResults() {
       <PackagesSteps />
 
       <div
-        className="bg-[#f2f4f5] md:px-[3%] lg:px-[8%] flex flex-col lg:flex-row"
+        className="bg-[#f2f4f5] md:px-[3%] lg:px-[8%] flex flex-col lg:flex-row pb-6"
         ref={sectionRef}
         id="accommodation"
       >
-        <PackagesFilter />
+        <PackagesFilter
+          filters={filters}
+          setFilters={setFilters}
+          sortBy={sortBy}
+          setSortBy={setSortBy}
+        />
 
         <PackagesResults
-          results={results}
+          results={sortedPackages}
           iconMap={iconMap}
           personas={personas}
         />

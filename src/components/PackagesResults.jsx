@@ -10,7 +10,7 @@ export function PackagesResults({ results, iconMap, personas }) {
 
   if (results.length === 0) {
     return (
-      <p className="text-center text-gray-600 mt-8">
+      <p className="text-center text-gray-600 mt-8 px-[3%]">
         No hay paquetes disponibles con los criterios seleccionados.
       </p>
     );
@@ -44,7 +44,12 @@ export function PackagesResults({ results, iconMap, personas }) {
                 </h2>
                 <span className="flex gap-1">
                   {[...Array(pkg.stars)].map((_, i) => (
-                    <Star key={i} size={16} className="text-yellow-500" />
+                    <Star
+                      key={i}
+                      size={16}
+                      className="text-yellow-500"
+                      style={{ fill: "currentColor" }}
+                    />
                   ))}
                 </span>
               </div>

@@ -10,6 +10,7 @@ export function Newsletter() {
       <div className="flex flex-wrap items-center gap-2 lg:gap-4 px-[3%]">
         <Mail className="" size={30} />
         <input
+          autoComplete="off"
           id="email"
           type="email"
           placeholder="Ingresá tu email"

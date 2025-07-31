@@ -130,12 +130,11 @@ export function DatePicker({ range, setRange, errorFrom, errorTo }) {
             </div>
 
             <DayPicker
-              className="flex justify-center"
+              className="flex flex-col justify-center"
               locale={es}
               mode="range"
               selected={range}
               onSelect={handleSelect}
-              showOutsideDays
               disabled={(date) => {
                 const today = new Date();
                 const todayStart = new Date(
@@ -145,7 +144,7 @@ export function DatePicker({ range, setRange, errorFrom, errorTo }) {
                 );
                 return date <= todayStart;
               }}
-              numberOfMonths={1}
+              numberOfMonths={2}
             />
 
             <button

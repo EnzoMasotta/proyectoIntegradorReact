@@ -7,28 +7,31 @@
         "stars": 4,
         "image": "/imagenes/obelisco.jpg",
         "pricePerNight": 125000,
-        "services": ["wifi", "desayuno", "pileta"]
+        "services": ["wifi", "desayuno", "pileta", "estacionamiento", "aire"]
       },
       {
         "id": 2,
         "title": "Palacio Plaza",
         "stars": 5,
         "image": "/imagenes/palacio.jpg",
-        "pricePerNight": 320000
+        "pricePerNight": 320000,
+        "services": ["wifi", "desayuno", "pileta", "estacionamiento", "aire"]
       },
       {
         "id": 3,
         "title": "Recoleta Boutique Hotel",
         "stars": 3,
         "image": "/imagenes/recoleta.jpg",
-        "pricePerNight": 87000
+        "pricePerNight": 87000,
+        "services": ["wifi", "desayuno", "pileta", "estacionamiento", "aire"]
       },
       {
         "id": 4,
         "title": "Puerto Madero Luxury",
         "stars": 5,
         "image": "/imagenes/puertomadero.jpg",
-        "pricePerNight": 158000
+        "pricePerNight": 158000,
+        "services": ["wifi", "desayuno", "pileta", "estacionamiento", "aire"]
       }
     ],
     "La Plata": [
@@ -45,21 +48,24 @@
         "title": "Palacio Plata",
         "stars": 5,
         "image": "/imagenes/palacio.jpg",
-        "pricePerNight": 320000
+        "pricePerNight": 320000,
+        "services": ["wifi", "desayuno", "pileta", "estacionamiento", "aire"]
       },
       {
         "id": 7,
         "title": "Recoleta Boutique Hotel",
         "stars": 3,
         "image": "/imagenes/recoleta.jpg",
-        "pricePerNight": 87000
+        "pricePerNight": 87000,
+        "services": ["wifi", "desayuno", "pileta", "estacionamiento", "aire"]
       },
       {
         "id": 8,
         "title": "Puerto Madero Luxury",
         "stars": 5,
         "image": "/imagenes/puertomadero.jpg",
-        "pricePerNight": 158000
+        "pricePerNight": 158000,
+        "services": ["wifi", "desayuno", "pileta", "estacionamiento", "aire"]
       }
     ],
     "Córdoba": [
@@ -67,13 +73,15 @@
         "id": 9,
         "title": "Córdoba Suite Hotel",
         "image": "/imagenes/cordoba.jpg",
-        "pricePerNight": 50000
+        "pricePerNight": 50000,
+        "services": ["wifi", "desayuno", "pileta", "estacionamiento", "aire"]
       },
       {
         "id": 10,
         "title": "Hotel Nueva Córdoba",
         "image": "/imagenes/nuevacordoba.jpg",
-        "pricePerNight": 45000
+        "pricePerNight": 45000,
+        "services": ["wifi", "desayuno", "pileta", "estacionamiento", "aire"]
       }
     ]
   },
@@ -83,13 +91,15 @@
         "id": 11,
         "title": "Montevideo Plaza",
         "image": "/imagenes/montevideo.jpg",
-        "pricePerNight": 115000
+        "pricePerNight": 115000,
+        "services": ["wifi", "desayuno", "pileta", "estacionamiento", "aire"]
       },
       {
         "id": 12,
         "title": "Hotel Rambla",
         "image": "/imagenes/rambla.jpg",
-        "pricePerNight": 120000
+        "pricePerNight": 120000,
+        "services": ["wifi", "desayuno", "pileta", "estacionamiento", "aire"]
       }
     ],
     "Punta del Este": [
@@ -97,7 +107,8 @@
         "id": 13,
         "title": "Punta del Este Beach Hotel",
         "image": "/imagenes/punta.jpg",
-        "pricePerNight": 175000
+        "pricePerNight": 175000,
+        "services": ["wifi", "desayuno", "pileta", "estacionamiento", "aire"]
       }
     ]
   },
@@ -135,12 +146,14 @@
     "Madrid": [
       {
         "id": 18,
+        "stars": 1,
         "title": "Madrid Centro Hotel",
         "image": "/imagenes/madrid.jpg",
         "pricePerNight": 200000
       },
       {
         "id": 19,
+        "stars": 2,
         "title": "Hotel Gran Vía",
         "image": "/imagenes/granvia.jpg",
         "pricePerNight": 210000

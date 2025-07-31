@@ -90,7 +90,11 @@ export function FlightsDetails({ selectedPackage }) {
 
   const formatTime = (date) =>
     date
-      ? date.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })
+      ? date.toLocaleTimeString([], {
+          hour: "2-digit",
+          minute: "2-digit",
+          hour12: false,
+        })
       : "";
 
   const handleOptionClick = (times) => {
@@ -135,7 +139,7 @@ export function FlightsDetails({ selectedPackage }) {
 
   return (
     <section className="w-full flex flex-col px-[3%] lg:px-[20%] gap-6">
-      <div className=" bg-white w-full border-[#d9b0b6] border-2 rounded-lg flex flex-col cursor-pointer">
+      <div className="lg:hidden flex bg-white w-full border-[#d9b0b6] border-2 rounded-lg flex-col cursor-pointer">
         <h3 className="text-lg font-bold text-[#2a2a2a] p-2">
           Tu selección actual
         </h3>

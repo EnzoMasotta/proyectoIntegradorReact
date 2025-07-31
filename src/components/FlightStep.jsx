@@ -276,7 +276,11 @@ export function FlightStep({ selectedPackage, onChange }) {
 
   const formatTime = (date) =>
     date
-      ? date.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })
+      ? date.toLocaleTimeString([], {
+          hour: "2-digit",
+          minute: "2-digit",
+          hour12: false,
+        })
       : "";
 
   const flightType = getFlightType(

@@ -47,7 +47,12 @@ export function AcommodationStep({ selectedPackage, onChange }) {
             <h1>{selectedPackage.title}</h1>
             <span className="flex gap-1">
               {[...Array(selectedPackage.stars)].map((_, i) => (
-                <Star key={i} size={16} className="text-yellow-500" />
+                <Star
+                  key={i}
+                  size={16}
+                  className="text-yellow-500"
+                  style={{ fill: "currentColor" }}
+                />
               ))}
             </span>
           </div>

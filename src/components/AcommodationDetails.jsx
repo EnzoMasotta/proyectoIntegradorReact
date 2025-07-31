@@ -30,7 +30,12 @@ export function AcommodationDetails({ pkg }) {
           <h1 className="text-xl font-bold text-[#2a2a2a]">{pkg.title}</h1>
           <span className="flex gap-1">
             {[...Array(pkg.stars)].map((_, i) => (
-              <Star key={i} size={16} className="text-yellow-500" />
+              <Star
+                key={i}
+                size={16}
+                className="text-yellow-500"
+                style={{ fill: "currentColor" }}
+              />
             ))}
           </span>
         </div>
