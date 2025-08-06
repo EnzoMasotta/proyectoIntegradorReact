@@ -8,22 +8,22 @@ export function StepsTotalPrice({ selectedPackage }) {
   const { totalPrice, personas, totalNights } = useTotalPrice();
   const navigate = useNavigate();
   const isMobile = useIsMobile(1024);
-  const isAnotherPage = [
-    "/paquetes/resultados/hospedajes/detalles/",
-    "/paquetes/resultados/vuelos/detalles/",
-  ].some((path) => location.pathname.includes(path));
   const thisPage = location.pathname.includes(
     "/paquetes/resultados/reservas/detalles/"
   );
 
   const showBorder =
-    (!isMobile || !isAnotherPage) &&
+    !isMobile &&
     location.pathname !== "/paquetes/resultados/reservas/detalles/";
   const disableButton = thisPage;
 
   if (!selectedPackage) {
     return (
-      <section className="flex flex-1 justify-center my-2">
+      <section
+        className={`flex flex-1 justify-center py-2 lg:py-4 rounded-lg rounded-l-none ${
+          thisPage ? "border-3 border-l-0 border-[#ad6771]" : "border-0"
+        }`}
+      >
         <div className="flex flex-col py-2">
           <h1 className="flex gap-2 items-center text-sm md:text-lg text-[#ad6771] font-bold">
             <Receipt size={18} />
@@ -36,9 +36,7 @@ export function StepsTotalPrice({ selectedPackage }) {
 
   return (
     <section
-      className={`flex flex-col flex-1 justify-center py-2 lg:py-4 rounded-lg rounded-l-none ${
-        showBorder ? "border-3 border-l-0 border-[#ad6771]" : "border-0"
-      }`}
+      className={`flex flex-col flex-1 justify-center py-2 lg:py-4 rounded-lg rounded-l-none `}
     >
       <div className="lg:flex lg:flex-col lg:gap-1 py-2">
         <div className="flex items-center justify-center lg:justify-between lg:w-full lg:px-[5%] ">

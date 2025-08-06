@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import packages from "../data/packages.json";
 import { PackagesSteps } from "../components/PackagesSteps";
 import { BookingDetails } from "../components/BookingDetails";
+import { ChevronLeft } from "lucide-react";
 
 export function PackagesBookingDetails() {
   const { id } = useParams();
@@ -30,7 +31,18 @@ export function PackagesBookingDetails() {
   if (!pkg) return null;
 
   return (
-    <main className="bg-[#f2f4f5] px-[3%] py-6">
+    <main className="bg-[#f2f4f5] pb-6">
+      <PackagesSteps />
+      <button
+        type="button"
+        className="flex items-center gap-1 mx-[3%] mb-2 font-bold text-[#2d6a4f] text-sm cursor-pointer"
+        onClick={() => {
+          navigate(`/paquetes/resultados/vuelos/detalles/${pkg.id}`);
+        }}
+      >
+        <ChevronLeft />
+        Regresar a la pagina anterior
+      </button>
       <BookingDetails selectedPackage={pkg} />
     </main>
   );

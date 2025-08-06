@@ -20,6 +20,10 @@ export function FlightStep({ selectedPackage, onChange }) {
   const showBorder =
     (!isMobile || !isFirstPage) &&
     location.pathname !== "/paquetes/resultados/vuelos/detalles/";
+  const reservationPage = location.pathname.includes(
+    "/paquetes/resultados/reservas/detalles/"
+  );
+
   const disableButton = thisPage;
 
   const getCoordsFromCity = (city, country) => {
@@ -292,9 +296,15 @@ export function FlightStep({ selectedPackage, onChange }) {
 
   if (!selectedPackage) {
     return (
-      <section className="flex flex-1 justify-center border-r border-[#dbdbdb] my-2">
-        <div className="flex flex-col py-2">
-          <h1 className="flex gap-2 items-center text-sm md:text-lg text-[#ad6771] font-bold">
+      <section
+        className={`flex flex-1 justify-center py-2 lg:py-4 rounded-r-none rounded-l-none ${
+          reservationPage
+            ? "border-3 border-l-0 border-r-0 border-[#ad6771]"
+            : "border-0"
+        }`}
+      >
+        <div className="flex flex-col  py-2 border-r w-full border-l border-[#dbdbdb]">
+          <h1 className="flex gap-2 items-center justify-center text-sm md:text-lg text-[#ad6771] font-bold">
             <Plane size={18} strokeWidth={2} />
             Vuelos
           </h1>

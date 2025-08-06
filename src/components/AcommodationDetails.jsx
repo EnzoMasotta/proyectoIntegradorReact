@@ -19,13 +19,13 @@ export function AcommodationDetails({ pkg }) {
   };
 
   return (
-    <div className="flex flex-col relative">
+    <div className="flex flex-col relative lg:bg-white">
       <img
         src="/HabitacionPrueba.webp"
         alt=""
-        className="w-auto h-60 object-cover"
+        className="w-auto h-60 object-cover lg:p-10 lg:h-120 lg:w-[50%] lg:m-auto"
       />
-      <div className="flex flex-col px-[3%] pt-4 gap-2 rounded-t-2xl bg-white overflow-hidden w-full absolute top-50">
+      <div className="flex flex-col px-[3%] pt-4 gap-2 rounded-t-2xl bg-white overflow-hidden w-full absolute top-50 lg:relative lg:top-0">
         <div className="flex items-center gap-2">
           <h1 className="text-xl font-bold text-[#2a2a2a]">{pkg.title}</h1>
           <span className="flex gap-1">

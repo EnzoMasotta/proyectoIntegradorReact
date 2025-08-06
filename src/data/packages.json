@@ -3,9 +3,13 @@
     "Buenos Aires": [
       {
         "id": 1,
-        "title": "Hotel Obelisco",
+        "title": "Hotel Hilton",
         "stars": 4,
-        "image": "/imagenes/obelisco.jpg",
+        "presentationImage": "",
+        "roomImage": [
+          "/acommodationsImgs/hilton01.avif",
+          "/acommodationsImgs/hilton02.avif"
+        ],
         "pricePerNight": 125000,
         "services": ["wifi", "desayuno", "pileta", "estacionamiento", "aire"]
       },

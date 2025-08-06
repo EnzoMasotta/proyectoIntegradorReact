@@ -9,6 +9,7 @@ import { PackagesPageResults } from "./pages/PackagesPageResults";
 import { PackagesAcommodationsDetails } from "./pages/PackagesAcommodationsDetails";
 import { PackagesFlightsDetails } from "./pages/PackagesFlightsDetails";
 import { PackagesBookingDetails } from "./pages/PackagesBookingDetails";
+import { MyReservations } from "./pages/MyReservations";
 
 function App() {
   return (
@@ -31,7 +32,7 @@ function App() {
           path="/paquetes/resultados/reservas/detalles/:id"
           element={<PackagesBookingDetails />}
         />
-        <Route path="/reservas" element={<h1>Aca vas a ver las reservas</h1>} />
+        <Route path="/reservas" element={<MyReservations />} />
         <Route path="/actividades" element={<h1>No hay nada gato</h1>} />
       </Routes>
       <Footer />

@@ -192,11 +192,14 @@ export function FlightsDetails({ selectedPackage }) {
             vuelta
           </span>
           <span>
-            {new Date(flightData.departureTime).toLocaleDateString("es-AR", {
-              day: "2-digit",
-              month: "2-digit",
-              year: "numeric",
-            })}
+            {new Date(flightData.returnDepartureTime).toLocaleDateString(
+              "es-AR",
+              {
+                day: "2-digit",
+                month: "2-digit",
+                year: "numeric",
+              }
+            )}
           </span>
         </p>
         <div className="flex justify-between items-center px-[12%] text-base text-[#2a2a2a] mt-2">
@@ -290,11 +293,14 @@ export function FlightsDetails({ selectedPackage }) {
               vuelta
             </span>
             <span>
-              {new Date(flightData.departureTime).toLocaleDateString("es-AR", {
-                day: "2-digit",
-                month: "2-digit",
-                year: "numeric",
-              })}
+              {new Date(flightData.returnDepartureTime).toLocaleDateString(
+                "es-AR",
+                {
+                  day: "2-digit",
+                  month: "2-digit",
+                  year: "numeric",
+                }
+              )}
             </span>
           </p>
           <div className="flex justify-between items-center px-[12%] text-base text-[#2a2a2a] mt-2">

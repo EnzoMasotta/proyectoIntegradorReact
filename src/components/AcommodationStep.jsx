@@ -4,13 +4,20 @@ import { useIsMobile } from "../hooks/useIsMobile";
 
 export function AcommodationStep({ selectedPackage, onChange }) {
   const isMobile = useIsMobile(1024);
+  const reservationPage = location.pathname.includes(
+    "/paquetes/resultados/reservas/detalles/"
+  );
 
   if (!selectedPackage) {
     return (
-      <section className="flex flex-1 justify-center border-r border-[#dbdbdb] my-2">
+      <section
+        className={`flex flex-1 justify-center py-2 lg:py-4 rounded-lg rounded-r-none ${
+          reservationPage ? "border-3 border-r-0 border-[#ad6771]" : "border-0"
+        }`}
+      >
         <div className="flex flex-col py-2">
           <h1 className="flex gap-2 items-center text-sm md:text-lg text-[#ad6771] font-bold">
-            <BedDouble size={18} strokeWidth={2} />
+            <BedDouble size={18} />
             Hospedaje
           </h1>
         </div>
