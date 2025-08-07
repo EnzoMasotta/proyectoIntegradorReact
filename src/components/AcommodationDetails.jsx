@@ -8,7 +8,7 @@ import {
   WavesLadder,
 } from "lucide-react";
 import { AcommodationSliderImgs } from "./AcommodationSliderImgs";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
 export function AcommodationDetails({ pkg }) {
   const iconMap = {
@@ -21,6 +21,8 @@ export function AcommodationDetails({ pkg }) {
   };
 
   const [showFullText, setShowFullText] = useState(false);
+  const [absHeight, setAbsHeight] = useState(0);
+  const absRef = useRef(null);
 
   const toggleText = () => setShowFullText((prev) => !prev);
 
@@ -30,10 +32,22 @@ export function AcommodationDetails({ pkg }) {
     ? pkg.description
     : pkg.description.slice(0, maxParagraphsToShow);
 
+  useEffect(() => {
+    if (absRef.current) {
+      setAbsHeight(absRef.current.offsetHeight);
+    }
+  }, [showFullText, pkg.description]);
+
   return (
-    <div className="flex flex-col relative lg:bg-white">
+    <div
+      className="flex flex-col relative lg:bg-white"
+      style={{ paddingBottom: absHeight }}
+    >
       <AcommodationSliderImgs id={pkg.id} />
-      <div className="flex flex-col px-[3%] pt-4 gap-4 rounded-t-2xl bg-white overflow-hidden w-full absolute top-50 lg:relative lg:top-0 md:top-90">
+      <div
+        ref={absRef}
+        className="flex flex-col px-[3%] pt-4 gap-2 rounded-t-2xl bg-white overflow-hidden w-full absolute top-50 lg:relative lg:top-0 md:top-90"
+      >
         <div className="flex items-center gap-2">
           <h1 className="text-xl font-bold text-[#2a2a2a]">{pkg.title}</h1>
           <span className="flex gap-1">
