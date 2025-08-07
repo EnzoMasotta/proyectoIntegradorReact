@@ -50,7 +50,7 @@ export function PackagesFilter({ filters, setFilters, sortBy, setSortBy }) {
       <>
         <button
           onClick={() => setOpen(true)}
-          className="flex items-center justify-between px-4 py-2 ml-4 w-[25%] md:w-[15%] bg-white border border-[#dbdbdb] rounded-lg text-sm text-[#2a2a2a] mb-2"
+          className="flex items-center justify-between px-4 py-2 m-auto w-[25%] md:w-[15%] bg-white border border-[#dbdbdb] rounded-lg text-sm text-[#2a2a2a] mb-6"
         >
           <SlidersHorizontal size={14} />
           Filtros
@@ -58,16 +58,16 @@ export function PackagesFilter({ filters, setFilters, sortBy, setSortBy }) {
 
         {open && (
           <div className="fixed inset-0 bg-white z-50 flex flex-col p-4 overflow-auto">
-            <div className="flex justify-between items-center mb-4">
-              <h2 className="text-lg font-semibold">Filtros</h2>
+            <div className="flex items-center mb-4 gap-6">
               <button
                 type="button"
                 onClick={() => setOpen(false)}
-                className=" text-xl font-bold mb-4 text-[#4a4a4a]"
+                className=" text-xl font-bold text-[#4a4a4a]"
                 aria-label="Cerrar"
               >
                 <ChevronLeft />
               </button>
+              <h2 className="text-lg font-semibold">Filtros</h2>
             </div>
 
             <div className="border-b border-[#dbdbdb] pb-3 mb-4">

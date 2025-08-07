@@ -4,28 +4,45 @@
       {
         "id": 1,
         "title": "Hotel Hilton",
-        "stars": 4,
-        "presentationImage": "",
+        "description": [
+          "Ubicado en el exclusivo barrio de Puerto Madero, el Hilton Buenos Aires combina lujo contemporáneo con confort y servicios de primer nivel.",
+          "El hotel ofrece habitaciones amplias y modernas, una piscina en la azotea con vistas panorámicas, un completo gimnasio y un centro de bienestar.",
+          "Ideal tanto para viajes de negocios como de placer, el Hilton se encuentra a pasos de reconocidos restaurantes, atractivos turísticos y el distrito financiero.",
+          "Su icónico atrio de vidrio, el restaurante gourmet El Faro y su atención personalizada hacen de este hotel una opción destacada en la ciudad."
+        ],
+        "stars": 5,
+        "presentationImage": "/acommodationsImgs/HiltonFachada.jpg",
         "roomImage": [
           "/acommodationsImgs/hilton01.avif",
-          "/acommodationsImgs/hilton02.avif"
+          "/acommodationsImgs/hilton02.avif",
+          "/acommodationsImgs/hilton03.jpg",
+          "/acommodationsImgs/hilton04.jpg"
         ],
         "pricePerNight": 125000,
         "services": ["wifi", "desayuno", "pileta", "estacionamiento", "aire"]
       },
       {
         "id": 2,
-        "title": "Palacio Plaza",
+        "title": "Alvear Icon Hotel",
         "stars": 5,
-        "image": "/imagenes/palacio.jpg",
+        "presentationImage": "/acommodationsImgs/alvearIconFachada.jpg",
+        "roomImage": [
+          "/acommodationsImgs/hilton01.avif",
+          "/acommodationsImgs/hilton02.avif"
+        ],
         "pricePerNight": 320000,
         "services": ["wifi", "desayuno", "pileta", "estacionamiento", "aire"]
       },
       {
         "id": 3,
-        "title": "Recoleta Boutique Hotel",
-        "stars": 3,
-        "image": "/imagenes/recoleta.jpg",
+        "title": "Sheraton Hotel & Convention Center",
+        "stars": 5,
+        "presentationImage": "/acommodationsImgs/sheratonFachada.jpg",
+        "roomImage": [
+          "/acommodationsImgs/hilton01.avif",
+          "/acommodationsImgs/hilton02.avif"
+        ],
+
         "pricePerNight": 87000,
         "services": ["wifi", "desayuno", "pileta", "estacionamiento", "aire"]
       },

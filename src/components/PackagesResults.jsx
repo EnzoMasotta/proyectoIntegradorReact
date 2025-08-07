@@ -31,13 +31,13 @@ export function PackagesResults({ results, iconMap, personas }) {
           className="bg-white w-full border-[#dbdbdb] border transition duration-500 hover:shadow-lg rounded-lg flex flex-col md:flex-row md:justify-between cursor-pointer"
         >
           <img
-            src="/HotelPrueba.jpg"
+            src={pkg.presentationImage}
             alt={pkg.title}
             className="w-auto h-50 md:h-70 md:w-70 lg:h-85 lg:w-[40%] object-cover rounded-t-lg md:rounded-l-lg md:rounded-r-none"
           />
 
           <section className="px-4 py-2 md:py-4 md:flex md:flex-1 md:justify-between">
-            <div>
+            <div className="flex flex-col flex-1">
               <div className="flex items-center gap-2 flex-wrap">
                 <h2 className="text-lg font-semibold text-[#2a2a2a]">
                   {pkg.title}

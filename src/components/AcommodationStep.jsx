@@ -45,7 +45,7 @@ export function AcommodationStep({ selectedPackage, onChange }) {
         </div>
         <div className="hidden lg:flex lg:px-[5%] lg:gap-3">
           <img
-            src="/HotelPrueba.jpg" /*{selectedPackage.image}*/
+            src={selectedPackage.presentationImage}
             alt={selectedPackage.title}
             className="w-25 h-25 rounded-lg object-cover"
           />
