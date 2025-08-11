@@ -3,6 +3,7 @@ import { PackagesSearchBar } from "../components/PackagesSearchBar";
 import { FeaturedPackages } from "../components/FeaturedPackages";
 import { FeaturedPackageDeals } from "../components/FeaturedPackageDeals";
 import { Newsletter } from "../components/Newsletter";
+import { AbbreviatedAboutUs } from "../components/AbbreviatedAboutUs";
 
 export function PackagesPage() {
   return (
@@ -12,6 +13,7 @@ export function PackagesPage() {
       </section>
       <FeaturedPackages />
       <FeaturedPackageDeals />
+      <AbbreviatedAboutUs />
       <Newsletter />
     </main>
   );

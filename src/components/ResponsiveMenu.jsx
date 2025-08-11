@@ -28,7 +28,7 @@ export function ResponsiveMenu() {
             </Link>
           </li>
           <li>
-            <Link to="/about" onClick={closeMenu}>
+            <Link to="/sobrenosotros" onClick={closeMenu}>
               Nosotros
             </Link>
           </li>

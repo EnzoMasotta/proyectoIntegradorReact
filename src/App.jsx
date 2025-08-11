@@ -10,6 +10,7 @@ import { PackagesAcommodationsDetails } from "./pages/PackagesAcommodationsDetai
 import { PackagesFlightsDetails } from "./pages/PackagesFlightsDetails";
 import { PackagesBookingDetails } from "./pages/PackagesBookingDetails";
 import { MyReservations } from "./pages/MyReservations";
+import { AboutUs } from "./pages/AboutUs";
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
           element={<PackagesBookingDetails />}
         />
         <Route path="/actividades" element={<h1>No hay nada gato</h1>} />
+        <Route path="/sobrenosotros" element={<AboutUs />} />
       </Routes>
       <Footer />
     </>

@@ -6,29 +6,17 @@ import cuotassininteres from "../assets/FeaturedPackagesImgs/cuotassininteres.pn
 
 export function FeaturedPackages() {
   return (
-    <div className="flex w-full h-auto mt-10 items-center justify-around lg:justify-center overflow-x-auto gap-5 border-r-[15px] px-[3%] border-white no-scrollbar lg:border-none">
-      <img
-        src={brasil}
-        alt=""
-        className="h-55 md:h-65 w-auto rounded-xl cursor-pointer"
-      />
+    <div className="flex w-full h-auto mt-10 items-center justify-around lg:justify-center overflow-x-auto gap-5 lg:gap-10 border-r-[15px] px-[3%] border-white no-scrollbar lg:border-none">
+      <img src={brasil} alt="" className="h-55 md:h-65 w-auto rounded-lg" />
 
-      <img
-        src={madrid}
-        alt=""
-        className="h-55 md:h-65 w-auto rounded-xl cursor-pointer"
-      />
+      <img src={madrid} alt="" className="h-55 md:h-65 w-auto rounded-lg" />
 
-      <img
-        src={puntacana}
-        alt=""
-        className="h-55 md:h-65 w-auto rounded-xl cursor-pointer"
-      />
+      <img src={puntacana} alt="" className="h-55 md:h-65 w-auto rounded-lg" />
 
       <img
         src={cuotassininteres}
         alt=""
-        className="h-55 md:h-65 w-auto rounded-xl cursor-pointer"
+        className="h-55 md:h-65 w-auto rounded-lg"
       />
     </div>
   );
