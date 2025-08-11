@@ -18,90 +18,106 @@
           "/acommodationsImgs/hilton03.jpg",
           "/acommodationsImgs/hilton04.jpg"
         ],
-        "pricePerNight": 125000,
+        "pricePerNight": 420000,
         "services": ["wifi", "desayuno", "pileta", "estacionamiento", "aire"]
       },
       {
-        "id": 2,
+        "id": 10,
         "title": "Alvear Icon Hotel",
+        "description": [
+          "Ubicado en el exclusivo barrio de Puerto Madero, el Hilton Buenos Aires combina lujo contemporáneo con confort y servicios de primer nivel.",
+          "El hotel ofrece habitaciones amplias y modernas, una piscina en la azotea con vistas panorámicas, un completo gimnasio y un centro de bienestar.",
+          "Ideal tanto para viajes de negocios como de placer, el Hilton se encuentra a pasos de reconocidos restaurantes, atractivos turísticos y el distrito financiero.",
+          "Su icónico atrio de vidrio, el restaurante gourmet El Faro y su atención personalizada hacen de este hotel una opción destacada en la ciudad."
+        ],
         "stars": 5,
         "presentationImage": "/acommodationsImgs/alvearIconFachada.jpg",
         "roomImage": [
-          "/acommodationsImgs/hilton01.avif",
-          "/acommodationsImgs/hilton02.avif"
+          "/acommodationsImgs/alvear01.jpg",
+          "/acommodationsImgs/alvear02.jpg",
+          "/acommodationsImgs/alvear03.jpg",
+          "/acommodationsImgs/alvear04.jpg"
         ],
         "pricePerNight": 320000,
         "services": ["wifi", "desayuno", "pileta", "estacionamiento", "aire"]
       },
       {
-        "id": 3,
+        "id": 20,
         "title": "Sheraton Hotel & Convention Center",
+        "description": [
+          "Ubicado en el exclusivo barrio de Puerto Madero, el Hilton Buenos Aires combina lujo contemporáneo con confort y servicios de primer nivel.",
+          "El hotel ofrece habitaciones amplias y modernas, una piscina en la azotea con vistas panorámicas, un completo gimnasio y un centro de bienestar.",
+          "Ideal tanto para viajes de negocios como de placer, el Hilton se encuentra a pasos de reconocidos restaurantes, atractivos turísticos y el distrito financiero.",
+          "Su icónico atrio de vidrio, el restaurante gourmet El Faro y su atención personalizada hacen de este hotel una opción destacada en la ciudad."
+        ],
         "stars": 5,
         "presentationImage": "/acommodationsImgs/sheratonFachada.jpg",
         "roomImage": [
-          "/acommodationsImgs/hilton01.avif",
-          "/acommodationsImgs/hilton02.avif"
+          "/acommodationsImgs/sheraton01.jpg",
+          "/acommodationsImgs/sheraton02.jpg",
+          "/acommodationsImgs/sheraton03.jpg"
         ],
 
-        "pricePerNight": 87000,
+        "pricePerNight": 260000,
         "services": ["wifi", "desayuno", "pileta", "estacionamiento", "aire"]
       },
       {
-        "id": 4,
-        "title": "Puerto Madero Luxury",
-        "stars": 5,
-        "image": "/imagenes/puertomadero.jpg",
-        "pricePerNight": 158000,
-        "services": ["wifi", "desayuno", "pileta", "estacionamiento", "aire"]
-      }
-    ],
-    "La Plata": [
-      {
-        "id": 5,
-        "title": "Hotel Plata",
-        "stars": 4,
-        "image": "/imagenes/obelisco.jpg",
-        "pricePerNight": 125000,
-        "services": ["wifi", "desayuno", "pileta"]
-      },
-      {
-        "id": 6,
-        "title": "Palacio Plata",
-        "stars": 5,
-        "image": "/imagenes/palacio.jpg",
-        "pricePerNight": 320000,
-        "services": ["wifi", "desayuno", "pileta", "estacionamiento", "aire"]
-      },
-      {
-        "id": 7,
-        "title": "Recoleta Boutique Hotel",
+        "id": 30,
+        "title": "Hotel Centro Naval",
+        "description": [
+          "Ubicado en el exclusivo barrio de Puerto Madero, el Hilton Buenos Aires combina lujo contemporáneo con confort y servicios de primer nivel.",
+          "El hotel ofrece habitaciones amplias y modernas, una piscina en la azotea con vistas panorámicas, un completo gimnasio y un centro de bienestar.",
+          "Ideal tanto para viajes de negocios como de placer, el Hilton se encuentra a pasos de reconocidos restaurantes, atractivos turísticos y el distrito financiero.",
+          "Su icónico atrio de vidrio, el restaurante gourmet El Faro y su atención personalizada hacen de este hotel una opción destacada en la ciudad."
+        ],
         "stars": 3,
-        "image": "/imagenes/recoleta.jpg",
-        "pricePerNight": 87000,
-        "services": ["wifi", "desayuno", "pileta", "estacionamiento", "aire"]
-      },
-      {
-        "id": 8,
-        "title": "Puerto Madero Luxury",
-        "stars": 5,
-        "image": "/imagenes/puertomadero.jpg",
-        "pricePerNight": 158000,
+        "presentationImage": "/acommodationsImgs/centroNavalFachada.jpg",
+        "roomImage": [
+          "/acommodationsImgs/centroNaval01.jpg",
+          "/acommodationsImgs/centroNaval02.jpg",
+          "/acommodationsImgs/centroNaval03.jpg"
+        ],
+        "pricePerNight": 90000,
         "services": ["wifi", "desayuno", "pileta", "estacionamiento", "aire"]
       }
     ],
     "Córdoba": [
       {
-        "id": 9,
-        "title": "Córdoba Suite Hotel",
-        "image": "/imagenes/cordoba.jpg",
-        "pricePerNight": 50000,
+        "id": 40,
+        "title": "Quinto Centenario",
+        "description": [
+          "Ubicado en el exclusivo barrio de Puerto Madero, el Hilton Buenos Aires combina lujo contemporáneo con confort y servicios de primer nivel.",
+          "El hotel ofrece habitaciones amplias y modernas, una piscina en la azotea con vistas panorámicas, un completo gimnasio y un centro de bienestar.",
+          "Ideal tanto para viajes de negocios como de placer, el Hilton se encuentra a pasos de reconocidos restaurantes, atractivos turísticos y el distrito financiero.",
+          "Su icónico atrio de vidrio, el restaurante gourmet El Faro y su atención personalizada hacen de este hotel una opción destacada en la ciudad."
+        ],
+        "stars": 5,
+        "presentationImage": "/acommodationsImgs/quintoCentenarioFachada.jpg",
+        "roomImage": [
+          "/acommodationsImgs/quintoCentenario01.jpg",
+          "/acommodationsImgs/quintoCentenario02.jpg",
+          "/acommodationsImgs/quintoCentenario03.jpg"
+        ],
+        "pricePerNight": 129000,
         "services": ["wifi", "desayuno", "pileta", "estacionamiento", "aire"]
       },
       {
-        "id": 10,
-        "title": "Hotel Nueva Córdoba",
-        "image": "/imagenes/nuevacordoba.jpg",
-        "pricePerNight": 45000,
+        "id": 50,
+        "title": "Neper Hotel",
+        "description": [
+          "Ubicado en el exclusivo barrio de Puerto Madero, el Hilton Buenos Aires combina lujo contemporáneo con confort y servicios de primer nivel.",
+          "El hotel ofrece habitaciones amplias y modernas, una piscina en la azotea con vistas panorámicas, un completo gimnasio y un centro de bienestar.",
+          "Ideal tanto para viajes de negocios como de placer, el Hilton se encuentra a pasos de reconocidos restaurantes, atractivos turísticos y el distrito financiero.",
+          "Su icónico atrio de vidrio, el restaurante gourmet El Faro y su atención personalizada hacen de este hotel una opción destacada en la ciudad."
+        ],
+        "stars": 4,
+        "presentationImage": "/acommodationsImgs/neperFachada.jpg",
+        "roomImage": [
+          "/acommodationsImgs/neper01.jpg",
+          "/acommodationsImgs/neper02.jpg",
+          "/acommodationsImgs/neper03.jpg"
+        ],
+        "pricePerNight": 102000,
         "services": ["wifi", "desayuno", "pileta", "estacionamiento", "aire"]
       }
     ]
@@ -109,26 +125,62 @@
   "Uruguay": {
     "Montevideo": [
       {
-        "id": 11,
-        "title": "Montevideo Plaza",
-        "image": "/imagenes/montevideo.jpg",
-        "pricePerNight": 115000,
+        "id": 60,
+        "title": "Hyatt Centric",
+        "description": [
+          "El Hyatt Centric Montevideo ofrece alojamiento en el bulevar Montevideo Oceanside, a 500 metros del World Trade Center de Montevideo, y cuenta con una piscina cubierta y un restaurante. Dispone de instalaciones de spa. Cuenta con WiFi gratuita.",
+          "Todas las habitaciones del Hyatt Centric Montevideo son elegantes y modernas y cuentan con aire acondicionado, TV de pantalla plana, caja fuerte y escritorio. Algunas ofrecen vistas al río y la ciudad. Algunas tienen zona de cocina y zona de estar. Todas disponen de baño privado con secador de pelo.",
+          "En el Hyatt Centric Montevideo hay instalaciones de negocios, servicio de conserjería y servicio de aparcacoches.",
+          "El Hyatt Centric Montevideo se encuentra en el barrio de Pocitos, a 5 km de la plaza Cagancha y a 6 km del mercado del puerto de Montevideo. Se sitúa a 14 km del aeropuerto internacional de Carrasco, el más cercano."
+        ],
+        "stars": 5,
+        "presentationImage": "/acommodationsImgs/hyattCentricFachada.jpg",
+        "roomImage": [
+          "/acommodationsImgs/hyattCentric01.jpg",
+          "/acommodationsImgs/hyattCentric02.jpg",
+          "/acommodationsImgs/hyattCentric03.jpg"
+        ],
+        "pricePerNight": 250000,
         "services": ["wifi", "desayuno", "pileta", "estacionamiento", "aire"]
       },
       {
-        "id": 12,
-        "title": "Hotel Rambla",
-        "image": "/imagenes/rambla.jpg",
-        "pricePerNight": 120000,
+        "id": 70,
+        "title": "Holiday Inn by IHG",
+        "description": [
+          "El Holiday Inn cuenta con piscina cubierta y gimnasio, así como elegantes habitaciones con TV por cable y desayuno, a solo 500 metros del ayuntamiento de Montevideo. La terminal de autobuses de Tres Cruces está a 2 km.",
+          "Las habitaciones del Holiday Inn Montevideo son amplias y luminosas y presentan una decoración elegante en tonos suaves. Todas tienen escritorio y minibar, mientras que algunas disponen de zona de estar amplia y bañera de hidromasaje privada.",
+          "A diario se sirve un desayuno buffet con repostería, jamón y queso. El bar salón ofrece bebidas y aperitivos.",
+          "Este establecimiento alberga una sauna y una terraza con tumbonas. Hay WiFi gratuita en las zonas comunes y conexión a Internet por cable en las habitaciones."
+        ],
+        "stars": 4,
+        "presentationImage": "/acommodationsImgs/holidayInnFachada.jpg",
+        "roomImage": [
+          "/acommodationsImgs/holidayInn01.jpg",
+          "/acommodationsImgs/holidayInn02.jpg",
+          "/acommodationsImgs/holidayInn03.jpg"
+        ],
+        "pricePerNight": 108000,
         "services": ["wifi", "desayuno", "pileta", "estacionamiento", "aire"]
       }
     ],
     "Punta del Este": [
       {
-        "id": 13,
-        "title": "Punta del Este Beach Hotel",
-        "image": "/imagenes/punta.jpg",
-        "pricePerNight": 175000,
+        "id": 80,
+        "title": "The Grand Hotel",
+        "description": [
+          "El The Grand Hotel se encuentra en Punta del Este, frente a la playa Brava y ofrece habitaciones con conexión WiFi gratuita y vistas fabulosas al mar. Este establecimiento ecológico alberga un spa y centro de bienestar con piscina cubierta, sauna y gimnasio.",
+          "Las habitaciones del The Grand Hotel disponen de muebles cómodos, aire acondicionado, TV por cable de pantalla plana y minibar. También tienen vistas directas al jardín o al mar y baño con bañera de hidromasaje.",
+          "Las habitaciones del The Grand Hotel disponen de muebles cómodos, aire acondicionado, TV por cable de pantalla plana y minibar. También tienen vistas directas al jardín o al mar y baño con bañera de hidromasaje.",
+          "En los alrededores se pueden practicar diversas actividades como golf, ciclismo y equitación. Se proporciona servicio de alquiler de coches y bicicletas. Además, hay aparcamiento gratuito."
+        ],
+        "stars": 5,
+        "presentationImage": "/acommodationsImgs/grandHotelFachada.jpg",
+        "roomImage": [
+          "/acommodationsImgs/grandHotel01.jpg",
+          "/acommodationsImgs/grandHotel02.jpg",
+          "/acommodationsImgs/grandHotel03.jpg"
+        ],
+        "pricePerNight": 208000,
         "services": ["wifi", "desayuno", "pileta", "estacionamiento", "aire"]
       }
     ]
@@ -136,76 +188,200 @@
   "Brasil": {
     "São Paulo": [
       {
-        "id": 14,
-        "title": "Paulista Inn",
-        "image": "/imagenes/saopaulo.jpg",
-        "pricePerNight": 160000
+        "id": 90,
+        "title": "Radisson São Paulo Paulista",
+        "description": [
+          "Se encuentra en el centro financiero y comercial de São Paulo, a solo 1 calle de la Avenida Paulista, entre las estaciones de metro Brigadeiro y Paraíso, a 150 metros del SESC Paulista y del Instituto Itaú Cultural, y a 700 metros de la Casa de Japón.",
+          "Está situado cerca de varios centros médicos y de los principales hospitales de São Paulo.",
+          "El Radisson São Paulo Paulista cuenta con piscinas al aire libre para adultos y niños y conexión WiFi gratuita en todas las instalaciones."
+        ],
+        "stars": 5,
+        "presentationImage": "/acommodationsImgs/radissonFachada.jpg",
+        "roomImage": [
+          "/acommodationsImgs/radisson01.jpg",
+          "/acommodationsImgs/radisson02.jpg",
+          "/acommodationsImgs/radisson03.jpg"
+        ],
+        "pricePerNight": 270000,
+        "services": ["wifi", "desayuno", "pileta", "estacionamiento", "aire"]
       },
       {
-        "id": 15,
-        "title": "Hotel Jardins",
-        "image": "/imagenes/jardins.jpg",
-        "pricePerNight": 155000
+        "id": 100,
+        "title": "Laghetto Stilo",
+        "description": [
+          "Laghetto Stilo São Paulo dispone de centro de fitness, jardín, restaurante y bar en São Paulo. Este hotel de 4 estrellas tiene wifi gratis, servicio de habitaciones y recepción 24 horas. Este alojamiento libre de humo se encuentra a 2,2 km de Pabellón de Ciccillo Matarazzo.",
+          "El hotel ofrece habitaciones con aire acondicionado, escritorio, caja fuerte, TV de pantalla plana y baño privado con ducha. En Laghetto Stilo São Paulo, cada habitación incluye ropa de cama y toallas.",
+          "Hay opciones buffet o continentales de desayuno disponibles en el alojamiento."
+        ],
+        "stars": 4,
+        "presentationImage": "/acommodationsImgs/laghettoFachada.jpg",
+        "roomImage": [
+          "/acommodationsImgs/laghetto01.jpg",
+          "/acommodationsImgs/laghetto02.jpg",
+          "/acommodationsImgs/laghetto03.jpg"
+        ],
+        "pricePerNight": 135000,
+        "services": ["wifi", "desayuno", "pileta", "estacionamiento", "aire"]
       }
     ],
     "Río de Janeiro": [
       {
-        "id": 16,
-        "title": "Copacabana Hotel",
-        "image": "/imagenes/copacabana.jpg",
-        "pricePerNight": 190000
+        "id": 110,
+        "title": "Hotel Hilton Barra",
+        "description": [
+          "El Hilton Barra Rio de Janeiro está ubicado en el animado barrio de Barra da Tijuca, en Río de Janeiro, a 7 km de la playa de Barra, y cuenta con piscina en la azotea con vistas pintorescas al lago, centro de fitness bien equipado y restaurante con platos regionales e internacionales.",
+          "Las habitaciones y la suites presentan una decoración elegante de estilo moderno e incluyen café gratuito. El baño privado tiene secador de pelo. Algunas categorías de habitación incluyen WiFi gratuita. El servicio de habitaciones está disponible las 24 horas.",
+          "El Hilton Barra Rio de Janeiro alberga un salón tecnológico abierto las 24 horas. Además, hay 2 grandes salones de baile y 5 salas para reuniones donde celebrar eventos y conferencias.",
+          "Este hotel de 5 estrellas está situado a 300 metros del centro comercial Metropolitano, a 2 km del parque olímpico de Barra, a 5 km del centro de convenciones RioCentro y a 11 km del parque nacional de la Tijuca. El aeropuerto internacional de Galeão y el aeropuerto Santos Dumont están a 30 km y el aeropuerto de Jacarepaguá, a 3,5 km."
+        ],
+        "stars": 5,
+        "presentationImage": "/acommodationsImgs/hiltonBarraFachada.jpg",
+        "roomImage": [
+          "/acommodationsImgs/hiltonBarra01.jpg",
+          "/acommodationsImgs/hiltonBarra02.jpg",
+          "/acommodationsImgs/hiltonBarra03.jpg"
+        ],
+        "pricePerNight": 133000,
+        "services": ["wifi", "desayuno", "pileta", "estacionamiento", "aire"]
       },
       {
-        "id": 17,
-        "title": "Ipanema Suites",
-        "image": "/imagenes/ipanema.jpg",
-        "pricePerNight": 185000
+        "id": 120,
+        "title": "PortoBay Rio de Janeiro",
+        "description": [
+          "El PortoBay Rio de Janeiro, que alberga un restaurante y un bar donde se escucha bossa nova, está situado frente a la playa de Copacabana y tiene vistas impresionantes al Pan de Azúcar y al cerro del Corcovado. Se sirven bebidas exóticas y ofrece vistas a la puesta de sol de Río de Janeiro. Hay WiFi en todas las habitaciones.",
+          "Este hotel de 4 estrellas se encuentra junto a la playa y tiene habitaciones con vistas al mar. Hay minibar y TV de pantalla plana con canales por cable. Algunas habitaciones ofrecen vistas panorámicas, mientras que otras disponen de balcón privado.",
+          "El hotel alberga el bar Bossa Lounge, especializado en cócteles con frutas exóticas. Este hotel facilita toallas de playa, sombrillas y sillas."
+        ],
+        "stars": 5,
+        "presentationImage": "/acommodationsImgs/portoBayFachada.jpg",
+        "roomImage": [
+          "/acommodationsImgs/portoBay01.jpg",
+          "/acommodationsImgs/portoBay02.jpg",
+          "/acommodationsImgs/portoBay03.jpg"
+        ],
+        "pricePerNight": 262000,
+        "services": ["wifi", "desayuno", "pileta", "estacionamiento", "aire"]
       }
     ]
   },
   "España": {
     "Madrid": [
       {
-        "id": 18,
-        "stars": 1,
-        "title": "Madrid Centro Hotel",
-        "image": "/imagenes/madrid.jpg",
-        "pricePerNight": 200000
+        "id": 130,
+        "title": "Barceló Torre",
+        "description": [
+          "El Barceló Torre Madrid está en la Plaza de España de Madrid y ofrece habitaciones elegantes con WiFi gratis, así como piscina cubierta y restaurante. La estación de metro de Plaza de España está junto al hotel.",
+          "Las habitaciones son amplias y modernas y cuentan con cama extragrande, aire acondicionado, TV de 42 pulgadas y caja fuerte para ordenador portátil. El baño es privado e incluye ducha de efecto lluvia y secador de pelo.",
+          "Este hotel también proporciona piscina cubierta, centro de fitness, sauna y servicio de masajes.",
+          "Asimismo, el restaurante del Barceló Torre Madrid sirve platos a la carta. También hay un bar con DJ."
+        ],
+        "stars": 5,
+        "presentationImage": "/acommodationsImgs/barceloTorreFachada.jpg",
+        "roomImage": [
+          "/acommodationsImgs/barceloTorre01.jpg",
+          "/acommodationsImgs/barceloTorre02.jpg",
+          "/acommodationsImgs/barceloTorre03.jpg"
+        ],
+        "pricePerNight": 548000,
+        "services": ["wifi", "desayuno", "pileta", "estacionamiento", "aire"]
       },
       {
-        "id": 19,
-        "stars": 2,
-        "title": "Hotel Gran Vía",
-        "image": "/imagenes/granvia.jpg",
-        "pricePerNight": 210000
+        "id": 140,
+        "title": "Vincci The Mint",
+        "description": [
+          "El Vincci The Mint, con una impresionante terraza con vistas a los edificios más emblemáticos de Madrid, ofrece un nuevo tipo de alojamiento en Madrid. Es posible hacer el registro de entrada/salida en la zona de bar de la recepción mientras se toma una bebida. Hay WiFi gratuita en todas las instalaciones.",
+          "Este alojamiento, divertido y original, ha sido diseñado por Jaime Beristain, se encuentra en la famosa Gran Vía y ofrece habitaciones, suites y una amplia gama de servicios, como recepción 24 horas. El gastrobar del hotel sirve desayunos gourmet a la carta especiales todos los días de 07:00 a 23:00.",
+          "Las habitaciones del The Mint, modernas y con un toque de frescura, cuentan con suelo de parquet. Tienen paredes en tonos verde y blanco, aire acondicionado, TV de pantalla plana, escritorio, minibar y cafetera. El baño incluye bañera o ducha, secador de pelo y artículos de aseo gratuitos. Algunas habitaciones tienen zona de estar."
+        ],
+        "stars": 4,
+        "presentationImage": "/acommodationsImgs/VincciFachada.jpg",
+        "roomImage": [
+          "/acommodationsImgs/Vincci01.jpg",
+          "/acommodationsImgs/Vincci02.jpg",
+          "/acommodationsImgs/Vincci03.jpg"
+        ],
+        "pricePerNight": 420000,
+        "services": ["wifi", "desayuno", "pileta", "estacionamiento", "aire"]
       }
     ],
     "Barcelona": [
       {
-        "id": 20,
-        "title": "Barcelona Rambla Inn",
-        "image": "/imagenes/barcelona.jpg",
-        "pricePerNight": 195000
+        "id": 150,
+        "title": "Hotel Condes de Barcelona",
+        "description": [
+          "El Hotel Condes Barcelona se encuentra un edificio del siglo XIX en la avenida Passeig de Gràcia y ofrece piscina de temporada y terraza en la azotea. Además, cuenta con gimnasio y sauna.",
+          "Las habitaciones del Hotel Condes de Barcelona Hotel están insonorizadas e incluyen aire acondicionado, TV LCD vía satélite y caja fuerte para ordenador portátil. Gozan de vistas a la avenida Passeig de Gràcia o a un bonito patio del Eixample. Algunas de ellas también tienen balcón pequeño.",
+          "El bar elegante en la azotea, el Alaire, goza de vistas preciosas.",
+          "El hotel Condes está a solo 100 metros de La Pedrera de Gaudí y a 10 minutos a pie de la plaza de Catalunya y de La Rambla. La estación de tren de Passeig de Gràcia se halla a 200 metros y ofrece enlaces directos con el aeropuerto de Barcelona."
+        ],
+        "stars": 4,
+        "presentationImage": "/acommodationsImgs/condesFachada.jpg",
+        "roomImage": [
+          "/acommodationsImgs/condes01.jpg",
+          "/acommodationsImgs/condes02.jpg",
+          "/acommodationsImgs/condes03.jpg"
+        ],
+        "pricePerNight": 554000,
+        "services": ["wifi", "desayuno", "pileta", "estacionamiento", "aire"]
       },
       {
-        "id": 21,
-        "title": "Hotel Gótico",
-        "image": "/imagenes/gotico.jpg",
-        "pricePerNight": 180000
+        "id": 160,
+        "title": "Sofitel Barcelona Skipper",
+        "description": [
+          "El Sofitel Barcelona Skipper ofrece alojamiento de lujo de 5 estrellas junto al puerto olímpico de Barcelona. Está a 100 metros de la playa y ofrece WiFi gratuita y 2 piscinas al aire libre.",
+          "Este hotel moderno dispone de habitaciones amplias con Smart TV de 55 pulgadas y reproductor de DVD. Todas incluyen un baño elegante con ducha de efecto lluvia.",
+          "En la azotea del Sofitel Barcelona Skipper hay una piscina con vistas impresionantes a la ciudad y al mar, y una gran terraza con tumbonas abierta en temporada.",
+          "El hotel está a 5 minutos a pie de la estación de metro Ciutadella Vila Olimpica, a solo 2 paradas del centro histórico de la ciudad. El zoo de Barcelona y el bonito parque de la Ciutadella también están cerca."
+        ],
+        "stars": 5,
+        "presentationImage": "/acommodationsImgs/sofitelFachada.jpg",
+        "roomImage": [
+          "/acommodationsImgs/sofitel01.jpg",
+          "/acommodationsImgs/sofitel02.jpg",
+          "/acommodationsImgs/sofitel03.jpg"
+        ],
+        "pricePerNight": 751000,
+        "services": ["wifi", "desayuno", "pileta", "estacionamiento", "aire"]
       }
     ],
     "Valencia": [
       {
-        "id": 50,
-        "title": "Chulitos",
-        "image": "/imagenes/barcelona.jpg",
-        "pricePerNight": 195000
+        "id": 170,
+        "title": "The Westin Valencia",
+        "description": [
+          "Este hotel exclusivo se encuentra en uno de los edificios modernistas más impresionantes de Valencia, a 1 km de la catedral. Ofrece un spa de 850 m² y habitaciones de estilo art déco con aire acondicionado.",
+          "Las habitaciones del The Westin Valencia disponen de TV vía satélite, cama exclusiva Westin Heavenly Bed, tetera/cafetera y baño con secador de pelo y albornoz.",
+          "El centro de bienestar del Westin tiene una piscina terapéutica cubierta de 25 m², sauna finlandesa, baño turco, duchas de sensaciones y centro de fitness. Hay 8 salas independientes de tratamiento, así como una zona de relajación.",
+          "El Westin Valencia alberga el restaurante Rosemarino, que sirve desayunos buffet. El restaurante El Jardí elabora platos deliciosos de cocina mediterránea y ofrece un ambiente tranquilo para tomar una copa. El SeaBar Valencia prepara cócteles."
+        ],
+        "stars": 5,
+        "presentationImage": "/acommodationsImgs/westinFachada.jpg",
+        "roomImage": [
+          "/acommodationsImgs/westin01.jpg",
+          "/acommodationsImgs/westin02.jpg",
+          "/acommodationsImgs/westin03.jpg"
+        ],
+        "pricePerNight": 350000,
+        "services": ["wifi", "desayuno", "pileta", "estacionamiento", "aire"]
       },
       {
-        "id": 51,
-        "title": "Hotel Picante",
-        "image": "/imagenes/gotico.jpg",
-        "pricePerNight": 180000
+        "id": 180,
+        "title": "Melia Plaza Valencia",
+        "description": [
+          "Meliá Plaza Valencia está ubicado en un edificio clásico con vistas a la plaza principal de Valencia. Ofrece conexión wifi gratuita y cuenta con gimnasio, sauna y terraza solárium en la azotea.",
+          "Las habitaciones cuentan con aire acondicionado, suelo de madera, minibar, caja fuerte y TV de pantalla plana. El baño privado incluye secador de pelo y artículos de aseo.",
+          "El restaurante del hotel está especializado en cocina italiana y tiene una acogedora terraza al aire libre. El servicio de habitaciones está disponible las 24 horas y se ofrecen comidas sin gluten.",
+          "Se puede alquilar un coche en la recepción 24 horas del Meliá Plaza. Se ofrece aparcamiento privado en las inmediaciones por un suplemento. La estación de tren de Valencia está a 5 minutos a pie y la catedral, a 10 minutos a pie."
+        ],
+        "stars": 4,
+        "presentationImage": "/acommodationsImgs/meliaFachada.jpg",
+        "roomImage": [
+          "/acommodationsImgs/melia01.jpg",
+          "/acommodationsImgs/melia02.jpg",
+          "/acommodationsImgs/melia03.jpg"
+        ],
+        "pricePerNight": 225000,
+        "services": ["wifi", "desayuno", "pileta", "estacionamiento", "aire"]
       }
     ]
   }

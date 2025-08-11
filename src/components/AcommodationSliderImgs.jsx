@@ -69,7 +69,6 @@ export function AcommodationSliderImgs({ id }) {
     );
   }
 
-  // Calcular imágenes secundarias para desktop
   const nextImage1 = images[(currentIndex + 1) % images.length];
   const nextImage2 = images[(currentIndex + 2) % images.length];
 
@@ -119,13 +118,13 @@ export function AcommodationSliderImgs({ id }) {
           />
           <button
             onClick={prevSlide}
-            className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white bg-opacity-70 p-2 rounded-full shadow hover:bg-opacity-100 transition"
+            className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white bg-opacity-70 p-2 rounded-full shadow hover:bg-opacity-100 transition cursor-pointer"
           >
             <ChevronLeft size={18} />
           </button>
           <button
             onClick={nextSlide}
-            className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white bg-opacity-70 p-2 rounded-full shadow hover:bg-opacity-100 transition"
+            className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white bg-opacity-70 p-2 rounded-full shadow hover:bg-opacity-100 transition cursor-pointer"
           >
             <ChevronRight size={18} />
           </button>

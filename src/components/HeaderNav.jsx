@@ -7,7 +7,7 @@ export function HeaderNav() {
   const pathname = location.pathname;
 
   return (
-    <div className="relative hidden">
+    <div className="relative">
       <nav className="w-full items-center pt-3 px-[3%] md:px-[15%] block overflow-x-auto no-scrollbar">
         <ul className="flex items-center whitespace-nowrap">
           {navLinks.map((link) => {

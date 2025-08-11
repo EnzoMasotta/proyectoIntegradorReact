@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import packages from "../data/packages.json";
 import { PackagesSteps } from "../components/PackagesSteps";
@@ -8,6 +8,7 @@ import { ChevronLeft } from "lucide-react";
 export function PackagesBookingDetails() {
   const { id } = useParams();
   const navigate = useNavigate();
+  const location = useLocation();
 
   const allPackages = [];
   for (const country in packages) {
@@ -32,16 +33,26 @@ export function PackagesBookingDetails() {
 
   return (
     <main className="bg-[#f2f4f5] pb-6">
-      <PackagesSteps />
+      {location.pathname === `/paquetes/resultados/reservas/detalles/${id}` && (
+        <PackagesSteps />
+      )}
       <button
         type="button"
-        className="flex items-center gap-1 mx-[3%] mb-2 font-bold text-[#2d6a4f] text-sm cursor-pointer"
-        onClick={() => {
-          navigate(`/paquetes/resultados/vuelos/detalles/${pkg.id}`);
-        }}
+        className={`flex items-center gap-1 mx-[3%] mb-2 font-bold text-[#2d6a4f] text-sm cursor-pointer ${
+          location.pathname ===
+          `/paquetes/resultados/reservas/detalles/${pkg.id}`
+            ? "pt-0"
+            : "pt-2"
+        }`}
+        onClick={() =>
+          location.pathname ===
+          `/paquetes/resultados/reservas/detalles/${pkg.id}`
+            ? navigate(`/paquetes/resultados/vuelos/detalles/${pkg.id}`)
+            : navigate(`/reservas`)
+        }
       >
         <ChevronLeft />
-        Regresar a la pagina anterior
+        Regresar a la página anterior
       </button>
       <BookingDetails selectedPackage={pkg} />
     </main>

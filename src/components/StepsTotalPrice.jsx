@@ -61,7 +61,7 @@ export function StepsTotalPrice({ selectedPackage }) {
             {(totalPrice * personas).toLocaleString("es-AR")}
           </p>
           <button
-            className={`flex justify-center mx-auto w-1/2 items-center bg-[#2a5732] text-white py-1 mt-2 rounded-3xl 
+            className={`flex justify-center mx-auto w-1/2 items-center bg-[#2a5732] text-white text-sm font-semibold py-2 mt-2 rounded-lg 
               ${
                 disableButton
                   ? "opacity-0 cursor-default"

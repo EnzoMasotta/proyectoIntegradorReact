@@ -33,6 +33,10 @@ function App() {
           element={<PackagesBookingDetails />}
         />
         <Route path="/reservas" element={<MyReservations />} />
+        <Route
+          path="/reservas/detalles/:id"
+          element={<PackagesBookingDetails />}
+        />
         <Route path="/actividades" element={<h1>No hay nada gato</h1>} />
       </Routes>
       <Footer />

@@ -119,7 +119,7 @@ export const GuestsAndRoomsInput = ({
               <button
                 type="button"
                 onClick={toggleOpen}
-                className=" text-xl font-bold mb-4 text-[#4a4a4a]"
+                className="self-start inline-flex w-auto p-0 text-xl font-bold mb-4 text-[#4a4a4a]"
                 aria-label="Cerrar"
               >
                 <ChevronLeft />

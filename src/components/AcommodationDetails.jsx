@@ -87,14 +87,14 @@ export function AcommodationDetails({ pkg }) {
             Información
           </h1>
           {paragraphsToShow.map((paragraph, index) => (
-            <p key={index} className="text-[#4a4a4a] text-sm mt-1 lg:max-w-2xl">
+            <p key={index} className="text-[#4a4a4a] text-sm mt-2 lg:max-w-2xl">
               {paragraph}
             </p>
           ))}
           {pkg.description.length > maxParagraphsToShow && (
             <button
               onClick={toggleText}
-              className="text-blue-600 text-sm mt-2 hover:underline"
+              className="text-[#100c0d] text-sm mt-2 hover:underline"
             >
               {showFullText ? "Leer menos" : "Leer más"}
             </button>

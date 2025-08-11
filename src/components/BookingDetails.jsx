@@ -5,20 +5,23 @@ import {
   PlaneLanding,
   PlaneTakeoff,
   Star,
+  ChevronLeft,
 } from "lucide-react";
 import { useTotalPrice } from "../contexts/TotalPriceContext";
 import { useIsMobile } from "../hooks/useIsMobile";
 import { addReservationToCart } from "../utils/sessionCart";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 
 export function BookingDetails({ selectedPackage }) {
   const { totalPrice, personas, totalNights } = useTotalPrice();
   const [flightData, setFlightData] = useState(null);
 
+  const { id } = useParams();
   const navigate = useNavigate();
+  const location = useLocation();
 
   const [open, setOpen] = useState(false);
-  const isMobile = useIsMobile();
+  const isMobile = useIsMobile(1024);
 
   const handleConfirmReservation = () => {
     if (!selectedPackage || !flightData) return;
@@ -127,7 +130,7 @@ export function BookingDetails({ selectedPackage }) {
               <span className="text-[#4a4a4a] text-sm">
                 {selectedPackage.title} - {selectedPackage.province}
               </span>
-              <p className="text-xs text-[#4a4a4a]">
+              <p className="text-xs text-[#4a4a4a] italic">
                 (Horario check-in 13:00 hs - Horario check-out 10:00 hs)
               </p>
             </div>
@@ -172,65 +175,127 @@ export function BookingDetails({ selectedPackage }) {
               {(totalPrice * personas).toLocaleString("es-AR")}
             </p>
           </div>
-          <button
-            type="button"
-            className="font-bold text-[#2d6a4f] text-sm cursor-pointer self-end"
-            onClick={() => setOpen(true)}
-          >
-            Ver detalles
-          </button>
+          <div className="flex justify-between items-center">
+            <button
+              type="button"
+              className="font-bold text-[#2d6a4f] text-sm cursor-pointer"
+              onClick={() => setOpen(true)}
+            >
+              Ver detalles
+            </button>
+            {location.pathname ===
+              `/paquetes/resultados/reservas/detalles/${id}` && (
+              <button
+                type="button"
+                onClick={handleConfirmReservation}
+                className="py-2 px-4 bg-[#2a5732] text-white rounded-lg text-sm font-semibold cursor-pointer"
+              >
+                Confirmar Reserva
+              </button>
+            )}
+          </div>
 
           {open && (
             <div className="fixed inset-0 bg-white z-50 flex flex-col p-4 overflow-auto">
-              <div className="">
-                <h3 className="font-semibold mb-2">Vuelo de ida</h3>
-                <p>
-                  <PlaneTakeoff size={16} className="inline-block mr-1" />
-                  {flightData.originAirport.name} (
-                  {flightData.originAirport.code}) - {flightData.originCountry}
-                </p>
-                <p>Fecha: </p>
-                <p>Hora salida: </p>
-                <p>
-                  Destino: {flightData.destinationAirport.name} (
-                  {flightData.destinationAirport.code}) -{" "}
-                  {flightData.destinationCountry}
-                </p>
-                <p>Hora llegada: {formatTime(flightData.arrivalTime)}</p>
-                <p>Tipo vuelo: {getStopLabel(flightData.layoverAirports)}</p>
-              </div>
-
-              <div>
-                <h3 className="font-semibold mb-2">Vuelo de vuelta</h3>
-                <p>
-                  <PlaneLanding size={16} className="inline-block mr-1" />
-                  {flightData.destinationAirport.name} (
-                  {flightData.destinationAirport.code}) -{" "}
-                  {flightData.destinationCountry}
-                </p>
-                <p>Fecha: {formatDate(flightData.returnDepartureTime)}</p>
-                <p>Hora salida: {formatTime(flightData.returnDepartureTime)}</p>
-                <p>
-                  Destino: {flightData.originAirport.name} (
-                  {flightData.originAirport.code}) - {flightData.originCountry}
-                </p>
-                <p>Hora llegada: {formatTime(flightData.returnArrivalTime)}</p>
-                <p>Tipo vuelo: {getStopLabel(flightData.layoverAirports)}</p>
-              </div>
-
-              <div>
-                <h3 className="font-semibold">Totales</h3>
-                <p>Noches: {totalNights}</p>
-                <p>Pasajeros: {personas}</p>
-                <p>Precio total: ${totalPrice}</p>
-              </div>
               <button
                 onClick={() => setOpen(false)}
-                className="mt-6 py-2 px-4 bg-[#2a5732] text-white rounded text-sm font-semibold"
+                className="self-start inline-flex w-auto p-0  text-[#4a4a4a] font-semibold mb-2"
                 type="button"
               >
-                Aplicar filtros
+                <ChevronLeft size={24} />
               </button>
+              <div className="space-y-4">
+                <div className="bg-[#edf4ea] p-4 rounded-lg border border-[#dbdbdb] text-[var(--gris-navbar)] text-sm">
+                  <h3 className="font-semibold text-[var(--verde-logo)] mb-3 uppercase tracking-wide">
+                    Vuelo de ida
+                  </h3>
+                  <div className="space-y-1 text-sm text-[var(--gris-navbar)]">
+                    <p>
+                      <span className="font-medium">
+                        {flightData.originAirport.name}
+                      </span>{" "}
+                      ({flightData.originAirport.code}) –{" "}
+                      {flightData.originCountry}
+                    </p>
+                    <p>
+                      Fecha:{" "}
+                      <span className="font-medium">
+                        {formatDate(flightData.departureTime)}
+                      </span>
+                    </p>
+                    <p>
+                      Hora salida:{" "}
+                      <span className="font-medium">
+                        {formatTime(flightData.departureTime)}
+                      </span>
+                    </p>
+                    <p>
+                      Destino: {flightData.destinationAirport.name} (
+                      {flightData.destinationAirport.code}) –{" "}
+                      {flightData.destinationCountry}
+                    </p>
+                    <p>
+                      Hora llegada:{" "}
+                      <span className="font-medium">
+                        {formatTime(flightData.arrivalTime)}
+                      </span>
+                    </p>
+                    <p className="text-[var(--rosa-viejo)] font-semibold">
+                      {getStopLabel(flightData.layoverAirports)}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="bg-[#edf4ea] p-4 rounded-lg border border-[#dbdbdb] text-[var(--gris-navbar)] text-sm">
+                  <h3 className="font-semibold text-[var(--verde-logo)] mb-3 uppercase tracking-wide">
+                    Vuelo de vuelta
+                  </h3>
+                  <div className="space-y-1 text-sm text-[var(--gris-navbar)]">
+                    <p>
+                      <span className="font-medium">
+                        {flightData.destinationAirport.name}
+                      </span>{" "}
+                      ({flightData.destinationAirport.code}) –{" "}
+                      {flightData.destinationCountry}
+                    </p>
+                    <p>
+                      Fecha:{" "}
+                      <span className="font-medium">
+                        {formatDate(flightData.returnDepartureTime)}
+                      </span>
+                    </p>
+                    <p>
+                      Hora salida:{" "}
+                      <span className="font-medium">
+                        {formatTime(flightData.returnDepartureTime)}
+                      </span>
+                    </p>
+                    <p>
+                      Destino: {flightData.originAirport.name} (
+                      {flightData.originAirport.code}) –{" "}
+                      {flightData.originCountry}
+                    </p>
+                    <p>
+                      Hora llegada:{" "}
+                      <span className="font-medium">
+                        {formatTime(flightData.returnArrivalTime)}
+                      </span>
+                    </p>
+                    <p className="text-[var(--rosa-viejo)] font-semibold">
+                      {getStopLabel(flightData.layoverAirports)}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="bg-[#edf4ea] p-4 rounded-lg border border-[#dbdbdb] text-[var(--gris-navbar)] text-sm">
+                  <h3 className="font-semibold text-[var(--verde-logo)] mb-3 uppercase tracking-wide">
+                    Totales
+                  </h3>
+                  <p>Noches: {totalNights}</p>
+                  <p>Pasajeros: {personas}</p>
+                  <p>Precio total: ${totalPrice.toLocaleString("es-AR")}</p>
+                </div>
+              </div>
             </div>
           )}
         </section>
@@ -238,39 +303,124 @@ export function BookingDetails({ selectedPackage }) {
     );
   }
   return (
-    <section className="flex justify-between">
-      <div className="flex flex-col border border-[#dbdbdb] rounded-lg bg-white">
-        <h2 className="flex items-center gap-1 text-[#2a2a2a] font-bold">
+    <section className="grid grid-cols-[1fr_1fr] grid-rows-[auto_auto] gap-4 px-[3%] items-stretch">
+      {/* Card 1 */}
+      <div className="flex flex-col border border-[#dbdbdb] rounded-lg bg-white p-2 shadow-sm">
+        <h2 className="flex items-center gap-1 text-[#2a2a2a] font-bold text-lg border-b border-[#dbdbdb] pb-2">
           <BedDouble size={16} strokeWidth={3} />
           Hospedaje
         </h2>
-        <span className="text-[#4a4a4a] text-sm">
+        <span className="text-[#4a4a4a] text-sm mt-2">
           {selectedPackage.title} - {selectedPackage.province}
         </span>
-        <p className="text-xs text-[#4a4a4a]">
+        <p className="text-xs text-[#4a4a4a] italic">
           (Horario check-in 13:00 hs - Horario check-out 10:00 hs)
         </p>
+        <img
+          src={selectedPackage.presentationImage}
+          alt={selectedPackage.tittle}
+          className="w-1/2 h-40 object-cover rounded-lg mt-2"
+        />
       </div>
-      <div className="border border-[#dbdbdb] rounded-lg bg-white">
-        <h2 className="flex items-center gap-1 text-[#2a2a2a] font-bold">
-          <PlaneTakeoff size={16} strokeWidth={3} />
+
+      {/* Card 2 */}
+      <div className="flex flex-col gap-4 border border-[#dbdbdb] rounded-lg bg-white p-4 shadow-sm row-span-2 h-full">
+        {/* Encabezado */}
+        <h2 className="flex items-center gap-1 text-[#2a2a2a] font-bold text-lg border-b border-[#dbdbdb] pb-2">
+          <PlaneTakeoff size={18} strokeWidth={3} className="" />
           Vuelos
         </h2>
-        <p className="text-sm text-[#4a4a4a]">
-          IDA: {formatDate(flightData.departureTime)} -{" "}
-          {formatTime(flightData.departureTime)}
-        </p>
-        <p className="text-sm text-[#4a4a4a]">
-          VUELTA: {formatDate(flightData.returnDepartureTime)} -{" "}
-          {formatTime(flightData.returnDepartureTime)}
-        </p>
+
+        {/* Vuelo de ida */}
+        <div className="bg-[#edf4ea] p-3 rounded-md">
+          <h3 className="font-semibold text-[var(--verde-logo)] text-sm uppercase tracking-wide mb-2">
+            Vuelo de ida
+          </h3>
+          <div className="space-y-1 text-xs text-[var(--gris-navbar)]">
+            <p>
+              <span className="font-medium">
+                {flightData.originAirport.name}
+              </span>{" "}
+              ({flightData.originAirport.code}) – {flightData.originCountry}
+            </p>
+            <p>
+              Fecha:{" "}
+              <span className="font-medium">
+                {formatDate(flightData.departureTime)}
+              </span>
+            </p>
+            <p>
+              Hora salida:{" "}
+              <span className="font-medium">
+                {formatTime(flightData.departureTime)}
+              </span>
+            </p>
+            <p>
+              Destino: {flightData.destinationAirport.name} (
+              {flightData.destinationAirport.code}) –{" "}
+              {flightData.destinationCountry}
+            </p>
+            <p>
+              Hora llegada:{" "}
+              <span className="font-medium">
+                {formatTime(flightData.arrivalTime)}
+              </span>
+            </p>
+            <p className="text-[var(--rosa-viejo)] font-semibold">
+              {getStopLabel(flightData.layoverAirports)}
+            </p>
+          </div>
+        </div>
+
+        {/* Vuelo de vuelta */}
+        <div className="bg-[#edf4ea] p-3 rounded-md">
+          <h3 className="font-semibold text-[var(--verde-logo)] text-sm uppercase tracking-wide mb-2">
+            Vuelo de vuelta
+          </h3>
+          <div className="space-y-1 text-xs text-[var(--gris-navbar)]">
+            <p>
+              <span className="font-medium">
+                {flightData.destinationAirport.name}
+              </span>{" "}
+              ({flightData.destinationAirport.code}) –{" "}
+              {flightData.destinationCountry}
+            </p>
+            <p>
+              Fecha:{" "}
+              <span className="font-medium">
+                {formatDate(flightData.returnDepartureTime)}
+              </span>
+            </p>
+            <p>
+              Hora salida:{" "}
+              <span className="font-medium">
+                {formatTime(flightData.returnDepartureTime)}
+              </span>
+            </p>
+            <p>
+              Destino: {flightData.originAirport.name} (
+              {flightData.originAirport.code}) – {flightData.originCountry}
+            </p>
+            <p>
+              Hora llegada:{" "}
+              <span className="font-medium">
+                {formatTime(flightData.returnArrivalTime)}
+              </span>
+            </p>
+            <p className="text-[var(--rosa-viejo)] font-semibold">
+              {getStopLabel(flightData.layoverAirports)}
+            </p>
+          </div>
+        </div>
       </div>
-      <div className="border border-[#dbdbdb] rounded-lg bg-white">
-        <h2 className="flex items-center gap-1 text-[#2a2a2a] font-bold">
+
+      {/* Card 3 */}
+      <div className="flex flex-col border border-[#dbdbdb] rounded-lg bg-white p-2 shadow-sm">
+        <h2 className="flex items-center gap-1 text-[#2a2a2a] font-bold text-lg border-b border-[#dbdbdb] pb-2">
           <Info size={16} strokeWidth={3} />
           Información
         </h2>
-        <p className="text-sm text-[#4a4a4a]">
+        <p className="text-sm text-[#4a4a4a] mt-2">
           Paquete para {personas} {personas === 1 ? "pasajero" : "pasajeros"}{" "}
           por la cantidad de {totalNights}{" "}
           {totalNights === 1 ? "noche" : "noches"}
@@ -288,9 +438,16 @@ export function BookingDetails({ selectedPackage }) {
           Precio final para {personas} {personas === 1 ? "persona" : "personas"}{" "}
           $ {(totalPrice * personas).toLocaleString("es-AR")}
         </p>
-        <button type="button" onClick={handleConfirmReservation}>
-          Confirmar Reserva
-        </button>
+        {location.pathname ===
+          `/paquetes/resultados/reservas/detalles/${id}` && (
+          <button
+            type="button"
+            onClick={handleConfirmReservation}
+            className="mt-2 w-1/3 py-2 px-4 bg-[#2a5732] text-white rounded-lg text-sm font-semibold cursor-pointer"
+          >
+            Confirmar Reserva
+          </button>
+        )}
       </div>
     </section>
   );
