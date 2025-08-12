@@ -1,8 +1,8 @@
 import React from "react";
-import brasil from "../assets/FeaturedPackagesImgs/brasil.png";
-import madrid from "../assets/FeaturedPackagesImgs/madrid.png";
-import puntacana from "../assets/FeaturedPackagesImgs/puntacana.png";
-import cuotassininteres from "../assets/FeaturedPackagesImgs/cuotassininteres.png";
+import brasil from "../assets/FeaturedPackagesImgs/brasil.jpg";
+import madrid from "../assets/FeaturedPackagesImgs/madrid.jpg";
+import puntacana from "../assets/FeaturedPackagesImgs/puntacana.jpg";
+import cuotassininteres from "../assets/FeaturedPackagesImgs/cuotassininteres.jpg";
 
 export function FeaturedPackages() {
   return (

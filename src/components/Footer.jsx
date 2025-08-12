@@ -12,9 +12,7 @@ import { Link } from "react-router-dom";
 export function Footer() {
   return (
     <footer className="text-[#ffffff] bg-[#2d6a4f]">
-      {/* Contenedor principal */}
       <div className="max-w-7xl mx-auto px-6 py-10 flex flex-col lg:flex-row lg:justify-between lg:items-start gap-8">
-        {/* Logo y descripción */}
         <div className="flex-1 min-w-[200px]">
           <h1 className="logo cursor-pointer font-extrabold text-[#ffffff] text-2xl">
             katafly
@@ -26,7 +24,6 @@ export function Footer() {
           </p>
         </div>
 
-        {/* Navegación */}
         <div className="flex-1 min-w-[150px]">
           <h3 className="text-[#ffffff] text-lg font-semibold mb-3">Enlaces</h3>
           <ul className="space-y-2">
@@ -49,7 +46,6 @@ export function Footer() {
           </ul>
         </div>
 
-        {/* Contacto */}
         <div className="flex-1 min-w-[200px]">
           <h3 className="text-[#ffffff] text-lg font-semibold mb-3">
             Contacto
@@ -70,7 +66,6 @@ export function Footer() {
           </ul>
         </div>
 
-        {/* Redes sociales */}
         <div className="flex-1 min-w-[200px]">
           <h3 className="text-[#ffffff] text-lg font-semibold mb-3">
             Seguinos en las redes
@@ -89,7 +84,6 @@ export function Footer() {
         </div>
       </div>
 
-      {/* Línea inferior */}
       <div
         className="text-center py-4 text-sm"
         style={{ backgroundColor: "#2a5732", color: "#ffffff" }}

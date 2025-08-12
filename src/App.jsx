@@ -11,6 +11,7 @@ import { PackagesFlightsDetails } from "./pages/PackagesFlightsDetails";
 import { PackagesBookingDetails } from "./pages/PackagesBookingDetails";
 import { MyReservations } from "./pages/MyReservations";
 import { AboutUs } from "./pages/AboutUs";
+import { Soon } from "./pages/Soon";
 
 function App() {
   return (
@@ -38,7 +39,11 @@ function App() {
           path="/reservas/detalles/:id"
           element={<PackagesBookingDetails />}
         />
-        <Route path="/actividades" element={<h1>No hay nada gato</h1>} />
+        <Route path="/hospedajes" element={<Soon />} />
+        <Route path="/vuelos" element={<Soon />} />
+        <Route path="/actividades" element={<Soon />} />
+        <Route path="/autos" element={<Soon />} />
+        <Route path="/asistencias" element={<Soon />} />
         <Route path="/sobrenosotros" element={<AboutUs />} />
       </Routes>
       <Footer />

@@ -9,7 +9,7 @@ export function User() {
     if (user) {
       logout();
     } else {
-      login({ name: "María", email: "maria@ejemplo.com" });
+      login({ name: "Ejemplo", email: "ejemplo@katafly.com" });
     }
   };
 
@@ -19,7 +19,7 @@ export function User() {
       className="cursor-pointer flex items-center gap-2"
     >
       <CircleUser size={25} className="text-[#4a4a4a]" />
-      <span className="text-sm text-[#4a4a4a] hidden">
+      <span className="text-sm text-[#4a4a4a]">
         {user ? user.email : "Iniciar sesión"}
       </span>
     </div>

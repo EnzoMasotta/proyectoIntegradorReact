@@ -1,8 +1,7 @@
 import React from "react";
 import { PackagesSearchBar } from "../components/PackagesSearchBar";
 import { FeaturedPackages } from "../components/FeaturedPackages";
-import { FeaturedPackageDeals } from "../components/FeaturedPackageDeals";
-import { Newsletter } from "../components/Newsletter";
+import { ContactForm } from "../components/ContactForm";
 import { AbbreviatedAboutUs } from "../components/AbbreviatedAboutUs";
 
 export function PackagesPage() {
@@ -12,9 +11,8 @@ export function PackagesPage() {
         <PackagesSearchBar />
       </section>
       <FeaturedPackages />
-      <FeaturedPackageDeals />
       <AbbreviatedAboutUs />
-      <Newsletter />
+      <ContactForm />
     </main>
   );
 }

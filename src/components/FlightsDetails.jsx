@@ -138,7 +138,7 @@ export function FlightsDetails({ selectedPackage }) {
   }
 
   return (
-    <section className="w-full flex flex-col px-[3%] lg:px-[20%] gap-6">
+    <section className="w-full flex flex-col px-[3%] lg:px-[20%] gap-6 pb-6">
       <div className="lg:hidden flex bg-white w-full border-[#d9b0b6] border-2 rounded-lg flex-col cursor-pointer">
         <h3 className="text-lg font-bold text-[#2a2a2a] p-2">
           Tu selección actual
